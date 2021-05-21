@@ -12,8 +12,14 @@
 					`<p>Visit <a href=".listing">.listing</a> for list of component names.</p>`;
 			} else {
 				document.title = `${moduleName} | Preview`;
-				const { default: App } = await import(`./${moduleName}/script.es.js`);
-				const app = new App({ target: document.body });
+				import(`./${moduleName}/script.es.js`)
+					.then(({ defaut: App }) => {
+						const app = new App({ target: document.body });
+					})
+					.catch((err) => {
+						console.error(err);
+						document.body.append(err.message);
+					});
 			}
 		</script>
 	</head>
