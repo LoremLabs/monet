@@ -7,6 +7,7 @@
     "build:elements": "rollup -c .config/rollup.config.mjs",
     "build:listing": "find dist/components/*/ -type d -exec basename {} \\; > dist/components/.listing",
     "serve": "npx serve -n dist",
+    "start": "npm run storybook",
     "storybook": "start-storybook -c .config/storybook/ -p 6006",
     "build-storybook": "build-storybook -c .config/storybook/ -o dist/storybook"
   },
