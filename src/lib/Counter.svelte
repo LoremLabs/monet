@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../assets/global.postcss"
+  import "../assets/global.css"
 
   let count: number = 0
   const increment = () => {
@@ -17,7 +17,7 @@
     font-size: inherit;
     /* Using Tailwind classes directly on your HTML elements is recommended over @apply. */
 		@apply py-4 px-8;
-    @apply text-red-100;
+    @apply text-red-900;
     @apply bg-red-500 bg-opacity-10;
     @apply rounded-full;
     @apply border-2 border-transparent;

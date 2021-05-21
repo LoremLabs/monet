@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "./assets/global.postcss";
+  import "./assets/global.css";
 
   import logo from "./assets/svelte.png";
   import Counter from "./lib/Counter.svelte";
