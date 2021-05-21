@@ -4,8 +4,8 @@
   "scripts": {
     "build": "vite build",
     "serve": "npx serve -n dist",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o dist/storybook"
+    "storybook": "start-storybook -c .config/storybook/ -p 6006",
+    "build-storybook": "build-storybook -c .config/storybook/ -o dist/storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
