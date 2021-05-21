@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <script type="module">
-      import App from "./script.es.js";
-      const app = new App({ target: document.body });
-    </script>
-  </head>
-  <body></body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script type="module">
+			const moduleName = new URLSearchParams(location.search).get("m");
+			if (!moduleName) {
+				document.body.innerHTML =
+					`<p>Add <code>?m=ComponentName</code> to render <code>ComponentName</code>.</p>` +
+					`<p>Visit <a href=".listing">.listing</a> for list of component names.</p>`;
+			} else {
+				document.title = `${moduleName} | Preview`;
+				const { default: App } = await import(`./${moduleName}/script.es.js`);
+				const app = new App({ target: document.body });
+			}
+		</script>
+	</head>
+	<body></body>
 </html>

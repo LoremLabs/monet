@@ -2,8 +2,6 @@
 import { terser } from "rollup-plugin-terser";
 import { createRequire } from "module";
 import { readdirSync } from "fs";
-// @ts-ignore
-const css = createRequire(import.meta.url)("rollup-plugin-import-css");
 
 const isProdEnv = !process.env.ROLLUP_WATCH;
 
@@ -41,12 +39,7 @@ function getRollupConfig(elementName) {
 			format: "iife",
 			dir: `dist/elements/`,
 		},
-		plugins: [
-			css(),
-
-			// minify production builds
-			isProdEnv && terser(),
-		],
+		plugins: [isProdEnv && terser()],
 		watch: {
 			clearScreen: false,
 		},

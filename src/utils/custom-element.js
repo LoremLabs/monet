@@ -3,9 +3,8 @@
  * @param {string} name
  * @param {string[]} attributes
  * @param {new (...args: any[]) => T} App
- * @param {string} css
  */
-export function init(name, attributes, App, css) {
+export function init(name, attributes, App) {
 	let app;
 	let shadowRoot;
 
@@ -17,10 +16,6 @@ export function init(name, attributes, App, css) {
 		constructor() {
 			super();
 			shadowRoot = this.attachShadow({ mode: "closed" });
-
-			const style = document.createElement("style");
-			style.textContent = css;
-			shadowRoot.append(style);
 		}
 
 		attributeChangedCallback(attr, oldValue, newValue) {
