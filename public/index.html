@@ -9,7 +9,7 @@
 			if (!moduleName) {
 				document.body.innerHTML =
 					`<p>Add <code>?m=ComponentName</code> to render <code>ComponentName</code>.</p>` +
-					`<p>Visit <a href=".listing">.listing</a> for list of component names.</p>`;
+					`<p>Visit <a href=".listing.txt">.listing.txt</a> for list of component names.</p>`;
 			} else {
 				document.title = `${moduleName} | Preview`;
 				import(`./${moduleName}/script.es.js`)
