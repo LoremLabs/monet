@@ -30,6 +30,7 @@ module.exports = {
 			},
 			boxShadow: {
 				"xl-all": "0 0 20px rgba(0, 0, 0, 0.3)",
+				"xl-all-darker": "0 0 20px rgba(0, 0, 0, 0.4)",
 			},
 		},
 	},

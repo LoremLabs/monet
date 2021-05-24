@@ -6,7 +6,7 @@
 
 <div class="bg-black w-98 h-6 rounded-t-3xl" />
 <div
-	class="bg-white font-sans shadow-xl-all rounded-3xl rounded-tl-none inline-flex gap-6 py-10"
+	class="bg-white font-sans shadow-xl-all rounded-3xl rounded-tl-none inline-flex gap-6 py-10 link-parent relative cursor-pointer hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker"
 >
 	<div class="pl-10">
 		<h2
@@ -22,8 +22,12 @@
 			autem minus ex, dignissimos deleniti ipsum, neque saepe, obcaecati hic
 			dolorem. Laudantium eos ullam dolore.
 		</p>
-		<p class="text-black font-semibold underline">
-			Learn More <span aria-hidden="true">&rarr;</span>
+		<p>
+			<a
+				href="#learn-more"
+				class="text-black font-semibold underline link-trigger"
+				>Learn More <span aria-hidden="true">&rarr;</span></a
+			>
 		</p>
 	</div>
 	<div class="self-center flex-shrink-0">
@@ -35,3 +39,12 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.link-trigger::after {
+		content: "";
+		@apply absolute;
+		@apply inset-0;
+	}
+
+</style>
