@@ -2,7 +2,7 @@
   import "./assets/global.css";
 
   import logo from "./assets/svelte.png";
-  import Counter from "./lib/Counter.svelte";
+  import Counter from "./components/Counter.svelte";
 
   export let name = "TypeScript";
 </script>

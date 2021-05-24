@@ -21,7 +21,11 @@ module.exports = {
 		safelist: [/^svelte-[\d\w]+$/],
 	},
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				"wm-green": "#2FA875",
+			},
+		},
 	},
 	variants: {
 		extend: {},
