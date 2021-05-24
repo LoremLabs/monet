@@ -6,7 +6,7 @@
 
 <div class="bg-gray-900 w-98 h-6 rounded-t-3xl" />
 <div
-	class="bg-white font-sans shadow-xl-all rounded-3xl rounded-tl-none inline-flex gap-6 py-10 link-parent relative cursor-pointer hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker"
+	class="bg-white w-full font-sans shadow-xl-all rounded-3xl rounded-tl-none inline-flex gap-6 py-10 link-parent relative cursor-pointer hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker"
 >
 	<div class="pl-10">
 		<h2
