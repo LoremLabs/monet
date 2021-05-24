@@ -4,7 +4,7 @@
 
 </script>
 
-<div class="bg-black w-98 h-6 rounded-t-3xl" />
+<div class="bg-gray-900 w-98 h-6 rounded-t-3xl" />
 <div
 	class="bg-white font-sans shadow-xl-all rounded-3xl rounded-tl-none inline-flex gap-6 py-10 link-parent relative cursor-pointer hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker"
 >
@@ -12,7 +12,7 @@
 		<h2
 			class="font-extrabold xl:text-3xl md:text-2xl text-xl m-0 mb-1 tracking-tighter"
 		>
-			<span class="block text-black">Want to unlock the article?</span>
+			<span class="block text-gray-900">Want to unlock the article?</span>
 			<span class="block text-wm-green"
 				>Purchase a Web Monetization pass now!</span
 			>
@@ -25,7 +25,7 @@
 		<p>
 			<a
 				href="#learn-more"
-				class="text-black font-semibold underline link-trigger"
+				class="text-gray-900 font-semibold underline link-trigger"
 				>Learn More <span aria-hidden="true">&rarr;</span></a
 			>
 		</p>
