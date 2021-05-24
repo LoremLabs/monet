@@ -1,3 +1,8 @@
+<script>
+	export let animate = false;
+
+</script>
+
 <svg
 	version="1.1"
 	xmlns="http://www.w3.org/2000/svg"
@@ -7,32 +12,8 @@
 	viewBox="0 0 128 128"
 	style="enable-background:new 0 0 128 128;"
 	xml:space="preserve"
+	class:animate
 >
-	<style type="text/css">
-		path {
-			/* fill: #6adaab; */
-			fill: #fff;
-		}
-		rect {
-			/* fill: #6adaab; */
-			fill: #fff;
-			animation: blink 2s infinite;
-			animation-delay: calc(var(--animation-order) * 100ms);
-		}
-
-		@keyframes blink {
-			0% {
-				opacity: 1;
-			}
-			10% {
-				opacity: 0;
-			}
-			30% {
-				opacity: 1;
-			}
-		}
-
-	</style>
 	<path
 		class="st0"
 		d="M64,124C30.9,124,4,97.1,4,64S30.9,4,64,4s60,26.9,60,60S97.1,124,64,124z M64,10c-29.8,0-54,24.2-54,54
@@ -72,3 +53,29 @@
 		height="15"
 	/>
 </svg>
+
+<style>
+	path,
+	rect {
+		/* fill: #6adaab; */
+		fill: #fff;
+	}
+
+	.animate rect {
+		animation: blink 2s infinite;
+		animation-delay: calc(var(--animation-order) * 100ms);
+	}
+
+	@keyframes blink {
+		0% {
+			opacity: 1;
+		}
+		10% {
+			opacity: 0;
+		}
+		30% {
+			opacity: 1;
+		}
+	}
+
+</style>

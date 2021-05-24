@@ -25,6 +25,12 @@ module.exports = {
 			colors: {
 				"wm-green": "#2FA875",
 			},
+			width: {
+				98: "98%",
+			},
+			boxShadow: {
+				"xl-all": "0 0 20px rgba(0, 0, 0, 0.3)",
+			},
 		},
 	},
 	variants: {
