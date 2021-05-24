@@ -27,7 +27,7 @@
 		</div>
 		<div class="self-center flex-shrink-0">
 			<div
-				class="inline-flex gap-3 items-center sm:p-2 md:p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
+				class="inline-flex gap-3 items-center p-2 md:p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
 			>
 				<span class="h-8 w-8"><WebMonetizationLogo /></span>
 				<span class="font-sans">Purchase from Provider</span>
