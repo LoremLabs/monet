@@ -2,6 +2,9 @@
 	import "../assets/global.css";
 	import WebMonetizationLogo from "../assets/WebMonetizationLogo.svelte";
 
+	export let href = "#learn-more";
+	export let ctaText = "Purchase";
+
 </script>
 
 <div class="bg-gray-900 w-98 h-6 rounded-t-3xl" />
@@ -23,19 +26,17 @@
 			dolorem. Laudantium eos ullam dolore.
 		</p>
 		<p>
-			<a
-				href="#learn-more"
-				class="text-gray-900 font-semibold underline link-trigger"
+			<a {href} class="text-gray-900 font-semibold underline link-trigger"
 				>Learn More <span aria-hidden="true">&rarr;</span></a
 			>
 		</p>
 	</div>
 	<div class="self-center flex-shrink-0">
 		<div
-			class="inline-flex gap-3 items-center p-2 md:p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
+			class="flex flex-col md:flex-row md:gap-3 items-center p-3 md:p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
 		>
 			<span class="h-8 w-8"><WebMonetizationLogo /></span>
-			<span>Purchase from Provider</span>
+			<span class="max-w-xs">{ctaText}</span>
 		</div>
 	</div>
 </div>
