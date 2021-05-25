@@ -1,6 +1,6 @@
 <script lang="ts">
 	import "../assets/global.css";
-	import WebMonetizationLogo from "../assets/WebMonetizationLogo.svelte";
+	import WebMonetizationLogo from "../atoms/WebMonetizationLogo.svelte";
 
 	export let href = "#learn-more";
 	export let ctaText = "Purchase";
@@ -35,7 +35,7 @@
 		<div
 			class="flex flex-col md:flex-row md:gap-3 items-center p-3 md:p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
 		>
-			<span class="h-8 w-8"><WebMonetizationLogo /></span>
+			<WebMonetizationLogo class="h-8 w-8" />
 			<span class="max-w-xs">{ctaText}</span>
 		</div>
 	</div>

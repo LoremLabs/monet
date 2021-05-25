@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export let animate = false;
 
 </script>
@@ -13,14 +13,14 @@
 	style="enable-background:new 0 0 128 128;"
 	xml:space="preserve"
 	class:animate
+	class:fill-current={true}
+	{...$$restProps}
 >
 	<path
-		class="st0"
 		d="M64,124C30.9,124,4,97.1,4,64S30.9,4,64,4s60,26.9,60,60S97.1,124,64,124z M64,10c-29.8,0-54,24.2-54,54
 			c0,29.8,24.2,54,54,54s54-24.2,54-54C118,34.2,93.8,10,64,10z"
 	/>
 	<path
-		class="st0"
 		d="M56.4,76.3c0-1.8-0.6-3.3-1.7-4.5c-1.1-1.2-3-2.3-5.6-3.2c-2.6-1-4.7-1.9-6.1-2.7c-4.8-2.7-7.3-6.7-7.3-11.9
 		c0-3.6,1-6.5,3.1-8.8c2.1-2.3,4.3-3.6,7.9-4V34h5.6v7.1c3.6,0.5,6.4,2.1,8.4,4.8c2,2.6,3,6,3,10.2h-7.5c0-2.7-0.6-4.8-1.8-6.4
 		c-1.2-1.6-2.8-2.4-4.8-2.4c-2,0-3.6,0.6-4.7,1.7c-1.1,1.1-1.7,2.7-1.7,4.8c0,1.9,0.6,3.4,1.7,4.5c1.1,1.1,3,2.2,5.7,3.2
@@ -28,39 +28,12 @@
 		c-2.1,2.3-4.7,3.6-8.6,4v5h-5.4v-5c-4.1-0.5-7.3-2-9.5-4.6c-2.2-2.6-3.3-6-3.3-10.2h7.6c0,2.7,0.7,4.8,2,6.3
 		c1.3,1.5,3.2,2.2,5.6,2.2c2.4,0,4.2-0.6,5.4-1.8C55.8,79.8,56.4,78.2,56.4,76.3z"
 	/>
-	<rect
-		style="--animation-order: 3;"
-		x="94"
-		y="49"
-		class="st0"
-		width="5"
-		height="35"
-	/>
-	<rect
-		style="--animation-order: 2;"
-		x="84"
-		y="54"
-		class="st0"
-		width="5"
-		height="25"
-	/>
-	<rect
-		style="--animation-order: 1;"
-		x="74"
-		y="59"
-		class="st0"
-		width="5"
-		height="15"
-	/>
+	<rect style="--animation-order: 3;" x="94" y="49" width="5" height="35" />
+	<rect style="--animation-order: 2;" x="84" y="54" width="5" height="25" />
+	<rect style="--animation-order: 1;" x="74" y="59" width="5" height="15" />
 </svg>
 
 <style>
-	path,
-	rect {
-		/* fill: #6adaab; */
-		fill: #fff;
-	}
-
 	.animate rect {
 		animation: blink 2s infinite;
 		animation-delay: calc(var(--animation-order) * 100ms);
