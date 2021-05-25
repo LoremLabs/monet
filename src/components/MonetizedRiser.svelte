@@ -30,7 +30,7 @@
 				<span class="text-wm-green text-2xl">{unit}</span>
 			</span>
 		</div>
-		<div class="self-center flex-shrink-0 p-3 bg-gray-900 rounded-l-full">
+		<div class="self-center flex-shrink-0 flex p-3 bg-gray-900 rounded-l-full">
 			<WebMonetizationLogo class="h-8 w-8 text-wm-green" />
 		</div>
 	</div>
