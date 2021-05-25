@@ -1,5 +1,9 @@
 const { tailwindExtractor } = require("tailwindcss/lib/lib/purgeUnusedStyles");
 
+const isStorybook = (process.env.npm_lifecycle_script || "").includes(
+	"storybook",
+);
+
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig} */
 module.exports = {
 	corePlugins: {
@@ -8,6 +12,7 @@ module.exports = {
 	mode: "aot",
 	purge: {
 		content: ["./src/**/*.{html,js,svelte,ts}"],
+		enabled: !isStorybook,
 		options: {
 			defaultExtractor: (content) => [
 				// If this stops working, please open an issue at https://github.com/svelte-add/tailwindcss/issues rather than bothering Tailwind Labs about it
