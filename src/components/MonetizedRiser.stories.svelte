@@ -18,4 +18,4 @@
 	<MonetizedRiser {...args} />
 </Template>
 
-<Story name="Primary" args={{}} />
+<Story name="Primary" args={{ count: 33, unit: "ads", collapsed: false }} />
