@@ -5,7 +5,6 @@
     "build": "npm run build:components && npm run build:elements",
     "build:components": "vite build",
     "build:elements": "rollup -c .config/rollup.config.mjs",
-    "build:listing": "find dist/components/*/ -type d -exec basename {} \\; > dist/components/.listing.txt",
     "serve": "npx serve -n dist",
     "start": "npm run storybook",
     "storybook": "start-storybook -c .config/storybook/ -p 6006",
