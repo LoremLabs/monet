@@ -2,7 +2,7 @@
 const path = require("path");
 const { defineConfig, build } = require("vite");
 const svelte = require("@sveltejs/vite-plugin-svelte").default;
-const { getInputs } = require("./utils.js");
+const { isProdEnv, getInputs } = require("./utils.js");
 
 /**
  * @param {string} componentName
@@ -10,7 +10,10 @@ const { getInputs } = require("./utils.js");
 function getRollupConfig(componentName) {
 	const viteConfig = defineConfig({
 		root: path.resolve(__dirname, ".."),
+		clearScreen: false,
+		mode: isProdEnv ? "production" : "development",
 		build: {
+			...(!isProdEnv ? { minify: false } : {}),
 			lib: {
 				formats: ["es"],
 				entry: `src/elements/${componentName}.svelte`,

@@ -2,7 +2,9 @@
   "name": "svelte-vite",
   "version": "0.0.0",
   "scripts": {
-    "build": "npm run build:components && npm run build:elements",
+    "build": "NODE_ENV=production npm run build:all",
+    "build:debug": "NODE_ENV=development npm run build:all",
+    "build:all": "npm run build:components && npm run build:elements",
     "build:components": "node scripts/build-components.js",
     "build:elements": "rollup -c scripts/elements.rollup.config.js",
     "serve": "npx serve -n dist",

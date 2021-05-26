@@ -1,6 +1,6 @@
 const { readdirSync } = require("fs");
 
-const isProdEnv = !process.env.ROLLUP_WATCH;
+const isProdEnv = process.env.NODE_ENV === "production";
 
 /**
  * Get input files from a directory matching a pattern.
