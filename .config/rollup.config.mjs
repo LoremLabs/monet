@@ -2,6 +2,8 @@
 import { terser } from "rollup-plugin-terser";
 import { createRequire } from "module";
 import { readdirSync } from "fs";
+// @ts-ignore
+const css = createRequire(import.meta.url)("rollup-plugin-import-css");
 
 const isProdEnv = !process.env.ROLLUP_WATCH;
 
@@ -33,20 +35,24 @@ function getInputs(dir, pattern, selectedInput) {
  */
 function getRollupConfig(elementName) {
 	return {
-		input: `src/${elementName}.js`,
+		input: `src/elements/${elementName}.js`,
 		output: {
 			sourcemap: true,
 			format: "iife",
 			dir: `dist/elements/`,
 		},
-		plugins: [isProdEnv && terser()],
+		plugins: [css(), isProdEnv && terser()],
 		watch: {
 			clearScreen: false,
 		},
 	};
 }
 
-const inputs = getInputs("src", /^(\w+-\w+)\.js$/, process.env.ELEMENT);
+const inputs = getInputs(
+	"src/elements/",
+	/^(\w+-\w+)\.js$/,
+	process.env.ELEMENT,
+);
 console.log({ inputs });
 
 export default inputs.map((elem) => getRollupConfig(elem));

@@ -3,8 +3,10 @@
  * @param {string} name
  * @param {string[]} attributes
  * @param {new (...args: any[]) => T} App
+ * @param {string} css
  */
-export function init(name, attributes, App) {
+export function init(name, attributes, App, css) {
+	// TODO: use a WeakMap
 	let app;
 	let shadowRoot;
 
@@ -31,6 +33,11 @@ export function init(name, attributes, App) {
 					props[attr] = this.getAttribute(attr);
 				}
 			}
+
+			const style = document.createElement("style");
+			style.textContent = css;
+			shadowRoot.append(style);
+
 			app = new App({ target: shadowRoot, props });
 		}
 	}
