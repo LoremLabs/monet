@@ -31,7 +31,7 @@
 			>
 		</p>
 	</div>
-	<div class="self-center flex-shrink-0">
+	<div class="self-center flex-grow">
 		<div
 			class="flex flex-col md:flex-row md:gap-3 items-center p-3 md:p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
 		>

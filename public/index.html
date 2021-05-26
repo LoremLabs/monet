@@ -4,6 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<meta name="monetization" content="$respec.org" />
+		<script>
+			if (document.monetization) {
+				document.monetization.addEventListener("monetizationprogress", (ev) => {
+					console.log(ev.detail);
+				});
+			}
+		</script>
 		<script type="module">
 			import App from "./script.es.js";
 			const app = new App({ target: document.body });
