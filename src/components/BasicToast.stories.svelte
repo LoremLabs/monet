@@ -5,7 +5,7 @@
 
 </script>
 
-<Meta title="Components/BasicToast" component={BasicToast} argTypes={{}} />
+<Meta title="Components/MonetizedRiser/BasicToast" component={BasicToast} argTypes={{}} />
 
 <Template let:args>
 	<BasicToast {...args} on:click={action("Close button click")} />
