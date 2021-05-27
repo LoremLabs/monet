@@ -24,6 +24,10 @@ module.exports = {
 			width: {
 				98: "98%",
 			},
+			maxWidth: {
+				"prose-72": "72ch",
+				"prose-78": "78ch",
+			},
 			boxShadow: {
 				"xl-all": "0 0 20px rgba(0, 0, 0, 0.3)",
 				"xl-all-darker": "0 0 20px rgba(0, 0, 0, 0.4)",
