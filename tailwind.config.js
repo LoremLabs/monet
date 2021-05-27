@@ -1,30 +1,21 @@
-const { tailwindExtractor } = require("tailwindcss/lib/lib/purgeUnusedStyles");
-
 const isStorybook = (process.env.npm_lifecycle_script || "").includes(
 	"storybook",
 );
+
+const purgeCssOptions = {
+	content: ["./src/**/*.{js,svelte,ts}"],
+	options: {
+		safelist: [/^svelte-\w+$/],
+	},
+};
 
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig} */
 module.exports = {
 	corePlugins: {
 		preflight: false,
 	},
-	mode: "aot",
-	purge: {
-		content: ["./src/**/*.{html,js,svelte,ts}"],
-		enabled: !isStorybook,
-		options: {
-			defaultExtractor: (content) => [
-				// If this stops working, please open an issue at https://github.com/svelte-add/tailwindcss/issues rather than bothering Tailwind Labs about it
-				...tailwindExtractor(content),
-				// Match Svelte class: directives (https://github.com/tailwindlabs/tailwindcss/discussions/1731)
-				...[...content.matchAll(/(?:class:)*([\w\d-/:%.]+)/gm)].map(
-					([_match, group, ..._rest]) => group,
-				),
-			],
-		},
-		safelist: [/^svelte-[\d\w]+$/],
-	},
+	mode: isStorybook ? "aot" : "jit", // Hack: jit purges CSS.
+	purge: isStorybook ? [] : purgeCssOptions,
 	theme: {
 		extend: {
 			colors: {

@@ -47,13 +47,13 @@
 			</div>
 		</div>
 	</div>
-
-	<style>
-		.link-trigger::after {
-			content: "";
-			@apply absolute;
-			@apply inset-0;
-		}
-
-	</style>
 {/if}
+
+<style>
+	.link-trigger::after {
+		content: "";
+		@apply absolute;
+		@apply inset-0;
+	}
+
+</style>
