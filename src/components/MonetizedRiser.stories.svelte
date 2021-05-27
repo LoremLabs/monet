@@ -7,15 +7,11 @@
 <Meta
 	title="Components/MonetizedRiser"
 	component={MonetizedRiser}
-	argTypes={{
-		count: {
-			control: { type: "number", min: 0, max: Number.MIN_SAFE_INTEGER },
-		},
-	}}
+	argTypes={{}}
 />
 
 <Template let:args>
 	<MonetizedRiser {...args} />
 </Template>
 
-<Story name="Primary" args={{ count: 33, unit: "ads", collapsed: false }} />
+<Story name="Primary" args={{ collapsed: false }} />
