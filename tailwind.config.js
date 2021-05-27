@@ -37,6 +37,15 @@ module.exports = {
 				"xl-all": "0 0 20px rgba(0, 0, 0, 0.3)",
 				"xl-all-darker": "0 0 20px rgba(0, 0, 0, 0.4)",
 			},
+			animation: {
+				"wm-blink": "blink 2s infinite",
+			},
+			keyframes: {
+				blink: {
+					"0%, 30%": { opacity: 1 },
+					"10%": { opacity: 0 },
+				},
+			},
 		},
 	},
 	variants: {
