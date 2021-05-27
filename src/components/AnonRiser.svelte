@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { fade, fly } from "svelte/transition";
+	import { fly } from "../utils/transfix";
 
-	import fix from "../utils/transfix.js";
 	import "../assets/global.css";
 	import WebMonetizationLogo from "../atoms/WebMonetizationLogo.svelte";
 
@@ -12,7 +11,7 @@
 </script>
 
 {#if visible}
-	<div transition:fix(fly)={{ x: 500, duration: 300 }}>
+	<div transition:fly={{ x: 500, duration: 300 }}>
 		<div class="bg-gray-900 w-98 h-6 rounded-t-3xl" />
 		<div
 			class="bg-white w-full font-sans shadow-xl-all rounded-3xl rounded-tl-none inline-flex gap-6 py-10 link-parent relative cursor-pointer hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker"

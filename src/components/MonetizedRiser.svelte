@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { fade, fly } from "svelte/transition";
 	import { onMount } from "svelte";
 
+	import { fade, fly } from "../utils/transfix";
 	import "../assets/global.css";
 	import WebMonetizationLogo from "../atoms/WebMonetizationLogo.svelte";
 	import CloseIcon from "../assets/icons/close.svelte";
-	import fix from '../utils/transfix.js'
 
 	export let count = 32;
 	export let unit = "ads";
@@ -27,8 +26,8 @@
 {#if ready}
 	{#if !collapsed}
 		<div
-		in:fix(fly)={{ x: -500, duration: 300 }}
-		out:fix(fade)={{ duration: 300 }}
+			in:fly={{ x: -500, duration: 300 }}
+			out:fade={{ duration: 300 }}
 			class="relative w-max max-w-md mt-6 mr-6"
 		>
 			<div class="bg-gray-900 w-11/12 h-4 rounded-t-2xl" />
@@ -63,7 +62,7 @@
 		</div>
 	{:else}
 		<button
-		transition:fix(fade)={{ duration: 300 }}
+			transition:fade={{ duration: 300 }}
 			type="button"
 			class="border-none p-0 cursor-pointer w-max max-w-md hover:shadow-2xl"
 			on:click={toggleCollapse}
