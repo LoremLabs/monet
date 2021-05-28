@@ -8,6 +8,7 @@
 	export let href = "#learn-more";
 
 	export let ctaText = "Purchase from Provider";
+	export let ctaTextMobile = ctaText;
 
 	export let heading1 = "Want to unlock the article?";
 	export let heading2 = "Purchase a Web Monetization pass now!";
@@ -19,35 +20,62 @@
 </script>
 
 {#if visible}
-	<div transition:fly={{ x: 500, duration: 300 }}>
-		<div class="bg-gray-900 w-98 h-6 rounded-t-3xl" />
+	<div transition:fly={{ x: 500, duration: 300 }} class="font-sans">
+		<div class="bg-gray-900 w-95 md:w-98 h-6 rounded-t-3xl" />
 		<div
-			class="bg-white w-full font-sans shadow-xl-all rounded-3xl rounded-tl-none py-10 link-parent relative XXX-cursor-pointer hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker inline-flex gap-6 justify-between"
+			class="bg-white w-full relative cursor-pointer rounded-3xl rounded-tl-none shadow-xl-all hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker"
 		>
-			<div class="pl-20">
-				<Heading
+			<div class="hidden md:inline-flex py-10 gap-6 justify-between">
+				<div class="pl-20">
+					<Heading
+						color1="text-gray-900"
+						color2="text-wm-green"
+						{heading1}
+						{heading2}
+					/>
+					<p
+						class="max-w-prose-78 my-2 text-gray-500 md:text-base lg:text-lg !leading-tight"
+					>
+						{text}
+					</p>
+					<a {href} class="text-gray-900 font-semibold underline link-trigger"
+						>Learn More <span aria-hidden="true">&rarr;</span></a
+					>
+				</div>
+				<div class="self-center max-w-max flex-shrink-0">
+					<div
+						class="flex md:flex-row gap-3 items-center p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
+					>
+						<WebMonetizationLogo class="h-8 w-8" />
+						<span class="max-w-xs text-base lg:text-lg">{ctaText}</span>
+					</div>
+				</div>
+			</div>
+			<div class="md:hidden py-6 pl-6">
+				<div class="pr-3">
+					<Heading
 					color1="text-gray-900"
 					color2="text-wm-green"
 					{heading1}
 					{heading2}
 				/>
-				<p
-					class="text-gray-500 max-w-prose-78 my-2 text-sm md:text-base lg:text-lg !leading-tight"
-				>
-					{text}
-				</p>
-				<a
-					{href}
-					class="text-wm-green md:text-gray-900 font-semibold underline link-trigger"
-					>Learn More <span aria-hidden="true">&rarr;</span></a
-				>
-			</div>
-			<div class="self-center flex-shrink-0 max-w-max">
-				<div
-					class="flex flex-col md:flex-row md:gap-3 items-center p-3 md:p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
-				>
-					<WebMonetizationLogo class="h-8 w-8" />
-					<span class="max-w-xs text-sm md:text-base lg:text-lg">{ctaText}</span
+				</div>
+				<div class="w-full box-border inline-flex gap-6 mt-2 justify-between">
+					<p
+						class="max-w-prose m-0 text-gray-500 text-sm !leading-tight line-clamp-3"
+					>
+						{text}
+					</p>
+					<div
+						class="self-stretch max-w-max flex-shrink-0 flex flex-col items-center justify-center p-3 pl-8 text-white bg-wm-green rounded-l-3xl"
+					>
+						<WebMonetizationLogo class="h-6 w-6" />
+						<span class="max-w-xs text-xs">{ctaTextMobile}</span>
+					</div>
+				</div>
+				<div class="mt-1 text-sm">
+					<a {href} class="text-wm-green font-semibold underline link-trigger"
+						>Learn More <span aria-hidden="true">&rarr;</span></a
 					>
 				</div>
 			</div>

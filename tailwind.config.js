@@ -22,6 +22,7 @@ module.exports = {
 				"wm-green": "#2FA875",
 			},
 			width: {
+				95: "95%",
 				98: "98%",
 			},
 			maxWidth: {
@@ -46,5 +47,5 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/line-clamp")],
 };

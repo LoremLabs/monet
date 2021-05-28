@@ -4,10 +4,19 @@
 
 </script>
 
-<Meta title="Components/MonetRiser/AnonRiser" component={AnonRiser} argTypes={{}} />
+<Meta
+	title="Components/MonetRiser/AnonRiser"
+	component={AnonRiser}
+	argTypes={{}}
+/>
 
 <Template let:args>
 	<AnonRiser {...args} />
 </Template>
 
-<Story name="Primary" args={{}} />
+<Story
+	name="Primary"
+	args={{
+		ctaTextMobile: "Purchase",
+	}}
+/>
