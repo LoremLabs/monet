@@ -25,7 +25,9 @@
 		<div
 			class="bg-white w-full relative cursor-pointer rounded-3xl rounded-tl-none shadow-xl-all hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker"
 		>
-			<div class="hidden md:inline-flex py-10 gap-6 w-full box-border justify-between">
+			<div
+				class="hidden md:inline-flex py-10 gap-6 w-full box-border justify-between"
+			>
 				<div class="pl-20">
 					<Heading
 						color1="text-gray-900"
@@ -46,7 +48,7 @@
 					<div
 						class="flex = gap-3 items-center p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
 					>
-						<WebMonetizationLogo class="h-8 w-8" />
+						<WebMonetizationLogo height="h-8" />
 						<span class="max-w-xs text-base lg:text-lg">{ctaText}</span>
 					</div>
 				</div>
@@ -69,7 +71,7 @@
 					<div
 						class="self-stretch max-w-max flex-shrink-0 flex flex-col items-center justify-center p-3 pl-8 text-white bg-wm-green rounded-l-3xl"
 					>
-						<WebMonetizationLogo class="h-6 w-6" />
+						<WebMonetizationLogo height="h-6" />
 						<span class="max-w-xs text-xs">{ctaTextMobile}</span>
 					</div>
 				</div>

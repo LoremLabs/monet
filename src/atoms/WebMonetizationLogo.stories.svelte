@@ -1,13 +1,6 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
 	import WebMonetizationLogo from "./WebMonetizationLogo.svelte";
-	export let props = (args) => {
-		const classList = ["h-24", "w-24", "p-2"].concat([
-			args.color,
-			args.background,
-		]);
-		return { ...args, class: classList.join(" ") };
-	};
 
 </script>
 
@@ -27,11 +20,24 @@
 />
 
 <Template let:args>
-	<WebMonetizationLogo {...props(args)} />
+	<div class="{args.background} p-2 w-max">
+		<WebMonetizationLogo {...args} />
+	</div>
 </Template>
 
-<Story name="Green" args={{ color: "text-white", background: "bg-wm-green" }} />
+<Story
+	name="Green"
+	args={{
+		color: "text-white",
+		background: "bg-wm-green",
+		height: "h-24",
+	}}
+/>
 <Story
 	name="Dark"
-	args={{ color: "text-wm-green", background: "bg-gray-900" }}
+	args={{
+		color: "text-wm-green",
+		background: "bg-gray-900",
+		height: "h-24",
+	}}
 />

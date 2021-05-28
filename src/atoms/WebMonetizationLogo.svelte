@@ -1,12 +1,14 @@
 <script lang="ts">
 	export let animate = false;
+	export let height = "h-6";
+	export let color = "text-wm-green";
 
 </script>
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 128 128"
-	{...$$restProps} class:animate class:fill-current={true}
+	class="{height} fill-current {color}" class:animate
 >
 	<path
 		d="M64 124C30.9 124 4 97.1 4 64S30.9 4 64 4s60 26.9 60 60-26.9 60-60 60zm0-114c-29.8 0-54 24.2-54 54s24.2 54 54 54 54-24.2 54-54-24.2-54-54-54z"

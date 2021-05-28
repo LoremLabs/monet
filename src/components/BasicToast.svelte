@@ -24,7 +24,7 @@
 			{text}
 		</div>
 		<div class="flex-shrink-0 flex p-4 bg-gray-900 rounded-l-full">
-			<WebMonetizationLogo class="h-10 w-10 text-wm-green" animate />
+			<WebMonetizationLogo height="h-10" animate />
 		</div>
 	</div>
 </div>
