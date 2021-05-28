@@ -34,7 +34,7 @@
 						{heading2}
 					/>
 					<p
-						class="max-w-prose-78 my-2 text-gray-500 md:text-base lg:text-lg !leading-tight"
+						class="max-w-prose-78 my-2 text-gray-500 text-base lg:text-lg !leading-tight"
 					>
 						{text}
 					</p>
@@ -44,7 +44,7 @@
 				</div>
 				<div class="self-center max-w-max flex-shrink-0">
 					<div
-						class="flex md:flex-row gap-3 items-center p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
+						class="flex = gap-3 items-center p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
 					>
 						<WebMonetizationLogo class="h-8 w-8" />
 						<span class="max-w-xs text-base lg:text-lg">{ctaText}</span>
