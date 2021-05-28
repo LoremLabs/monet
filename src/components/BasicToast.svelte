@@ -7,7 +7,7 @@
 
 </script>
 
-<div class="relative w-max max-w-md mt-6 mr-6">
+<div class="relative md:w-max max-w-md mt-6 mr-6">
 	<div class="bg-gray-900 w-11/12 h-4 rounded-t-2xl" />
 	<button
 		type="button"
@@ -18,9 +18,9 @@
 		<CloseIcon />
 	</button>
 	<div
-		class="bg-white w-full overflow-hidden font-sans shadow-xl-all rounded-2xl rounded-tl-none inline-flex gap-4 py-4 items-center"
+		class="bg-white w-full overflow-hidden font-sans shadow-xl-all rounded-2xl rounded-tl-none inline-flex gap-4 py-4 items-center justify-between"
 	>
-		<div class="pl-4 text-gray-900 text-xl">
+		<div class="pl-4 text-gray-900 text-lg md:text-xl">
 			{text}
 		</div>
 		<div class="flex-shrink-0 flex p-4 bg-gray-900 rounded-l-full">
