@@ -25,7 +25,7 @@
 		<div
 			class="bg-white w-full relative cursor-pointer rounded-3xl rounded-tl-none shadow-xl-all hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker"
 		>
-			<div class="hidden md:inline-flex py-10 gap-6 justify-between">
+			<div class="hidden md:inline-flex py-10 gap-6 w-full box-border justify-between">
 				<div class="pl-20">
 					<Heading
 						color1="text-gray-900"
