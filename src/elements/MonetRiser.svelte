@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { writable } from "svelte/store";
-
 	import AnonRiser from "../components/AnonRiser.svelte";
 	import MonetizedRiser from "../components/MonetizedRiser.svelte";
 
@@ -27,20 +25,7 @@
 		}
 	});
 
-	let monetizationAmount = writable({ amount: 0, unit: "" });
-	isMonetizedPromise.then((isMonetized) => {
-		if (!isMonetized) return;
-
-		wm.addEventListener("monetizationprogress", (ev) => {
-			const { amount, assetCode, assetScale } = ev.detail;
-			monetizationAmount.update((current) => {
-				return {
-					amount: current.amount + Number(amount),
-					unit: `${assetCode} 1e${assetScale}`,
-				};
-			});
-		});
-	});
+	const text = "This site is web-monetized.";
 
 </script>
 
@@ -49,10 +34,7 @@
 {:then isMonetized}
 	{#if isMonetized}
 		<div class="fixed bottom-0 left-0 p-2">
-			<MonetizedRiser
-				count={$monetizationAmount.amount}
-				unit={$monetizationAmount.unit}
-			/>
+			<MonetizedRiser {text} />
 		</div>
 	{:else}
 		<div
