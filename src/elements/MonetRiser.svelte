@@ -33,12 +33,12 @@
 	<p>detecting monetization...</p>
 {:then isMonetized}
 	{#if isMonetized}
-		<div class="fixed bottom-0 left-0 p-2">
+		<div class="fixed bottom-2 left-2 p-2">
 			<MonetizedRiser {text} />
 		</div>
 	{:else}
 		<div
-			class="fixed bottom-0 left-0 right-0 p-4 w-full m-auto"
+			class="fixed bottom-2 left-2 right-2 p-4 w-full m-auto"
 			style="max-width: 95vw;"
 		>
 			<AnonRiser />

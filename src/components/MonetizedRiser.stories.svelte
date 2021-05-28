@@ -11,7 +11,11 @@
 />
 
 <Template let:args>
-	<MonetizedRiser {...args} />
+	<div class="relative h-44 outline-black overflow-hidden">
+		<div class="absolute bottom-0 left-0">
+			<MonetizedRiser {...args} />
+		</div>
+	</div>
 </Template>
 
 <Story name="Primary" args={{ collapsed: false }} />

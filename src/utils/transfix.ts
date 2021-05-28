@@ -10,9 +10,9 @@ export default function fix<T extends TransitionFn>(transition: T) {
 		params: Parameters<T>[1],
 	): ReturnType<typeof transition> => {
 		if (!node.hasOwnProperty("ownerDocument")) {
-			Object.defineProperty(node, "ownerDocument", {
-				get: () => node.getRootNode().ownerDocument || node.getRootNode(),
-			});
+			const root = node.getRootNode();
+			const ownerDocument = root instanceof ShadowRoot ? { head: root } : root;
+			Object.defineProperty(node, "ownerDocument", { value: ownerDocument });
 		}
 		return transition(node, params);
 	};
