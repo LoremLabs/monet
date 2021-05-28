@@ -24,12 +24,10 @@
 		}
 	});
 
-	const monetizedText = "This site is web-monetized.";
-
 </script>
 
 {#await isMonetizedPromise then isMonetized}
-	<MonetRiser {monetizedText} {isMonetized} />
+	<MonetRiser {isMonetized} />
 {:catch}
 	<!-- nothing -->
 {/await}
