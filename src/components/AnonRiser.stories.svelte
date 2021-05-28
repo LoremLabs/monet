@@ -4,7 +4,7 @@
 
 </script>
 
-<Meta title="Components/AnonRiser" component={AnonRiser} argTypes={{}} />
+<Meta title="Components/MonetRiser/AnonRiser" component={AnonRiser} argTypes={{}} />
 
 <Template let:args>
 	<AnonRiser {...args} />

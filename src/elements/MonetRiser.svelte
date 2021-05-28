@@ -1,6 +1,5 @@
 <script lang="ts">
-	import AnonRiser from "../components/AnonRiser.svelte";
-	import MonetizedRiser from "../components/MonetizedRiser.svelte";
+	import MonetRiser from "../components/MonetRiser.svelte";
 
 	const wm = document.monetization;
 	let isMonetizedPromise = new Promise<boolean>((resolve) => {
@@ -25,25 +24,12 @@
 		}
 	});
 
-	const text = "This site is web-monetized.";
+	const monetizedText = "This site is web-monetized.";
 
 </script>
 
-{#await isMonetizedPromise}
-	<p>detecting monetization...</p>
-{:then isMonetized}
-	{#if isMonetized}
-		<div class="fixed bottom-2 left-2 p-2">
-			<MonetizedRiser {text} />
-		</div>
-	{:else}
-		<div
-			class="fixed bottom-2 left-2 right-2 p-4 w-full m-auto"
-			style="max-width: 95vw;"
-		>
-			<AnonRiser />
-		</div>
-	{/if}
+{#await isMonetizedPromise then isMonetized}
+	<MonetRiser {monetizedText} {isMonetized} />
 {:catch}
 	<!-- nothing -->
 {/await}
