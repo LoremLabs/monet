@@ -1,8 +1,6 @@
 // TODO: use a svelte store
 export default function isMonetized() {
 	return new Promise<boolean>((resolve) => {
-		return resolve(true);
-
 		const wm = document.monetization;
 		if (!wm) {
 			console.log("no extension/polyfill", false);
