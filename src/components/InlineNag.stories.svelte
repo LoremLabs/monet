@@ -8,8 +8,11 @@
 	title="Components/InlineNag"
 	component={InlineNag}
 	argTypes={{
-		variant: {
-			control: { type: "inline-radio", options: ["light", "dark"] },
+		theme: {
+			control: {
+				type: "inline-radio",
+				options: ["light", "dark", "dim"],
+			},
 		},
 	}}
 />
@@ -18,22 +21,7 @@
 	<InlineNag {...args} />
 </Template>
 
-<Story
-	name="Light"
-	args={{
-		subtitle: "",
-	}}
-/>
-<Story
-	name="Dark"
-	args={{
-		variant: "dark",
-		subtitle: "",
-	}}
-/>
-<Story
-	name="With subtitle"
-	args={{
-		variant: "dark",
-	}}
-/>
+<Story name="Light" args={{ subtitle: "" }} />
+<Story name="Dark" args={{ theme: "dark", subtitle: "" }} />
+<Story name="Dimmed" args={{ theme: "dim", subtitle: "" }} />
+<Story name="With subtitle" args={{ theme: "dark", heading1: "" }} />
