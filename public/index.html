@@ -4,6 +4,15 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<style>
+			#placeholder {
+				height: 100%;
+				min-height: 300vh;
+				padding: 1em;
+				background-color: antiquewhite;
+				white-space: pre-wrap;
+			}
+		</style>
 		<meta name="monetization" content="$respec.org" />
 		<script>
 			if (location.search.includes("disable")) {
@@ -22,6 +31,14 @@
 	</head>
 	<body>
 		<h1>Add <code>?disable</code> to remove the monetization meta tag.</h1>
+
+		<section id="placeholder"></section>
+		<script>
+			document
+				.getElementById("placeholder")
+				.append(...Array.from({ length: 200 }, (_, i) => `placeholder ${i}\n`));
+		</script>
+
 		<main></main>
 	</body>
 </html>

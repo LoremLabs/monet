@@ -3,12 +3,13 @@
 	import MonetizedRiser from "../components/MonetizedRiser.svelte";
 
 	export let isMonetized = false;
+	export let collapsed = false;
 
 </script>
 
 {#if isMonetized}
 	<div class="fixed bottom-2 left-2 p-2">
-		<MonetizedRiser />
+		<MonetizedRiser {collapsed} />
 	</div>
 {:else}
 	<div
