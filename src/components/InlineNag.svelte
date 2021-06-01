@@ -1,3 +1,8 @@
+<script context="module" lang="ts">
+	export type Theme = "light" | "dark" | "dim";
+
+</script>
+
 <script lang="ts">
 	export let heading1 = "Ready to dive in?";
 	export let heading2 = "Start your free trial today.";
@@ -6,7 +11,7 @@
 		"Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.";
 	export let ctaText = "Purchase Web Monetization Pass";
 
-	export let theme: "light" | "dark" | "dim" = "light";
+	export let theme: Theme = "light";
 
 </script>
 
