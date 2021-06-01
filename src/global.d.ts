@@ -17,3 +17,9 @@ type MonetizationProgressEvent = CustomEvent<{
 	assetCode: string;
 	assetScale: number;
 }>;
+
+interface PropMap {
+	[customElementAttrName: string]: (
+		customElementAttrValue: string,
+	) => unknown | [prop: string, value: unknown];
+}
