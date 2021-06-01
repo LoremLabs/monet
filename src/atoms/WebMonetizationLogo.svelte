@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let animate = false;
 	export let height = "h-6";
-	export let color = "text-wm-green";
+	export let color = "";
 
 </script>
 
