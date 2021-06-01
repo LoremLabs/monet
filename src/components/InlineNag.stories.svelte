@@ -18,4 +18,22 @@
 	<InlineNag {...args} />
 </Template>
 
-<Story name="Primary" args={{}} />
+<Story
+	name="Light"
+	args={{
+		subtitle: "",
+	}}
+/>
+<Story
+	name="Dark"
+	args={{
+		variant: "dark",
+		subtitle: "",
+	}}
+/>
+<Story
+	name="With subtitle"
+	args={{
+		variant: "dark",
+	}}
+/>

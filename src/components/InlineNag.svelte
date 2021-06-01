@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let heading1 = "Ready to dive in?";
 	export let heading2 = "Start your free trial today.";
+	export let subtitle = "Award winning support";
 	export let body =
 		"Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.";
 	export let ctaText = "Purchase Web Monetization Pass";
@@ -17,12 +18,19 @@
 			? 'bg-gray-900 text-white'
 			: 'bg-white text-gray-900'}"
 	>
+		{#if subtitle}
+			<p class="uppercase m-0 mb-1 tracking-tighter text-sm">{subtitle}</p>
+		{/if}
 		<h2 class="font-extrabold text-2xl xl:text-3xl m-0 mb-1">
-			<span class="block leading-none">{heading1}</span>
-			<span class="block leading-none">{heading2}</span>
+			{#if heading1 && !subtitle}
+				<span class="block leading-none">{heading1}</span>
+			{/if}
+			{#if heading2}
+				<span class="block leading-none">{heading2}</span>
+			{/if}
 		</h2>
 		<p
-			class="w-full max-w-md text-base sm:text-lg leading-tight sm:leading-tight {variant ===
+			class="w-full max-w-md text-base sm:text-lg leading-tight sm:leading-7 {variant ===
 			'dark'
 				? 'text-indigo-200'
 				: 'text-gray-500'}"
