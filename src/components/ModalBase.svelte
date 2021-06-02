@@ -14,10 +14,10 @@
 </script>
 
 <div
-	class={{
-		center: "max-w-xl",
-		bottom: "w-full",
-	}[variant]}
+	class="w-screen box-border {{
+		center: 'max-w-xl p-4 xl:p-0',
+		bottom: '',
+	}[variant]}"
 >
 	<div
 		class="h-4 md:h-6 {{
@@ -40,9 +40,9 @@
 		}[variant]}"
 	>
 		<div
-			class="inline-flex py-10 md:py-20 gap-6 w-full box-border justify-between"
+			class="grid gap-y-1 w-full box-border justify-between py-10 md:py-20 grid-cols-12 auto-rows-max"
 		>
-			<div class="pl-5 md:pl-10">
+			<div class="col-span-full px-5 md:px-10">
 				{#if subtitle}
 					<p
 						class="uppercase m-0 mb-1 tracking-tighter text-sm font-semibold {{
@@ -63,13 +63,15 @@
 				>
 					{heading}
 				</h2>
-				<p
-					class="max-w-prose-78 my-2 text-base leading-tight lg:text-lg lg:leading-snug"
-				>
-					{text}
-				</p>
 			</div>
-			<div class="self-center max-w-max flex-shrink-0">
+			<p
+				class="px-5 md:px-10 max-w-prose-78 my-2 text-base leading-tight lg:text-lg lg:leading-snug col-span-9"
+			>
+				{text}
+			</p>
+			<div
+				class="self-center flex-shrink-0 text-center col-span-3 col-start-auto"
+			>
 				<a
 					{href}
 					class="flex items-center xl:p-6 rounded-l-3xl {{
