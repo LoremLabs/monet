@@ -39,10 +39,8 @@
 			bottom: 'rounded-tr-3xl',
 		}[variant]}"
 	>
-		<div
-			class="grid gap-y-1 w-full box-border justify-between py-10 md:py-20 grid-cols-12 auto-rows-max"
-		>
-			<div class="col-span-full px-5 md:px-10">
+		<div class="w-full box-border py-10 md:py-20">
+			<div class="px-5 md:px-10">
 				{#if subtitle}
 					<p
 						class="uppercase m-0 mb-1 tracking-tighter text-sm font-semibold {{
@@ -64,28 +62,33 @@
 					{heading}
 				</h2>
 			</div>
-			<p
-				class="px-5 md:px-10 max-w-prose-78 my-2 text-base leading-tight lg:text-lg lg:leading-snug col-span-9"
-			>
-				{text}
-			</p>
-			<div
-				class="self-center flex-shrink-0 text-center col-span-3 col-start-auto"
-			>
-				<a
-					{href}
-					class="flex items-center xl:p-6 rounded-l-3xl {{
-						light: 'bg-wm-green',
-						dark: 'bg-wm-green',
-						accent: 'bg-gray-800',
-					}[theme]} text-white no-underline {{
-						center: 'flex-col py-3 px-5',
-						bottom: 'flex-col md:flex-row md:gap-3 p-5',
+			<div class="flex justify-between">
+				<p
+					class="px-5 md:px-10 max-w-prose-78 my-2 text-base leading-tight lg:text-lg lg:leading-snug"
+				>
+					{text}
+				</p>
+				<div
+					class="self-center flex-shrink-0 text-center transform {{
+						center: '-translate-y-1/2',
+						bottom: '-translate-y-1/3',
 					}[variant]}"
 				>
-					<WebMonetizationLogo height="h-6" />
-					<span class="max-w-xs text-sm self-stretch">{ctaText}</span>
-				</a>
+					<a
+						{href}
+						class="flex items-center xl:p-6 rounded-l-3xl {{
+							light: 'bg-wm-green',
+							dark: 'bg-wm-green',
+							accent: 'bg-gray-800',
+						}[theme]} text-white no-underline {{
+							center: 'flex-col py-3 px-5',
+							bottom: 'flex-col md:flex-row md:gap-3 p-5',
+						}[variant]}"
+					>
+						<WebMonetizationLogo height="h-6" />
+						<span class="max-w-xs text-sm self-stretch">{ctaText}</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
