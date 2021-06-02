@@ -10,6 +10,9 @@
 <Meta
 	title="Components/Modal"
 	component={ModalBase}
+	parameters={{
+		layout: "fullscreen",
+	}}
 	argTypes={{
 		theme: {
 			control: {
@@ -25,6 +28,12 @@
 		},
 	}}
 />
+
+<Template let:args>
+	<div class="p-8 outline-black box-border m-4">
+		<ModalBase {...args} />
+	</div>
+</Template>
 
 <Template let:args id="Bottom">
 	<div class={demo_modalBackgroundClasslist}>
@@ -43,6 +52,8 @@
 		</div>
 	</div>
 </Template>
+
+<Story name="Base" args={{}} />
 
 <Story
 	name="Center"
