@@ -39,8 +39,8 @@
 			bottom: 'rounded-tr-3xl',
 		}[variant]}"
 	>
-		<div class="w-full box-border py-10 md:py-20">
-			<div class="px-5 md:px-10">
+		<div class="w-full box-border py-6 sm:py-10 md:py-20">
+			<div class="px-3 sm:px-5 md:px-10">
 				{#if subtitle}
 					<p
 						class="uppercase m-0 mb-1 tracking-tighter text-sm font-semibold {{
@@ -64,14 +64,14 @@
 			</div>
 			<div class="flex justify-between">
 				<p
-					class="px-5 md:px-10 max-w-prose-78 my-2 text-base leading-tight lg:text-lg lg:leading-snug"
+					class="px-3 sm:px-5 md:px-10 max-w-prose-78 my-2 text-base leading-tight lg:text-lg lg:leading-snug	"
 				>
 					{text}
 				</p>
 				<div
 					class="self-center flex-shrink-0 text-center transform {{
 						center: '-translate-y-1/2',
-						bottom: '-translate-y-1/3',
+						bottom: 'md:-translate-y-1/3',
 					}[variant]}"
 				>
 					<a
@@ -82,7 +82,8 @@
 							accent: 'bg-gray-800',
 						}[theme]} text-white no-underline {{
 							center: 'flex-col py-3 px-5',
-							bottom: 'flex-col md:flex-row md:gap-3 p-5',
+							bottom:
+								'flex-col md:flex-row md:gap-3 p-3 sm:p-5 w-min sm:w-auto',
 						}[variant]}"
 					>
 						<WebMonetizationLogo height="h-6" />
