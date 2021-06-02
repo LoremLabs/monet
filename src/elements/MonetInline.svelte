@@ -11,7 +11,7 @@
 </script>
 
 {#await isMonetizedPromise then isMonetized}
-	{#if isMonetized}
+	{#if !isMonetized}
 		<InlineNag {theme} />
 	{/if}
 {:catch}
