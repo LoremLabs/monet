@@ -20,7 +20,7 @@
 	}[variant]}
 >
 	<div
-		class="h-6 {{
+		class="h-4 md:h-6 {{
 			light: 'bg-wm-green',
 			dark: 'bg-wm-green',
 			accent: 'bg-gray-800',
@@ -82,7 +82,7 @@
 					}[variant]}"
 				>
 					<WebMonetizationLogo height="h-6" />
-					<span class="max-w-xs text-sm">{ctaText}</span>
+					<span class="max-w-xs text-sm self-stretch">{ctaText}</span>
 				</a>
 			</div>
 		</div>
