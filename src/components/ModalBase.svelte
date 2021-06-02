@@ -1,0 +1,90 @@
+<script lang="ts">
+	import WebMonetizationLogo from "../atoms/WebMonetizationLogo.svelte";
+
+	export let variant: "center" | "bottom" = "center";
+	export let theme: "light" | "dark" | "accent" = "light";
+
+	export let subtitle = "Award winning support";
+	export let heading = "Unlock article with Web Monetization Pass";
+	export let href = "#learn-more";
+	export let ctaText = "Purchase";
+	export let text =
+		"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat aliquid tempore obcaecati quidem molestiae iure eum. Reiciendis ea ipsam minima aspernatur nulla beatae perferendis, iste esse! Dolores consectetur sapiente cumque?";
+
+</script>
+
+<div
+	class={{
+		center: "max-w-xl",
+		bottom: "w-full",
+	}[variant]}
+>
+	<div
+		class="h-6 {{
+			light: 'bg-wm-green',
+			dark: 'bg-wm-green',
+			accent: 'bg-gray-800',
+		}[theme]} {{
+			center: 'rounded-t-3xl w-11/12',
+			bottom: 'rounded-tr-3xl w-95 md:w-98',
+		}[variant]}"
+	/>
+	<div
+		class="font-sans w-full shadow-xl-all focus-within:shadow-xl-all-darker {{
+			light: 'bg-white text-gray-800',
+			dark: 'bg-gray-900 text-gray-300',
+			accent: 'bg-wm-green text-white',
+		}[theme]} {{
+			center: 'rounded-3xl rounded-tl-none ',
+			bottom: 'rounded-tr-3xl',
+		}[variant]}"
+	>
+		<div
+			class="inline-flex py-10 md:py-20 gap-6 w-full box-border justify-between"
+		>
+			<div class="pl-5 md:pl-10">
+				{#if subtitle}
+					<p
+						class="uppercase m-0 mb-1 tracking-tighter text-sm font-semibold {{
+							light: 'text-wm-green',
+							dark: 'text-white',
+							accent: 'text-white',
+						}[theme]}"
+					>
+						{subtitle}
+					</p>
+				{/if}
+				<h2
+					class="font-extrabold text-2xl leading-none xl:text-3xl xl:leading-none m-0 mb-1 {{
+						light: 'text-gray-800',
+						dark: 'text-wm-green',
+						accent: 'text-gray-800',
+					}[theme]}"
+				>
+					{heading}
+				</h2>
+				<p
+					class="max-w-prose-78 my-2 text-base leading-tight lg:text-lg lg:leading-snug"
+				>
+					{text}
+				</p>
+			</div>
+			<div class="self-center max-w-max flex-shrink-0">
+				<a
+					{href}
+					class="flex items-center xl:p-6 rounded-l-3xl {{
+						light: 'bg-wm-green',
+						dark: 'bg-wm-green',
+						accent: 'bg-gray-800',
+					}[theme]} text-white no-underline {{
+						center: 'flex-col py-3 px-5',
+						bottom: 'flex-col md:flex-row md:gap-3 p-5',
+					}[variant]}"
+				>
+					<WebMonetizationLogo height="h-6" />
+					<span class="max-w-xs text-sm">{ctaText}</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
