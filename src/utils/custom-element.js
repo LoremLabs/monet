@@ -39,7 +39,7 @@ export function init(name, propMap, App, css) {
 
 		connectedCallback() {
 			const props = {};
-			for (const attr of MyComponent.observedAttributes) {
+			for (const attr of attributes) {
 				if (this.hasAttribute(attr)) {
 					const [prop, value] = getProp(attr, this.getAttribute(attr));
 					props[prop] = value;
@@ -51,6 +51,11 @@ export function init(name, propMap, App, css) {
 			shadowRoot.append(style);
 
 			app = new App({ target: shadowRoot, props });
+		}
+
+		disconnectedCallback() {
+			app = null;
+			shadowRoot = null;
 		}
 	}
 

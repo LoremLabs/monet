@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="monetization" content="$respec.org" />
+		<script>
+			if (location.search.includes("disable")) {
+				document.querySelector(`meta[name~=monetization]`).remove();
+			}
+			if (document.monetization) {
+				document.monetization.addEventListener("monetizationprogress", (ev) => {
+					console.log(ev.detail);
+				});
+			}
+		</script>
+		<script src="/elements/all.js"></script>
+	</head>
+	<body>
+		<h1>Add <code>?disable</code> to remove the monetization meta tag.</h1>
+		<hr />
+
+		<h2>Basic block level elements</h2>
+
+		<p>
+			This is a normal paragraph (<code>p</code> element). To add some length to
+			it, let us mention that this page was primarily written for testing the
+			effect of <strong>user style sheets</strong>. You can use it for various
+			other purposes as well, like just checking how your browser displays
+			various HTML elements by default. It can also be useful when testing
+			conversions from HTML format to other formats, since some elements can go
+			wrong then.
+		</p>
+
+		<monet-inline theme="dark"></monet-inline>
+
+		<p>
+			This is another paragraph. I think it needs to be added that the set of
+			elements tested is not exhaustive in any sense. I have selected those
+			elements for which it can make sense to write user style sheet rules, in
+			my opionion.
+		</p>
+
+		<monet-modal variant="bottom"></monet-modal>
+	</body>
+</html>

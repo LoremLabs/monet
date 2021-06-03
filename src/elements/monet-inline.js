@@ -8,5 +8,7 @@ const propMap = {
 	theme: (value) => (/^(light|dark|dim)$/.test(value) ? value : "light"),
 };
 
-/*#__INLINE__*/
-init("monet-inline", propMap, App, css);
+(() => {
+	/*#__INLINE__*/
+	init("monet-inline", propMap, App, css);
+})();

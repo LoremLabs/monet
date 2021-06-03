@@ -30,7 +30,7 @@ const inputs = getInputs(
 	"src/elements/",
 	/^(\w+-\w+)\.js$/,
 	process.env.ELEMENT,
-);
+).concat(["all"]);
 console.log({ inputs });
 
 module.exports = inputs.map((elem) => getRollupConfig(elem));

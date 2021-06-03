@@ -9,5 +9,7 @@ const propMap = {
 	variant: (value) => (/^(center|bottom)$/.test(value) ? value : "center"),
 };
 
-/*#__INLINE__*/
-init("monet-modal", propMap, App, css);
+(() => {
+	/*#__INLINE__*/
+	init("monet-modal", propMap, App, css);
+})();
