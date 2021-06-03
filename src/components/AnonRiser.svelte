@@ -8,7 +8,7 @@
 	export let href = "#learn-more";
 
 	export let ctaText = "Purchase from Provider";
-	export let ctaTextMobile = ctaText;
+	export let ctaTextMobile = "Purchase";
 
 	export let heading1 = "Want to unlock the article?";
 	export let heading2 = "Purchase a Web Monetization pass now!";
@@ -25,60 +25,37 @@
 		<div
 			class="bg-white w-full relative cursor-pointer rounded-3xl rounded-tl-none shadow-xl-all hover:shadow-xl-all-darker focus-within:shadow-xl-all-darker"
 		>
-			<div
-				class="hidden md:inline-flex py-10 gap-6 w-full box-border justify-between"
-			>
-				<div class="pl-20">
+			<div class="py-6 pl-6 md:py-10 md:pl-20">
+				<div class="pr-3">
 					<Heading
 						color1="text-gray-900"
 						color2="text-wm-green"
 						{heading1}
 						{heading2}
 					/>
-					<p
-						class="max-w-prose-78 my-2 text-gray-500 text-base lg:text-lg !leading-tight"
-					>
-						{text}
-					</p>
-					<a {href} class="text-gray-900 font-semibold underline link-trigger"
-						>Learn More <span aria-hidden="true">&rarr;</span></a
-					>
 				</div>
-				<div class="self-center max-w-max flex-shrink-0">
-					<div
-						class="flex = gap-3 items-center p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl"
-					>
-						<WebMonetizationLogo height="h-8" />
-						<span class="max-w-xs text-base lg:text-lg">{ctaText}</span>
+				<div class="w-full box-border flex gap-6 mt-2 justify-between">
+					<div>
+						<p
+							class="max-w-prose md:max-w-prose-78 m-0 text-gray-500 text-sm md:text-base lg:text-lg !leading-tight line-clamp-3 sm:line-clamp-none"
+						>
+							{text}
+						</p>
+						<a
+							{href}
+							class="text-wm-green md:text-gray-900 inline-block mt-1 text-sm md:text-base font-semibold underline link-trigger"
+							>Learn More <span aria-hidden="true">&rarr;</span></a
+						>
 					</div>
-				</div>
-			</div>
-			<div class="md:hidden py-6 pl-6">
-				<div class="pr-3">
-					<Heading
-					color1="text-gray-900"
-					color2="text-wm-green"
-					{heading1}
-					{heading2}
-				/>
-				</div>
-				<div class="w-full box-border inline-flex gap-6 mt-2 justify-between">
-					<p
-						class="max-w-prose m-0 text-gray-500 text-sm !leading-tight line-clamp-3"
-					>
-						{text}
-					</p>
 					<div
-						class="self-stretch max-w-max flex-shrink-0 flex flex-col items-center justify-center p-3 pl-8 text-white bg-wm-green rounded-l-3xl"
+						class="self-stretch md:self-center max-w-max flex-shrink-0 flex flex-col md:flex-row md:gap-3 items-center justify-center p-3 pl-6 md:p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl md:filter md:drop-shadow-lg md:transform md:-translate-y-1/2"
 					>
-						<WebMonetizationLogo height="h-6" />
-						<span class="max-w-xs text-xs">{ctaTextMobile}</span>
+						<WebMonetizationLogo height="h-6 md:h-8" />
+						<span class="max-w-xs text-xs md:text-sm xl:text-base">
+							<span class="hidden md:inline">{ctaText}</span>
+							<span class="md:hidden">{ctaTextMobile}</span>
+						</span>
 					</div>
-				</div>
-				<div class="mt-1 text-sm">
-					<a {href} class="text-wm-green font-semibold underline link-trigger"
-						>Learn More <span aria-hidden="true">&rarr;</span></a
-					>
 				</div>
 			</div>
 		</div>
