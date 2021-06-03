@@ -42,6 +42,9 @@ module.exports = {
 					"10%": { opacity: 0 },
 				},
 			},
+			zIndex: {
+				"-1": -1,
+			},
 		},
 	},
 	variants: {
