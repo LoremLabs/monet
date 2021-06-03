@@ -13,6 +13,7 @@ function getRollupConfig(componentName) {
 		clearScreen: false,
 		mode: isProdEnv ? "production" : "development",
 		build: {
+			sourcemap: true,
 			...(!isProdEnv ? { minify: false } : {}),
 			lib: {
 				formats: ["es"],

@@ -1,6 +1,7 @@
 // @ts-check
 // Run this with rollup.
 const { terser } = require("rollup-plugin-terser");
+const sourcemaps = require("rollup-plugin-sourcemaps");
 const sizes = require("rollup-plugin-sizes");
 const css = require("rollup-plugin-import-css");
 const { isProdEnv, getInputs } = require("./utils.js");
@@ -18,6 +19,8 @@ function getRollupConfig(elementName) {
 			file: `dist/elements/${elementName}.js`,
 		},
 		plugins: [
+			// @ts-expect-error
+			sourcemaps(),
 			// @ts-expect-error
 			css(),
 			isProdEnv && terser(),
