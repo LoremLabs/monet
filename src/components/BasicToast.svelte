@@ -23,7 +23,9 @@
 		<div class="pl-4 text-gray-900 text-lg md:text-xl">
 			{text}
 		</div>
-		<div class="flex-shrink-0 flex p-4 bg-gray-900 rounded-l-full">
+		<div
+			class="flex-shrink-0 flex p-4 bg-gray-900 text-wm-green rounded-l-full"
+		>
 			<WebMonetizationLogo height="h-10" animate />
 		</div>
 	</div>

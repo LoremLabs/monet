@@ -15,7 +15,7 @@
 		class="inline-flex py-2 rounded-2xl rounded-tl-none bg-gray-900 gap-2 items-center"
 	>
 		<span class="ml-3 h-8 w-8">
-			<WebMonetizationLogo color="text-wm-green" animate />
+			<WebMonetizationLogo color="text-wm-green" height="h-8" animate />
 		</span>
 		<span class="h-4 w-4 bg-wm-green rounded-l-md" />
 	</span>
