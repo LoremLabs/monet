@@ -5,16 +5,7 @@ import css from "../../dist/components/MonetInline/style.css";
 
 /** @type {PropMap} */
 const propMap = {
-	theme(value) {
-		switch (value) {
-			case "light":
-			case "dark":
-			case "dim":
-				return value;
-			default:
-				return "dark";
-		}
-	},
+	theme: (value) => (/^(light|dark|dim)$/.test(value) ? value : "light"),
 };
 
 /*#__INLINE__*/
