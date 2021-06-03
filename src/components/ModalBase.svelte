@@ -1,8 +1,14 @@
+<script context="module" lang="ts">
+	export type Theme = "light" | "dark" | "accent";
+	export type Variant = "center" | "bottom";
+
+</script>
+
 <script lang="ts">
 	import WebMonetizationLogo from "../atoms/WebMonetizationLogo.svelte";
 
-	export let variant: "center" | "bottom" = "center";
-	export let theme: "light" | "dark" | "accent" = "light";
+	export let variant: Variant = "center";
+	export let theme: Theme = "light";
 
 	export let subtitle = "Award winning support";
 	export let heading = "Unlock article with Web Monetization Pass";
