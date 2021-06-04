@@ -5,8 +5,8 @@
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
-		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-		"format": "prettier --write --plugin-search-dir=. .",
+		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
+		"lint:fix": "prettier --write . && eslint --fix --ignore-path .gitignore .",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
