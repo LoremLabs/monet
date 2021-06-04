@@ -4,7 +4,7 @@
 
 	export let cta = ''; // call to action
 	export let cta2 = ''; // call to action 2?
-  export let type = 'success';
+	export let type = 'success';
 </script>
 
 <Nag>
@@ -31,7 +31,9 @@
 						<div class="flex-shrink-0">
 							<!-- Heroicon name: outline/check-circle -->
 							<svg
-								class="h-6 w-6" class:text-green-400={type === 'success'} class:text-red-400={type === 'warn'}
+								class="h-6 w-6"
+								class:text-green-400={type === 'success'}
+								class:text-red-400={type === 'warn'}
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
 								viewBox="0 0 24 24"
