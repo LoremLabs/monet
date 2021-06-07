@@ -4,11 +4,11 @@
 </script>
 
 <script lang="ts">
-	export let heading1 = "Ready to dive in?";
-	export let heading2 = "Start your free trial today.";
-	export let subtitle = "Award winning support";
+	export let heading1 = "The news you need, when you need it!";
+	export let heading2 = "Read more with Web Monetization";
+	export let subtitle = "";
 	export let body =
-		"Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.";
+	"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
 	export let ctaText = "Purchase Web Monetization Pass";
 
 	export let theme: Theme = "light";

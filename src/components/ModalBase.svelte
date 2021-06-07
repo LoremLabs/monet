@@ -10,12 +10,12 @@
 	export let variant: Variant = "center";
 	export let theme: Theme = "light";
 
-	export let subtitle = "Award winning support";
-	export let heading = "Unlock article with Web Monetization Pass";
+	export let subtitle = "The news you need, when you need it!";
+	export let heading = "Read more with Web Monetization";
 	export let href = "#learn-more";
 	export let ctaText = "Purchase";
 	export let text =
-		"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat aliquid tempore obcaecati quidem molestiae iure eum. Reiciendis ea ipsam minima aspernatur nulla beatae perferendis, iste esse! Dolores consectetur sapiente cumque?";
+		"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
 
 </script>
 
