@@ -10,10 +10,10 @@
 	export let ctaText = "Purchase from Provider";
 	export let ctaTextMobile = "Purchase";
 
-	export let heading1 = "Want to unlock the article?";
-	export let heading2 = "Purchase a Web Monetization pass now!";
+	export let heading1 = "The news you need, when you need it!";
+	export let heading2 = "Read more with Web Monetization";
 	export let text =
-		"Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat. Elit sunt amet fugiat veniam occaecat fugiat.";
+		"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
 
 	export let visible = true;
 
