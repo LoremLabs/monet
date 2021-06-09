@@ -20,27 +20,14 @@
 					<p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
 						{body}
 					</p>
-					<div class="mt-10 sm:mt-12">
-						<form action="#" class="sm:max-w-xl sm:mx-auto lg:mx-0">
-							<div class="sm:flex">
-								<div class="min-w-0 flex-1">
-									<label for="email" class="sr-only">Email address</label>
-									<input
-										id="email"
-										type="email"
-										placeholder="npm install monet"
-										class="block w-full px-4 py-3 bg-theme-50 rounded-md border-0 text-base text-theme-800 placeholder-theme-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-300 focus:ring-offset-gray-900"
-									/>
-								</div>
-								<div class="mt-3 sm:mt-0 sm:ml-3">
-									<button
-										type="submit"
-										class="block w-full py-3 px-4 rounded-md shadow bg-theme-500 text-white font-medium hover:bg-theme-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-300 focus:ring-offset-gray-900"
-										>Try it out</button
-									>
-								</div>
-							</div>
-						</form>
+					<div class="mt-10 sm:mt-12 sm:max-w-xl sm:mx-auto lg:mx-0 flex flex-wrap gap-1 sm:gap-3">
+						<pre
+							class="flex-1 p-3 bg-theme-50 rounded-md border-0 text-base text-theme-800">npm install monet</pre>
+						<a
+							href="#try"
+							class="block p-3 rounded-md shadow bg-theme-500 text-white font-medium hover:bg-theme-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-300 focus:ring-offset-gray-900"
+							>Try it out</a
+						>
 					</div>
 				</div>
 			</div>
