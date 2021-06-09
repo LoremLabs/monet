@@ -3,6 +3,7 @@
 
 	export let codeInline = `<script src="https://monet.loremlabs.com/dist/monet-inline.js" defer><\/script>\n<monet-inline theme="light"></monet-inline>`;
 	export let codeRiser = `<script src="https://monet.loremlabs.com/dist/monet-riser.js" defer><\/script>\n<monet-riser></monet-riser>`;
+	export let codeModal = `<script src="https://monet.loremlabs.com/dist/monet-modal.js" defer><\/script>\n<monet-modal variant="center"></monet-modal>`;
 </script>
 
 <section
@@ -56,7 +57,7 @@
 		<img class="filter drop-shadow-2xl lg:w-2/3" src="/modal.png" alt="" />
 		<Highlight
 			class="text-sm md:text-base whitespace-pre overflow-x-auto md:whitespace-pre-wrap p-2 md:p-4 rounded-md md:rounded-xl"
-			code={codeRiser}
+			code={codeModal}
 		/>
 	</div>
 </section>
