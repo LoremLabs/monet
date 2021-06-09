@@ -1,9 +1,11 @@
 <script>
 	import HomeHeader from '$lib/components/home/HomeHeader.svelte';
-	import ExampleInline from '$lib/components/home/ExampleInline.svelte';
+	import Examples from '$lib/components/home/Examples.svelte';
 </script>
 
 <section>
 	<HomeHeader />
-	<ExampleInline />
+</section>
+<section class="bg-white py-10">
+	<Examples />
 </section>

@@ -31,6 +31,7 @@
 		"prettier": "~2.3.1",
 		"prettier-plugin-svelte": "^2.3.0",
 		"svelte": "^3.38.2",
+		"svelte-highlight": "^3.0.0",
 		"svelte-loader": "^3.1.1",
 		"svelte-preprocess": "^4.7.3",
 		"tailwindcss": "^2.1.4"

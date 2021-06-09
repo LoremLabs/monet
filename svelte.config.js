@@ -8,6 +8,11 @@ const config = {
 		adapter: svelteStatic(),
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: 'body',
+		vite: {
+			optimizeDeps: {
+				include: ['highlight.js/lib/core'],
+			},
+		},
 	},
 };
 

@@ -1,5 +1,6 @@
 <script>
 	import '$lib/styles/tailwind.css';
+	import '$lib/styles/highlight.css';
 	import Nav from '$lib/components/nav/Nav.svelte';
 	import Footer from '$lib/components/nav/Footer.svelte';
 </script>

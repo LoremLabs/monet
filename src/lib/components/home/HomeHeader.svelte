@@ -3,7 +3,7 @@
 	const body = `Web monetization empowers creators, journalists and artists with new revenue possibilities. These responsive, customizable components can be easily added to your site. Explore our growing, collaborative collection of design components for gating content on the web.`;
 </script>
 
-<div
+<header
 	class="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden rounded-tl-3xl rounded-tr-3xl"
 >
 	<div class="mx-auto max-w-7xl lg:px-8">
@@ -55,4 +55,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</header>
