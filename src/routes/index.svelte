@@ -6,6 +6,6 @@
 <section>
 	<HomeHeader />
 </section>
-<section class="bg-white py-10">
+<section class="bg-white pt-40 lg:py-20 flex flex-col gap-10">
 	<Examples />
 </section>
