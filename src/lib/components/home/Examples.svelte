@@ -3,7 +3,7 @@
 </script>
 
 <section
-	class="py-5 px-4 md:px-10 bg-no-repeat bg-contain bg-left-top flex flex-col md:flex-row-reverse gap-2"
+	class="py-24 px-4 md:px-10 bg-no-repeat bg-contain bg-center flex flex-col md:flex-row-reverse gap-2"
 	style="background-image: url(/svg/gradient-odd.svg);"
 >
 	<div class="md:mt-16 p-5">
@@ -16,7 +16,7 @@
 </section>
 
 <section
-	class="py-5 px-4 md:px-10 bg-no-repeat bg-contain bg-center flex flex-col items-center gap-2"
+	class="py-12 px-4 md:px-10 bg-no-repeat bg-contain bg-bottom flex flex-col items-center gap-2"
 	style="background-image: url(/svg/gradient-circle-blue.svg);"
 >
 	<div class="p-5">
@@ -29,7 +29,7 @@
 </section>
 
 <section
-	class="py-5 px-4 md:px-10 bg-no-repeat bg-contain bg-right flex flex-col md:flex-row gap-2"
+	class="py-24 px-4 md:px-10 bg-no-repeat bg-contain bg-right flex flex-col md:flex-row gap-2"
 	style="background-image: url(/svg/gradient-circle-orange.svg);"
 >
 	<div class="md:mt-16 p-5">
