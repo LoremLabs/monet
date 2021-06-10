@@ -9,6 +9,7 @@ node --input-type=commonjs << EOM_NODE_EVAL
 const { writeFileSync } = require('fs');
 const pkg = require('./package.json');
 pkg.scripts = pkg.devDependencies = {};
+pkg.browser = "monet.js";
 delete pkg.optionalDependencies;
 delete pkg.prettier;
 writeFileSync('package.json', JSON.stringify(pkg, null, 2), 'utf8');
