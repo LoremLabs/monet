@@ -1,7 +1,7 @@
 import { init } from "../utils/custom-element.js";
 
-import App from "../../dist/components/MonetModal/script.es.js";
-import css from "../../dist/components/MonetModal/style.css";
+import App from "@components/MonetModal/script.es.js";
+import css from "@components/MonetModal/style.css";
 
 /** @type {PropMap} */
 const propMap = {

@@ -1,5 +1,7 @@
 // @ts-check
 // Run this with rollup.
+const path = require("path");
+const alias = require("@rollup/plugin-alias");
 const { terser } = require("rollup-plugin-terser");
 const sourcemaps = require("rollup-plugin-sourcemaps");
 const sizes = require("rollup-plugin-sizes");
@@ -21,6 +23,12 @@ function getRollupConfig(elementName) {
 		plugins: [
 			// @ts-expect-error
 			sourcemaps(),
+			// @ts-expect-error
+			alias({
+				entries: {
+					"@components": path.join(__dirname, "../dist/components"),
+				},
+			}),
 			// @ts-expect-error
 			css(),
 			isProdEnv && terser(),
