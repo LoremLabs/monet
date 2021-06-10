@@ -22,5 +22,5 @@ cp -r elements/* publish/
 cd -
 
 cd dist/publish
-npm publish
+npm publish --access=public
 cd -
