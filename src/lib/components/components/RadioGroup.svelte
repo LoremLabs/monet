@@ -33,7 +33,7 @@
 					bind:group={selected}
 					{name}
 					id="{name}_opt{idx}"
-					class="h-4 w-4 text-theme-600 focus:ring-theme-500"
+					class="h-4 w-4 text-theme-600 focus:ring-theme-500 {description ? 'mt-2' : ''}"
 					{value}
 				/>
 				<div class="flex flex-col">

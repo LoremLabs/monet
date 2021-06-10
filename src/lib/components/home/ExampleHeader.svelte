@@ -8,7 +8,7 @@
 	id={name}
 >
 	<h2 class="font-extrabold text-4xl">
-		<a class="focus:outline-none" href="#/{name}">{title}</a>
+		<a class="focus:outline-none" href="/components/{name}">{title}</a>
 	</h2>
 	<p class="font-semibold font-mono text-lg text-theme-600" aria-hidden="true">
 		{`<${name}>`}
