@@ -29,5 +29,5 @@
 <Highlight
 	class="my-1 p-4 shadow-2xl rounded-md whitespace-pre-wrap"
 	code={`<!-- Add following before </head> -->` +
-		`\n<script src="${SOURCE_PREFIX[source]}${name}.js" defer><\/script>`}
+		`\n<script src="${SOURCE_PREFIX[source]}${name}.js" defer><${'/script>'}`}
 />

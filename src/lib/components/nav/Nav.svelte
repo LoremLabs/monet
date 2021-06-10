@@ -29,7 +29,7 @@
 			<div class="ml-10 space-x-4">
 				<a
 					href="https://github.com/LoremLabs/monet"
-          target="_new"
+					target="_new"
 					class="inline-block bg-theme-600 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75"
 					>GitHub</a
 				>
