@@ -2,7 +2,7 @@
 set -ev
 
 mkdir dist/publish
-cp package.json README.md dist/publish
+cp package.json README.md LICENSE dist/publish
 
 cd dist/publish
 node --input-type=commonjs << EOM_NODE_EVAL
