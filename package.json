@@ -12,7 +12,9 @@
     "serve": "npx serve -n dist",
     "start": "npm run storybook",
     "storybook": "start-storybook -c .config/storybook/ -p 6006",
-    "build-storybook": "build-storybook -c .config/storybook/ -o dist/storybook"
+    "build-storybook": "build-storybook -c .config/storybook/ -o dist/storybook",
+    "prerelease": "npx rimraf dist/publish",
+    "release": "./scripts/release.sh"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.2",
