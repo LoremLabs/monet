@@ -8,4 +8,3 @@ credentials
 .env
 .idea
 .svelte-kit
-.storybook-static
