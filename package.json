@@ -1,6 +1,6 @@
 {
   "name": "@loremlabs/monet",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "scripts": {
     "build": "NODE_ENV=production npm run build:all",
