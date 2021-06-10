@@ -1,8 +1,7 @@
 <script lang="ts">
-	import type { Theme } from "../components/InlineNag.svelte";
-	import InlineNag from "../components/InlineNag.svelte";
+	import type { Theme } from "../components/MonetInline.svelte";
+	import MonetInline from "../components/MonetInline.svelte";
 	import detectMonetization from "../utils/is-monetized";
-	import "../assets/global.css";
 
 	const isMonetizedPromise = detectMonetization();
 
@@ -11,9 +10,7 @@
 </script>
 
 {#await isMonetizedPromise then isMonetized}
-	{#if !isMonetized}
-		<InlineNag {theme} />
-	{/if}
+	<MonetInline {isMonetized} {theme} />
 {:catch}
 	<!-- nothing -->
 {/await}

@@ -1,5 +1,14 @@
 // @ts-check
-// Run this with rollup.
+/**
+ * Rollup config for final Custom Elements (with the "monetization" status being
+ * detected from the environment).
+ *
+ * The result of this is what websites will embed.
+ */
+
+const INPUT_DIR = "src/elements";
+const OUTPUT_DIR = "dist/elements";
+
 const path = require("path");
 const alias = require("@rollup/plugin-alias");
 const { terser } = require("rollup-plugin-terser");
@@ -14,11 +23,11 @@ const { isProdEnv, getInputs } = require("./utils.js");
  */
 function getRollupConfig(elementName) {
 	return {
-		input: `src/elements/${elementName}.js`,
+		input: `${INPUT_DIR}/${elementName}.js`,
 		output: {
 			sourcemap: true,
 			format: "iife",
-			file: `dist/elements/${elementName}.js`,
+			file: `${OUTPUT_DIR}/${elementName}.js`,
 		},
 		plugins: [
 			// @ts-expect-error
@@ -26,7 +35,7 @@ function getRollupConfig(elementName) {
 			// @ts-expect-error
 			alias({
 				entries: {
-					"@components": path.join(__dirname, "../dist/components"),
+					"@elements": path.join(__dirname, "../dist/.elements"),
 				},
 			}),
 			// @ts-expect-error
@@ -38,7 +47,7 @@ function getRollupConfig(elementName) {
 }
 
 const inputs = getInputs(
-	"src/elements/",
+	INPUT_DIR,
 	/^(\w+-\w+)\.js$/,
 	process.env.ELEMENT,
 ).concat(["monet"]);

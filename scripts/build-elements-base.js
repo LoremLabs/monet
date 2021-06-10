@@ -1,13 +1,12 @@
 // @ts-check
 /**
- * Components with "monetization" status set as a prop.
+ * Components with "monetization" status detected from environment.
  *
- * These exist mainly for the purpose of demonstration or if someone wants
- * create their own wrapper over them.
+ * These are the base for final custom elements.
  */
 
-const INPUT_DIR = "src/components";
-const OUTPUT_DIR = "dist/components";
+const INPUT_DIR = "src/elements";
+const OUTPUT_DIR = "dist/.elements";
 
 const path = require("path");
 const { defineConfig, build } = require("vite");
@@ -19,8 +18,8 @@ const { isProdEnv, getInputs } = require("./utils.js");
  */
 function getRollupConfig(componentName) {
 	const viteConfig = defineConfig({
-		publicDir: false,
 		root: path.resolve(__dirname, ".."),
+		publicDir: false,
 		clearScreen: false,
 		mode: isProdEnv ? "production" : "development",
 		build: {
@@ -38,13 +37,17 @@ function getRollupConfig(componentName) {
 	return viteConfig;
 }
 
-async function buildBaseElements(inputs) {
+async function buildComponents(inputs) {
 	await Promise.all(
 		inputs.map((elem) => getRollupConfig(elem)).map((conf) => build(conf)),
 	);
 }
 
-const inputs = getInputs(INPUT_DIR, /^([A-Z]\w*[A-Z]\w*)\.svelte$/);
+const inputs = getInputs(
+	INPUT_DIR,
+	/^([A-Z]\w*[A-Z]\w*)\.svelte$/,
+	process.env.COMPONENT,
+);
 
 console.log({ inputs });
-buildBaseElements(inputs);
+buildComponents(inputs);

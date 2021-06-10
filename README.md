@@ -34,13 +34,12 @@ npm ci
 ```bash
 # Dev Builds (watch mode)
 # run following to two separate terminals:
-npm run build:components -- -w --no-emptyOutDir
+npx nodemon -w src npm run build:elements-base
 npm run build:elements -- -w
-npm run serve
 ```
 
 # Production build
+
 ```bash
 npm run build
 ```
-

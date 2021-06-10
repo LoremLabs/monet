@@ -1,7 +1,7 @@
 import { init } from "../utils/custom-element.js";
 
-import App from "@components/MonetRiser/script.es.js";
-import css from "@components/MonetRiser/style.css";
+import App from "@elements/MonetRiser/script.es.js";
+import css from "@elements/MonetRiser/style.css";
 
 (() => {
 	/*#__INLINE__*/
