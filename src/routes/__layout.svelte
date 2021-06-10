@@ -1,4 +1,5 @@
 <script>
+	import '$lib/styles/fonts.css';
 	import '$lib/styles/tailwind.css';
 	import '$lib/styles/highlight.css';
 	import Nav from '$lib/components/nav/Nav.svelte';
