@@ -12,12 +12,13 @@ const OUTPUT_DIR = "dist/components";
 const path = require("path");
 const { defineConfig, build } = require("vite");
 const svelte = require("@sveltejs/vite-plugin-svelte").default;
-const { isProdEnv, getInputs } = require("./utils.js");
+const { isProdEnv, getInputs, pascalToKebab } = require("./utils.js");
 
 /**
  * @param {string} componentName
  */
 function getRollupConfig(componentName) {
+	const outDirName = pascalToKebab(componentName);
 	const viteConfig = defineConfig({
 		publicDir: false,
 		root: path.resolve(__dirname, ".."),
@@ -29,9 +30,16 @@ function getRollupConfig(componentName) {
 			lib: {
 				formats: ["es"],
 				entry: `${INPUT_DIR}/${componentName}.svelte`,
-				fileName: "script",
 			},
-			outDir: `${OUTPUT_DIR}/${componentName}/`,
+			rollupOptions: {
+				output: {
+					format: "es",
+					dir: `${OUTPUT_DIR}/${outDirName}/`,
+					entryFileNames: "app.js",
+					assetFileNames: "app.css",
+				},
+			},
+			outDir: `${OUTPUT_DIR}/${outDirName}/`,
 		},
 		plugins: [svelte()],
 	});

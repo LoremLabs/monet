@@ -24,7 +24,16 @@ function getInputs(dir, pattern, selectedInput) {
 	return [selectedInput];
 }
 
+/**
+ * FooBar to foo-bar
+ * @param {string} str
+ */
+function pascalToKebab(str) {
+	return str.replace(/(?<!^)([A-Z][a-z]|(?<=[a-z])[A-Z])/, "-$1").toLowerCase();
+}
+
 module.exports = {
 	isProdEnv,
 	getInputs,
+	pascalToKebab,
 };
