@@ -1,5 +1,5 @@
 {
-	"name": "~TODO~",
+	"name": "monet",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
@@ -10,6 +10,7 @@
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
+	"license": "SEE LICENSE IN LICENSE",
 	"devDependencies": {
 		"@babel/core": "^7.14.3",
 		"@storybook/addon-actions": "^6.2.9",
