@@ -6,7 +6,7 @@
 			<div class="flex items-center">
 				<a href="/">
 					<span class="sr-only">Monet</span>
-					<img class="h-20 w-auto" src="/svg/logo.svg" alt="Monet Logo" />
+					<img class="h-20 w-auto" src="/img/logo-monet.png" alt="Monet Logo" />
 				</a>
 				<div class="hidden ml-10 space-x-8 lg:block">
 					<!-- <a href="#" class="text-base font-medium text-white hover:text-theme-50" key="Solutions">
@@ -28,7 +28,8 @@
 			</div>
 			<div class="ml-10 space-x-4">
 				<a
-					href="#"
+					href="https://github.com/LoremLabs/monet"
+          target="_new"
 					class="inline-block bg-theme-600 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75"
 					>GitHub</a
 				>

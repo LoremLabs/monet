@@ -12,7 +12,7 @@
 			This design component prompts users while reading an article.
 		</p>
 	</div>
-	<img class="filter drop-shadow-2xl md:w-2/3" src="/inline.png" alt="" />
+	<img class="filter drop-shadow-2xl md:w-2/3" src="/img/inline.png" alt="" />
 </section>
 
 <section
@@ -25,7 +25,7 @@
 			This component, at the bottom of your page, encourages users to enable web monetization.
 		</p>
 	</div>
-	<img class="filter drop-shadow-2xl md:w-2/3" src="/riser.png" alt="" />
+	<img class="filter drop-shadow-2xl md:w-2/3" src="/img/riser.png" alt="" />
 </section>
 
 <section
@@ -39,5 +39,5 @@
 			Web Monetization before continuing.
 		</p>
 	</div>
-	<img class="filter drop-shadow-2xl lg:w-2/3" src="/modal.png" alt="" />
+	<img class="filter drop-shadow-2xl lg:w-2/3" src="/img/modal.png" alt="" />
 </section>
