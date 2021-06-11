@@ -34,7 +34,7 @@ npm ci
 ```bash
 # Dev Builds (watch mode)
 # run following to two separate terminals:
-npx nodemon -w src npm run build:elements-base
+nodemon -w src npm run build:elements-base
 npm run build:elements -- -w
 ```
 
