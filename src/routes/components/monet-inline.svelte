@@ -24,6 +24,7 @@
 	import Heading from '$lib/components/components/Heading.svelte';
 	import ScriptSnippet from '$lib/components/components/ScriptSnippet.svelte';
 	import MarkupSnippet from '$lib/components/components/MarkupSnippet.svelte';
+	import OptionsHeader from '$lib/components/components/OptionsHeader.svelte';
 
 	let theme = themeOptions.default;
 	$: values = [theme];
@@ -35,6 +36,7 @@
 <MarkupSnippet {name} {options} {values} comment={markupComment} />
 
 <form action="#">
-	<h2 class="font-extrabold text-2xl md:text-4xl py-4 mt-4">Options</h2>
+	<OptionsHeader storybookPath="/story/{name}" />
+
 	<RadioGroup bind:selected={theme} legend="Theme" name="theme" options={themeOptions.options} />
 </form>

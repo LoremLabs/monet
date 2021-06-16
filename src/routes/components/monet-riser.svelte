@@ -7,6 +7,7 @@
 	import Heading from '$lib/components/components/Heading.svelte';
 	import ScriptSnippet from '$lib/components/components/ScriptSnippet.svelte';
 	import MarkupSnippet from '$lib/components/components/MarkupSnippet.svelte';
+	import OptionsHeader from '$lib/components/components/OptionsHeader.svelte';
 
 	$: values = [];
 </script>
@@ -17,6 +18,6 @@
 <MarkupSnippet {name} {options} {values} />
 
 <form action="#">
-	<h2 class="font-extrabold text-2xl md:text-4xl py-4 mt-4">Options</h2>
+	<OptionsHeader storybookPath="/story/{name}" />
 	<p class="text-gray-500 text-base">None.</p>
 </form>
