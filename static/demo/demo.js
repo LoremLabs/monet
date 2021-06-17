@@ -3,7 +3,9 @@ const getJS = (component) => `${BASE_URL}/${component}/app.js`;
 const getCSS = (component) => `${BASE_URL}/${component}/app.css`;
 
 const getProps = () => {
-	const props = Object.fromEntries(new URLSearchParams(location.hash.slice(1)).entries());
+	const params = new URLSearchParams(location.hash.slice(1));
+	const mapValue = (val) => (/^(true|false)$/.test(val) ? JSON.parse(val) : val);
+	const props = Object.fromEntries([...params].map(([key, val]) => [key, mapValue(val)]));
 	console.log(props);
 	return props;
 };

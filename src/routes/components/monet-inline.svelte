@@ -1,5 +1,6 @@
 <script context="module">
-	const name = 'monet-inline';
+	import { isMonetizedOptions } from '$lib/components/components/common-options.js';
+
 	const markupComment = 'Add following within `<body></body>` where you want the prompt to appear';
 
 	const themeOptions = {
@@ -16,7 +17,8 @@
 		},
 	};
 
-	const options = [themeOptions];
+	const name = 'monet-inline';
+	const options = [themeOptions, isMonetizedOptions];
 </script>
 
 <script>
@@ -26,10 +28,12 @@
 	import MarkupSnippet from '$lib/components/components/MarkupSnippet.svelte';
 	import OptionsHeader from '$lib/components/components/OptionsHeader.svelte';
 	import ResizeableColumns from '$lib/components/components/ResizeableColumns.svelte';
+	import IsMonetized from '$lib/components/components/IsMonetized.svelte';
 	import Demo from '$lib/components/components/Demo.svelte';
 
 	let theme = themeOptions.default;
-	$: values = [theme];
+	let isMonetized = isMonetizedOptions.default;
+	$: values = [theme, isMonetized];
 </script>
 
 <Heading heading={name} />
@@ -42,6 +46,8 @@
 
 	<ResizeableColumns>
 		<div slot="left" class="flex flex-col gap-4">
+			<IsMonetized bind:isMonetized />
+
 			<RadioGroup
 				bind:selected={theme}
 				legend="Theme"

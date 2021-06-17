@@ -5,6 +5,7 @@
 		for (let idx = 0; idx < values.length; idx++) {
 			const val = values[idx];
 			const option = options[idx];
+			if (option.name === 'isMonetized') continue;
 			if (option.default === val) continue;
 
 			const value = option.value(val);

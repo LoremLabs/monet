@@ -1,5 +1,5 @@
 <script context="module">
-	const name = 'monet-modal';
+	import { isMonetizedOptions } from '$lib/components/components/common-options.js';
 
 	const themeOptions = {
 		name: 'theme',
@@ -27,7 +27,8 @@
 		},
 	};
 
-	const options = [themeOptions, variantOptions];
+	const name = 'monet-modal';
+	const options = [themeOptions, variantOptions, isMonetizedOptions];
 </script>
 
 <script>
@@ -38,10 +39,12 @@
 	import OptionsHeader from '$lib/components/components/OptionsHeader.svelte';
 	import ResizeableColumns from '$lib/components/components/ResizeableColumns.svelte';
 	import Demo from '$lib/components/components/Demo.svelte';
+	import IsMonetized from '$lib/components/components/IsMonetized.svelte';
 
 	let theme = themeOptions.default;
 	let variant = variantOptions.default;
-	$: values = [theme, variant];
+	let isMonetized = isMonetizedOptions.default;
+	$: values = [theme, variant, isMonetized];
 </script>
 
 <Heading heading={name} />
@@ -54,6 +57,7 @@
 
 	<ResizeableColumns>
 		<div slot="left" class="flex flex-col gap-4">
+			<IsMonetized bind:isMonetized />
 			<RadioGroup
 				bind:selected={theme}
 				legend="Theme"

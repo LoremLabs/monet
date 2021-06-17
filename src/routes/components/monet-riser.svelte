@@ -1,6 +1,8 @@
 <script context="module">
+	import { isMonetizedOptions } from '$lib/components/components/common-options.js';
+
 	const name = 'monet-riser';
-	const options = [];
+	const options = [isMonetizedOptions];
 </script>
 
 <script>
@@ -10,8 +12,10 @@
 	import OptionsHeader from '$lib/components/components/OptionsHeader.svelte';
 	import ResizeableColumns from '$lib/components/components/ResizeableColumns.svelte';
 	import Demo from '$lib/components/components/Demo.svelte';
+	import IsMonetized from '$lib/components/components/IsMonetized.svelte';
 
-	$: values = [];
+	let isMonetized = isMonetizedOptions.default;
+	$: values = [isMonetized];
 </script>
 
 <Heading heading={name} />
@@ -23,7 +27,9 @@
 	<OptionsHeader storybookPath="/story/{name}" />
 
 	<ResizeableColumns>
-		<p slot="left" class="text-gray-500 text-base">None.</p>
+		<div slot="left" class="flex flex-col gap-4">
+			<IsMonetized bind:isMonetized />
+		</div>
 
 		<Demo slot="right" {name} {options} {values} style="min-height: 400px;" />
 	</ResizeableColumns>
