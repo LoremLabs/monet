@@ -36,6 +36,8 @@
 	import ScriptSnippet from '$lib/components/components/ScriptSnippet.svelte';
 	import MarkupSnippet from '$lib/components/components/MarkupSnippet.svelte';
 	import OptionsHeader from '$lib/components/components/OptionsHeader.svelte';
+	import ResizeableColumns from '$lib/components/components/ResizeableColumns.svelte';
+	import Demo from '$lib/components/components/Demo.svelte';
 
 	let theme = themeOptions.default;
 	let variant = variantOptions.default;
@@ -50,13 +52,22 @@
 <form action="#">
 	<OptionsHeader storybookPath="/story/{name}" />
 
-	<div class="flex flex-col gap-4">
-		<RadioGroup bind:selected={theme} legend="Theme" name="theme" options={themeOptions.options} />
-		<RadioGroup
-			bind:selected={variant}
-			legend="Variant"
-			name="variant"
-			options={variantOptions.options}
-		/>
-	</div>
+	<ResizeableColumns>
+		<div slot="left" class="flex flex-col gap-4">
+			<RadioGroup
+				bind:selected={theme}
+				legend="Theme"
+				name="theme"
+				options={themeOptions.options}
+			/>
+			<RadioGroup
+				bind:selected={variant}
+				legend="Variant"
+				name="variant"
+				options={variantOptions.options}
+			/>
+		</div>
+
+		<Demo slot="right" {name} {options} {values} />
+	</ResizeableColumns>
 </form>

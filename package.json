@@ -31,6 +31,7 @@
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.0",
 		"highlight.js": "^11.0.1",
+		"lodash.throttle": "^4.1.1",
 		"postcss": "^8.3.0",
 		"postcss-load-config": "^3.0.1",
 		"prettier": "~2.3.1",

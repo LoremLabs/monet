@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Demo</title>
+		<style>
+			html {
+				overflow-y: auto;
+				scrollbar-width: thin;
+			}
+
+			body {
+				padding: 1rem;
+				font-family: Roboto, Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+					'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+			}
+
+			h1 {
+				font-size: 2rem;
+			}
+
+			p {
+				font-size: 1.125rem;
+				max-width: 65ch;
+			}
+		</style>
+		<script type="module">
+			import { CustomElement } from './demo.js';
+			const component = new URLSearchParams(location.search).get('component');
+			if (component) {
+				document.title = `Demo: ${component}`;
+				const elem = document.querySelector('my-element');
+				elem.setAttribute('component', component);
+				customElements.define('my-element', CustomElement);
+			} else {
+				console.error('No ?component found.');
+			}
+		</script>
+	</head>
+	<body>
+		<h1>This is a heading</h1>
+		<p>
+			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque recusandae perspiciatis
+			fugiat, quaerat accusantium quam, at aliquam omnis possimus consectetur ducimus quibusdam est
+			qui! Quae voluptate corporis voluptas numquam atque.
+		</p>
+		<my-element></my-element>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic laborum quidem possimus dolores
+			distinctio autem omnis accusantium quia tempora assumenda ullam natus rerum expedita vero
+			cupiditate saepe ab, nobis asperiores.
+		</p>
+		<p>
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis dolorum ullam beatae
+			architecto dolor, tempora cupiditate temporibus quos. Itaque placeat quidem maiores? Porro
+			aliquam perferendis itaque. Nesciunt quae dolores illo.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, fugit animi. Fugit cum, qui
+			sunt nihil odio commodi adipisci nostrum, expedita quidem ipsum, libero ut facilis dicta
+			magni! Assumenda, ducimus.
+		</p>
+	</body>
+</html>
