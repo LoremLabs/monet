@@ -1,6 +1,4 @@
 <script>
-	import ExampleHeader from './ExampleHeader.svelte';
-
 	export let name;
 	export let title;
 	export let imageUrl;
@@ -22,7 +20,17 @@
 	style="background-image: url({backgroundImageUrl});"
 >
 	<div class="p-5 {align !== 'center' ? 'md:mt-16' : ''}">
-		<ExampleHeader {name} {title} />
+		<header
+			class="inline-flex flex-col gap-1 items-baseline focus-within:ring-2 focus-within:ring-theme-500"
+			id={name}
+		>
+			<h2 class="font-extrabold text-4xl">
+				<a class="focus:outline-none" href="/components/{name}">{title}</a>
+			</h2>
+			<p class="font-semibold font-mono text-lg text-theme-600" aria-hidden="true">
+				{`<${name}>`}
+			</p>
+		</header>
 		<p class="m-0 text-lg max-w-prose text-gray-700">
 			<slot name="description" />
 		</p>
