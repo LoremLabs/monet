@@ -16,7 +16,6 @@
 		"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
 
 	export let visible = true;
-
 </script>
 
 {#if visible}

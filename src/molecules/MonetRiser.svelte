@@ -4,7 +4,6 @@
 
 	export let isMonetized = false;
 	export let collapsed = false;
-
 </script>
 
 {#if isMonetized}

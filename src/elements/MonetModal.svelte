@@ -7,7 +7,6 @@
 
 	export let theme: Theme = "light";
 	export let variant: Variant = "center";
-
 </script>
 
 {#await isMonetizedPromise then isMonetized}

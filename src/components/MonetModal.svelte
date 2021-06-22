@@ -1,7 +1,6 @@
 <script context="module" lang="ts">
 	import type { Theme, Variant } from "../molecules/ModalBase.svelte";
 	export type { Theme, Variant };
-
 </script>
 
 <script lang="ts">
@@ -11,7 +10,6 @@
 	export let isMonetized = false;
 	export let theme: Theme = "light";
 	export let variant: Variant = "center";
-
 </script>
 
 {#if !isMonetized}

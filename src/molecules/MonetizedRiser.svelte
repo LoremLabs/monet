@@ -18,7 +18,6 @@
 		// needed to have a transition
 		ready = true;
 	});
-
 </script>
 
 {#if ready}

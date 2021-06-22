@@ -2,7 +2,6 @@
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
 	import { action } from "@storybook/addon-actions";
 	import SmallToast from "./SmallToast.svelte";
-
 </script>
 
 <Meta

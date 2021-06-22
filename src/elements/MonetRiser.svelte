@@ -38,7 +38,6 @@
 		hidden.set(isGoingDown);
 	}
 	$: hideOnScroll(scrollY);
-
 </script>
 
 <svelte:window bind:scrollY />

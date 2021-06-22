@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
 	export type Theme = "light" | "dark" | "dim";
-
 </script>
 
 <script lang="ts">
@@ -8,11 +7,10 @@
 	export let heading2 = "Read more with Web Monetization";
 	export let subtitle = "";
 	export let body =
-	"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
+		"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
 	export let ctaText = "Purchase Web Monetization Pass";
 
 	export let theme: Theme = "light";
-
 </script>
 
 <div class="max-w-max">

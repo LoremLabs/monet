@@ -6,7 +6,6 @@
 	const isMonetizedPromise = detectMonetization();
 
 	export let theme: Theme = "light";
-
 </script>
 
 {#await isMonetizedPromise then isMonetized}

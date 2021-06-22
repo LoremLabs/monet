@@ -1,7 +1,6 @@
 <script context="module" lang="ts">
 	import type { Theme } from "../molecules/InlineNag.svelte";
 	export type { Theme };
-
 </script>
 
 <script lang="ts">
@@ -10,7 +9,6 @@
 
 	export let isMonetized = false;
 	export let theme: Theme = "light";
-
 </script>
 
 {#if !isMonetized}

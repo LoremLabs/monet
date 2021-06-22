@@ -4,7 +4,6 @@
 
 	const demo_modalBackgroundClasslist =
 		"relative bg-gray-600/60 w-screen h-screen max-w-full max-h-full";
-
 </script>
 
 <Meta

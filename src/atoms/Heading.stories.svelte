@@ -1,7 +1,6 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
 	import Heading from "./Heading.svelte";
-
 </script>
 
 <Meta title="Atoms/Heading" component={Heading} argTypes={{}} />

@@ -1,7 +1,6 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
 	import WebMonetizationLogo from "./WebMonetizationLogo.svelte";
-
 </script>
 
 <Meta

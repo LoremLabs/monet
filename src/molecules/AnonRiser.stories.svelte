@@ -1,7 +1,6 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
 	import AnonRiser from "./AnonRiser.svelte";
-
 </script>
 
 <Meta

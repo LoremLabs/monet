@@ -4,7 +4,6 @@
 	import CloseIcon from "../assets/icons/close.svelte";
 
 	export let text = "This site is web-monetized.";
-
 </script>
 
 <div class="relative md:w-max max-w-md mt-6 mr-6">

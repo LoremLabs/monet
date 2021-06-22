@@ -1,7 +1,6 @@
 <script context="module" lang="ts">
 	export type Theme = "light" | "dark" | "accent";
 	export type Variant = "center" | "bottom";
-
 </script>
 
 <script lang="ts">
@@ -16,7 +15,6 @@
 	export let ctaText = "Purchase";
 	export let text =
 		"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
-
 </script>
 
 <div
