@@ -2,20 +2,19 @@ const isStorybook = (process.env.npm_lifecycle_script || "").includes(
 	"storybook",
 );
 
-const purgeCssOptions = {
-	content: ["./src/**/*.{js,svelte,ts}"],
-	options: {
-		safelist: [/^svelte-\w+$/],
-	},
-};
-
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig} */
 module.exports = {
 	corePlugins: {
 		preflight: false,
 	},
-	mode: isStorybook ? "aot" : "jit", // Hack: jit purges CSS.
-	purge: isStorybook ? [] : purgeCssOptions,
+	mode: "jit",
+	purge: {
+		enabled: !isStorybook,
+		content: ["./src/**/*.{js,svelte,ts}"],
+		options: {
+			safelist: [/^svelte-\w+$/],
+		},
+	},
 	theme: {
 		extend: {
 			colors: {

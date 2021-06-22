@@ -43,7 +43,7 @@
 						</p>
 						<a
 							{href}
-							class="text-wm-green md:text-gray-900 inline-block mt-1 text-sm md:text-base font-semibold underline link-trigger"
+							class="text-wm-green md:text-gray-900 inline-block mt-1 text-sm md:text-base font-semibold underline after:absolute after:inset-0"
 							>Learn More <span aria-hidden="true">&rarr;</span></a
 						>
 					</div>
@@ -61,12 +61,3 @@
 		</div>
 	</div>
 {/if}
-
-<style>
-	.link-trigger::after {
-		content: "";
-		@apply absolute;
-		@apply inset-0;
-	}
-
-</style>
