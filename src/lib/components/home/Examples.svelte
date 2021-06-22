@@ -12,7 +12,7 @@
 			This design component prompts users while reading an article.
 		</p>
 	</div>
-	<a class="focus:outline-none md:w-2/3" href="/components/monet-inline">
+	<a class="focus:outline-none md:w-2/3" tabindex="-1" href="/components/monet-inline">
 		<img class="drop-shadow-2xl" src="/img/inline.png" alt="" />
 	</a>
 </section>
@@ -27,7 +27,7 @@
 			This component, at the bottom of your page, encourages users to enable web monetization.
 		</p>
 	</div>
-	<a class="focus:outline-none md:w-2/3" href="/components/monet-riser">
+	<a class="focus:outline-none md:w-2/3" tabindex="-1" href="/components/monet-riser">
 		<img class="drop-shadow-2xl" src="/img/riser.png" alt="" />
 	</a>
 </section>
@@ -43,7 +43,7 @@
 			Web Monetization before continuing.
 		</p>
 	</div>
-	<a class="focus:outline-none md:w-2/3" href="/components/monet-modal">
+	<a class="focus:outline-none md:w-2/3" tabindex="-1" href="/components/monet-modal">
 		<img class="drop-shadow-2xl" src="/img/modal.png" alt="" />
 	</a>
 </section>
