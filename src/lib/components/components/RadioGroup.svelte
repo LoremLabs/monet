@@ -39,7 +39,7 @@
 				<div class="flex flex-col">
 					<label
 						class={classNames(
-							'block cursor-pointer font-medium',
+							'block cursor-pointer font-medium after:absolute after:inset-0',
 							selectedIndex === idx ? 'text-theme-900' : 'text-gray-900',
 						)}
 						for="{name}_opt{idx}">{label}</label
@@ -59,11 +59,3 @@
 		{/each}
 	</div>
 </fieldset>
-
-<style>
-	label::after {
-		content: '';
-		@apply inset-0;
-		@apply absolute;
-	}
-</style>

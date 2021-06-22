@@ -13,7 +13,7 @@
 		</p>
 	</div>
 	<a class="focus:outline-none" href="/components/monet-inline">
-		<img class="filter drop-shadow-2xl md:w-2/3" src="/img/inline.png" alt="" />
+		<img class="drop-shadow-2xl md:w-2/3" src="/img/inline.png" alt="" />
 	</a>
 </section>
 
@@ -28,7 +28,7 @@
 		</p>
 	</div>
 	<a class="focus:outline-none" href="/components/monet-riser">
-		<img class="filter drop-shadow-2xl md:w-2/3" src="/img/riser.png" alt="" />
+		<img class="drop-shadow-2xl md:w-2/3" src="/img/riser.png" alt="" />
 	</a>
 </section>
 
@@ -44,6 +44,6 @@
 		</p>
 	</div>
 	<a class="focus:outline-none" href="/components/monet-modal">
-		<img class="filter drop-shadow-2xl lg:w-2/3" src="/img/modal.png" alt="" />
+		<img class="drop-shadow-2xl lg:w-2/3" src="/img/modal.png" alt="" />
 	</a>
 </section>
