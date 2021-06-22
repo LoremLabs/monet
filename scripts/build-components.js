@@ -11,7 +11,7 @@ const OUTPUT_DIR = "dist/components";
 
 const path = require("path");
 const { defineConfig, build } = require("vite");
-const svelte = require("@sveltejs/vite-plugin-svelte").default;
+const { svelte } = require("@sveltejs/vite-plugin-svelte");
 const { isProdEnv, getInputs, pascalToKebab } = require("./utils.js");
 
 /**
