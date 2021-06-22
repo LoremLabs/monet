@@ -1,0 +1,4 @@
+/dist/*
+!/dist/demo/
+!/dist/demo/*
+node_modules

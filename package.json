@@ -14,6 +14,8 @@
     "start": "npm run storybook",
     "storybook": "start-storybook -c .config/storybook/ -p 6006",
     "build-storybook": "build-storybook -c .config/storybook/ -o dist/storybook",
+    "prettier:check": "prettier -c .",
+    "prettier": "prettier -w .",
     "prerelease": "npx rimraf dist/publish",
     "release": "./scripts/release.sh"
   },
@@ -30,6 +32,7 @@
     "postcss": "^8.3.5",
     "postcss-import": "^14.0.2",
     "postcss-load-config": "^3.1.0",
+    "prettier": "^2.3.1",
     "rollup": "^2.52.2",
     "rollup-plugin-import-css": "^2.0.1",
     "rollup-plugin-sizes": "^1.0.4",
@@ -62,7 +65,8 @@
     "overrides": [
       {
         "files": [
-          "package.json"
+          "package.json",
+          "package-lock.json"
         ],
         "options": {
           "useTabs": false
