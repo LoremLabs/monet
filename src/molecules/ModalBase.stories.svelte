@@ -3,7 +3,7 @@
 	import ModalBase from "./ModalBase.svelte";
 
 	const demo_modalBackgroundClasslist =
-		"relative bg-gray-600 bg-opacity-60 w-screen h-screen max-w-full max-h-full";
+		"relative bg-gray-600/60 w-screen h-screen max-w-full max-h-full";
 
 </script>
 
@@ -45,9 +45,7 @@
 
 <Template let:args id="Center">
 	<div class={demo_modalBackgroundClasslist}>
-		<div
-			class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-		>
+		<div class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
 			<ModalBase {...args} />
 		</div>
 	</div>

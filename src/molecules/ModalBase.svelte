@@ -75,7 +75,7 @@
 					{text}
 				</p>
 				<div
-					class="self-center flex-shrink-0 text-center transform {{
+					class="self-center flex-shrink-0 text-center {{
 						center: '-translate-y-1/2',
 						bottom: 'md:-translate-y-1/3',
 					}[variant]}"

@@ -26,7 +26,7 @@
 				bottom: 'items-end',
 			}[variant]}"
 		>
-			<div class="fixed inset-0 bg-gray-500 bg-opacity-75 -z-1" />
+			<div class="fixed inset-0 bg-gray-500/75 -z-1" />
 			<ModalBase {theme} {variant} />
 		</div>
 	</div>

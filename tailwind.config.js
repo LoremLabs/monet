@@ -12,7 +12,7 @@ module.exports = {
 		enabled: !isStorybook,
 		content: ["./src/**/*.{js,svelte,ts}"],
 		options: {
-			safelist: [/^svelte-\w+$/],
+			prefix: "svelte-",
 		},
 	},
 	theme: {
