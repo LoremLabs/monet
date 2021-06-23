@@ -6,9 +6,11 @@ Monetization patterns can be explored via Storybook. These patterns are then bui
 
 ## Library Usage
 
-```
+```html
 <!-- in head -->
 <script src="https://monet.vercel.app/elements/monet-riser.js" defer></script>
+<!-- or -->
+<script src="./dist/elements/monet-riser.js" defer></script>
 
 <!-- then somewhere in body -->
 <monet-riser></monet-riser>

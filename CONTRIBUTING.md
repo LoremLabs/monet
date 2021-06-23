@@ -1,10 +1,10 @@
-## Install
+## Development
+
+### Install
 
 ```bash
 npm ci
 ```
-
-## Development
 
 ### Storybook
 
