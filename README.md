@@ -8,38 +8,12 @@ Monetization patterns can be explored via Storybook. These patterns are then bui
 
 ```
 <!-- in head -->
-<script src="https://monet-elements.vercel.app/elements/monet-riser.js" defer></script>
+<script src="https://monet.vercel.app/elements/monet-riser.js" defer></script>
 
 <!-- then somewhere in body -->
 <monet-riser></monet-riser>
 ```
 
-## Storybook
+## Contributing
 
-```bash
-# Storybook
-npm start
-```
-
-# Developing Components
-
-## Install
-
-```bash
-npm ci
-```
-
-## Dev
-
-```bash
-# Dev Builds (watch mode)
-# run following to two separate terminals:
-nodemon -w src npm run build:elements-base
-npm run build:elements -- -w
-```
-
-# Production build
-
-```bash
-npm run build
-```
+Read the [contributing guide](./CONTRIBUTING.md).
