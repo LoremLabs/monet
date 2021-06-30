@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 	import type { Item } from "../atoms/PrefPanelColumn.svelte";
+	export type Options = Item[];
 </script>
 
 <script lang="ts">
@@ -7,7 +8,7 @@
 	import PrefPanelColumn from "../atoms/PrefPanelColumn.svelte";
 
 	export let heading = "Your Monetization Preferences";
-	export let options: Item[] = [];
+	export let options: Options = [];
 </script>
 
 <div class="font-sans">
