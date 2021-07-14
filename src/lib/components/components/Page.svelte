@@ -17,7 +17,7 @@
 	export let markupComment;
 	export let demoStyle;
 
-	let isMonetized = false;
+	export let isMonetized = false;
 </script>
 
 <Heading heading={name} />

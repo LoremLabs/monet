@@ -1,6 +1,7 @@
 const BASE_URL = 'https://unpkg.com/@loremlabs/monet/components';
 const getJS = (component) => `${BASE_URL}/${component}/app.js`;
 const getCSS = (component) => `${BASE_URL}/${component}/app.css`;
+const showIfMonetized = (component) => ['monet-toast'].includes(component);
 
 const getProps = () => {
 	const params = new URLSearchParams(location.hash.slice(1));
@@ -24,10 +25,10 @@ export class CustomElement extends HTMLElement {
 
 		const { isMonetized, ...props } = getProps();
 		const app = new App({ target: shadowRoot, props });
-		this.hidden = isMonetized;
+		this.hidden = showIfMonetized(component) ^ isMonetized;
 		window.addEventListener('hashchange', () => {
 			const { isMonetized, ...props } = getProps();
-			this.hidden = isMonetized;
+			this.hidden = showIfMonetized(component) ^ isMonetized;
 			app.$set(props);
 		});
 	}
