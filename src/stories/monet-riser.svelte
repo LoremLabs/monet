@@ -5,9 +5,7 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 
-	export let isMonetized = false;
-	export let collapsed = false;
-	$: props = { isMonetized, collapsed };
+	$: props = {};
 
 	let target;
 	let riser;

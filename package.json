@@ -14,7 +14,7 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"devDependencies": {
 		"@babel/core": "^7.14.6",
-		"@loremlabs/monet": "0.0.1",
+		"@loremlabs/monet": "0.0.2",
 		"@storybook/addon-actions": "^6.3.4",
 		"@storybook/addon-essentials": "^6.2.9",
 		"@storybook/addon-postcss": "^2.0.0",

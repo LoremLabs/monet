@@ -5,8 +5,7 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 
-	export let isMonetized = false;
-	$: props = { isMonetized };
+	$: props = {};
 
 	let target;
 	let inline;

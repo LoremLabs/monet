@@ -22,9 +22,13 @@ export class CustomElement extends HTMLElement {
 
 		shadowRoot.append(createStylesheet(component));
 
-		const app = new App({ target: shadowRoot, props: getProps() });
+		const { isMonetized, ...props } = getProps();
+		const app = new App({ target: shadowRoot, props });
+		this.hidden = isMonetized;
 		window.addEventListener('hashchange', () => {
-			app.$set(getProps());
+			const { isMonetized, ...props } = getProps();
+			this.hidden = isMonetized;
+			app.$set(props);
 		});
 	}
 }

@@ -5,12 +5,11 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 
-	export let isMonetized = false;
 	/** @type {"center" | "bottom"} */
 	export let variant = 'center';
 	/** @type {"light" | "dark" | "accent"} */
 	export let theme = 'dark';
-	$: props = { isMonetized, variant, theme };
+	$: props = { variant, theme };
 
 	let target;
 	let modal;
