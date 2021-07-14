@@ -1,16 +1,12 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-	import AnonRiser from "./AnonRiser.svelte";
+	import RiserBase from "./RiserBase.svelte";
 </script>
 
-<Meta
-	title="Components/MonetRiser/AnonRiser"
-	component={AnonRiser}
-	argTypes={{}}
-/>
+<Meta title="Components/MonetRiser" component={RiserBase} argTypes={{}} />
 
 <Template let:args>
-	<AnonRiser {...args} />
+	<RiserBase {...args} />
 </Template>
 
 <Story

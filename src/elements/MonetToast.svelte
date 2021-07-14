@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import { writable } from "svelte/store";
-	import MonetRiser from "../components/MonetRiser/MonetRiser.svelte";
+	import MonetToast from "../components/MonetToast/MonetToast.svelte";
 
+	let collapsed = writable(false);
 	let hidden = writable(false);
 
 	let scrollY = 0;
@@ -24,9 +26,18 @@
 		const isGoingDown = scrolled < 0;
 		hidden.set(isGoingDown);
 	}
+
+	onMount(() => {
+		const timeout = 4000;
+		// Go to small state after a while to reduce distraction
+		setTimeout(() => collapsed.set(true), timeout);
+	});
+
 	$: hideOnScroll(scrollY);
 </script>
 
 <svelte:window bind:scrollY />
 
-<MonetRiser visible={!$hidden} />
+{#if !$hidden}
+	<MonetToast collapsed={$collapsed} />
+{/if}

@@ -1,18 +1,14 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-	import MonetizedRiser from "./MonetizedRiser.svelte";
+	import MonetToast from "./ToastBase.svelte";
 </script>
 
-<Meta
-	title="Components/MonetRiser/MonetizedRiser"
-	component={MonetizedRiser}
-	argTypes={{}}
-/>
+<Meta title="Components/MonetToast" component={MonetToast} argTypes={{}} />
 
 <Template let:args>
 	<div class="relative h-44 outline-black overflow-hidden">
 		<div class="absolute bottom-0 left-0">
-			<MonetizedRiser {...args} />
+			<MonetToast {...args} />
 		</div>
 	</div>
 </Template>

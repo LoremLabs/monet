@@ -5,7 +5,7 @@
 </script>
 
 <Meta
-	title="Components/MonetRiser/MonetizedRiser/BasicToast"
+	title="Components/MonetToast/BasicToast"
 	component={BasicToast}
 	argTypes={{}}
 />
