@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Theme } from "../components/MonetInline.svelte";
-	import MonetInline from "../components/MonetInline.svelte";
+	import type { Theme } from "../components/MonetInline/MonetInline.svelte";
+	import MonetInline from "../components/MonetInline/MonetInline.svelte";
 	import detectMonetization from "../utils/is-monetized";
 
 	const isMonetizedPromise = detectMonetization();
@@ -9,7 +9,9 @@
 </script>
 
 {#await isMonetizedPromise then isMonetized}
-	<MonetInline {isMonetized} {theme} />
+	{#if !isMonetized}
+		<MonetInline {theme} />
+	{/if}
 {:catch}
 	<!-- nothing -->
 {/await}

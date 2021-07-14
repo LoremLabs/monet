@@ -1,7 +1,7 @@
 <script>
-	import "../assets/global.css";
-	import WebMonetizationLogo from "../atoms/WebMonetizationLogo.svelte";
-	import CloseIcon from "../assets/icons/close.svelte";
+	import "../../assets/global.css";
+	import WebMonetizationLogo from "../../atoms/WebMonetizationLogo.svelte";
+	import CloseIcon from "../../assets/icons/close.svelte";
 
 	export let text = "This site is web-monetized.";
 </script>

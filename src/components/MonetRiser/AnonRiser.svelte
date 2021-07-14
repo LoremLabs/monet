@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { fly } from "../utils/transfix";
+	import { fly } from "../../utils/transfix";
 
-	import "../assets/global.css";
-	import Heading from "../atoms/Heading.svelte";
-	import WebMonetizationLogo from "../atoms/WebMonetizationLogo.svelte";
+	import "../../assets/global.css";
+	import Heading from "../../atoms/Heading.svelte";
+	import WebMonetizationLogo from "../../atoms/WebMonetizationLogo.svelte";
 
 	export let href = "#learn-more";
 

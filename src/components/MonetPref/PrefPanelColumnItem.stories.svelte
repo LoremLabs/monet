@@ -4,7 +4,7 @@
 </script>
 
 <Meta
-	title="Atoms/PrefPanel/ColumnItem"
+	title="Components/MonetPref/ColumnItem"
 	component={PrefPanelColumnItem}
 	argTypes={{
 		id: { control: { type: "text" } },

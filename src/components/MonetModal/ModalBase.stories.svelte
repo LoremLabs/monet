@@ -7,7 +7,7 @@
 </script>
 
 <Meta
-	title="Components/Modal"
+	title="Components/MonetModal"
 	component={ModalBase}
 	parameters={{
 		layout: "fullscreen",

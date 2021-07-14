@@ -1,6 +1,9 @@
 <script lang="ts">
-	import type { Theme, Variant } from "../components/MonetModal.svelte";
-	import MonetModal from "../components/MonetModal.svelte";
+	import type {
+		Theme,
+		Variant,
+	} from "../components/MonetModal/MonetModal.svelte";
+	import MonetModal from "../components/MonetModal/MonetModal.svelte";
 	import detectMonetization from "../utils/is-monetized";
 
 	const isMonetizedPromise = detectMonetization();
@@ -10,7 +13,9 @@
 </script>
 
 {#await isMonetizedPromise then isMonetized}
-	<MonetModal {isMonetized} {theme} {variant} />
+	{#if !isMonetized}
+		<MonetModal {theme} {variant} />
+	{/if}
 {:catch}
 	<!-- nothing -->
 {/await}

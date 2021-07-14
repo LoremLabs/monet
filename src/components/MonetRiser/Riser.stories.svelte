@@ -1,6 +1,6 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-	import MonetRiserBase from "./MonetRiser.svelte";
+	import MonetRiserBase from "./Riser.svelte";
 </script>
 
 <Meta title="Components/MonetRiser" component={MonetRiserBase} argTypes={{}} />

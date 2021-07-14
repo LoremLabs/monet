@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { fly } from "../utils/transfix";
-	import "../assets/global.css";
+	import { fly } from "../../utils/transfix";
+	import "../../assets/global.css";
 
 	import BasicToast from "./BasicToast.svelte";
 	import SmallToast from "./SmallToast.svelte";

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import "../assets/global.css";
-	import WebMonetizationLogo from "../atoms/WebMonetizationLogo.svelte";
+	import "../../assets/global.css";
+	import WebMonetizationLogo from "../../atoms/WebMonetizationLogo.svelte";
 </script>
 
 <button

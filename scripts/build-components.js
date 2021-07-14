@@ -29,7 +29,7 @@ function getRollupConfig(componentName) {
 			...(!isProdEnv ? { minify: false } : {}),
 			lib: {
 				formats: ["es"],
-				entry: `${INPUT_DIR}/${componentName}.svelte`,
+				entry: `${INPUT_DIR}/${componentName}/${componentName}.svelte`,
 			},
 			rollupOptions: {
 				output: {
@@ -52,7 +52,7 @@ async function buildBaseElements(inputs) {
 	);
 }
 
-const inputs = getInputs(INPUT_DIR, /^([A-Z]\w*[A-Z]\w*)\.svelte$/);
+const inputs = getInputs(INPUT_DIR, /^([A-Z]\w*[A-Z]\w*)$/);
 
 console.log({ inputs });
 buildBaseElements(inputs);

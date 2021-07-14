@@ -6,8 +6,8 @@
 </script>
 
 <script lang="ts">
-	import DragHandle from "./DragHandle.svelte";
-	import Checkbox from "./Checkbox.svelte";
+	import DragHandle from "../../atoms/DragHandle.svelte";
+	import Checkbox from "../../atoms/Checkbox.svelte";
 
 	export let id: string;
 	export let enabled: boolean = false;

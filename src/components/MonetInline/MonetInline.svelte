@@ -3,6 +3,8 @@
 </script>
 
 <script lang="ts">
+	import "../../assets/global.css";
+
 	export let heading1 = "The news you need, when you need it!";
 	export let heading2 = "Read more with Web Monetization";
 	export let subtitle = "";

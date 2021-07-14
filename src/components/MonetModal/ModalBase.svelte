@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-	import WebMonetizationLogo from "../atoms/WebMonetizationLogo.svelte";
+	import WebMonetizationLogo from "../../atoms/WebMonetizationLogo.svelte";
 
 	export let variant: Variant = "center";
 	export let theme: Theme = "light";

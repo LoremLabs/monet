@@ -1,12 +1,12 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-	import PrefPanel from "./PrefPanel.svelte";
+	import MonetPref from "./MonetPref.svelte";
 </script>
 
-<Meta title="Components/PrefPanel" component={PrefPanel} argTypes={{}} />
+<Meta title="Components/MonetPref" component={MonetPref} argTypes={{}} />
 
 <Template let:args>
-	<PrefPanel {...args} />
+	<MonetPref {...args} />
 </Template>
 
 <Story

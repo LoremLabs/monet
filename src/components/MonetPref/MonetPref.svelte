@@ -1,11 +1,11 @@
 <script context="module" lang="ts">
-	import type { Item } from "../atoms/PrefPanelColumn.svelte";
+	import type { Item } from "./PrefPanelColumn.svelte";
 	export type Options = Item[];
 </script>
 
 <script lang="ts">
-	import "../assets/global.css";
-	import PrefPanelColumn from "../atoms/PrefPanelColumn.svelte";
+	import "../../assets/global.css";
+	import PrefPanelColumn from "./PrefPanelColumn.svelte";
 
 	export let heading = "Your Monetization Preferences";
 	export let options: Options = [];

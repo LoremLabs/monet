@@ -1,11 +1,11 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-	import InlineNag from "./InlineNag.svelte";
+	import MonetInline from "./MonetInline.svelte";
 </script>
 
 <Meta
-	title="Components/InlineNag"
-	component={InlineNag}
+	title="Components/MonetInline"
+	component={MonetInline}
 	argTypes={{
 		theme: {
 			control: {
@@ -17,7 +17,7 @@
 />
 
 <Template let:args>
-	<InlineNag {...args} />
+	<MonetInline {...args} />
 </Template>
 
 <Template let:args id="InlineBlock">
@@ -27,7 +27,7 @@
 			quam eaque ipsum numquam perspiciatis ducimus nam, quibusdam fugit et id
 			nemo non quis similique, blanditiis aperiam totam qui nostrum?
 		</p>
-		<InlineNag {...args} />
+		<MonetInline {...args} />
 		<p class="font-sans text-base">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
 			nulla veritatis odio, quo nobis aliquid perferendis vel ut dolores labore

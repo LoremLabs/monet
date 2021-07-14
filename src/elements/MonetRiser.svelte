@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { writable } from "svelte/store";
-	import MonetRiser from "../components/MonetRiser.svelte";
+	import MonetRiser from "../components/MonetRiser/MonetRiser.svelte";
 	import detectMonetization from "../utils/is-monetized";
 
 	const isMonetizedPromise = detectMonetization();
