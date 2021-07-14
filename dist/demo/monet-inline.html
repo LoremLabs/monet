@@ -3,21 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="monetization" content="$respec.org" />
-		<script>
-			if (location.search.includes("disable")) {
-				document.querySelector(`meta[name~=monetization]`).remove();
-			}
-			if (document.monetization) {
-				document.monetization.addEventListener("monetizationprogress", (ev) => {
-					console.log(ev.detail);
-				});
-			}
-		</script>
 		<script src="/elements/monet-inline.js"></script>
 	</head>
 	<body>
-		<h1>Add <code>?disable</code> to remove the monetization meta tag.</h1>
 		<p>In Browser Console, run following to change attributes dynamically:</p>
 		<pre><code>$("monet-inline").setAttribute("theme", "light")</code></pre>
 		<hr />
