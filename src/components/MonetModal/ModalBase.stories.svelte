@@ -1,6 +1,9 @@
-<script>
+<script lang="ts">
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
 	import ModalBase from "./ModalBase.svelte";
+	import * as defaults from "./defaults";
+
+	const text = { control: { type: "text" as const } };
 
 	const demo_modalBackgroundClasslist =
 		"relative bg-gray-600/60 w-screen h-screen max-w-full max-h-full";
@@ -14,17 +17,24 @@
 	}}
 	argTypes={{
 		theme: {
+			defaultValue: defaults.theme,
 			control: {
 				type: "inline-radio",
 				options: ["light", "dark", "accent"],
 			},
 		},
 		variant: {
+			defaultValue: defaults.variant,
 			control: {
 				type: "inline-radio",
 				options: ["center", "bottom"],
 			},
 		},
+		subtitle: { defaultValue: defaults.subtitle, ...text },
+		heading: { defaultValue: defaults.heading, ...text },
+		href: { defaultValue: defaults.href, ...text },
+		ctaText: { defaultValue: defaults.ctaText, ...text },
+		text: { defaultValue: defaults.text, ...text },
 	}}
 />
 

@@ -1,20 +1,14 @@
-<script context="module" lang="ts">
-	export type Theme = "light" | "dark" | "accent";
-	export type Variant = "center" | "bottom";
-</script>
-
 <script lang="ts">
 	import WebMonetizationLogo from "../../atoms/WebMonetizationLogo.svelte";
+	import type { Theme, Variant } from "./defaults";
 
-	export let variant: Variant = "center";
-	export let theme: Theme = "light";
-
-	export let subtitle = "The news you need, when you need it!";
-	export let heading = "Read more with Web Monetization";
-	export let href = "#learn-more";
-	export let ctaText = "Purchase";
-	export let text =
-		"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
+	export let variant: Variant;
+	export let theme: Theme;
+	export let subtitle: string;
+	export let heading: string;
+	export let href: string;
+	export let ctaText: string;
+	export let text: string;
 </script>
 
 <div

@@ -1,14 +1,15 @@
-<script context="module" lang="ts">
-	import type { Theme, Variant } from "./ModalBase.svelte";
-	export type { Theme, Variant };
-</script>
-
 <script lang="ts">
 	import ModalBase from "./ModalBase.svelte";
+	import * as defaults from "./defaults";
 	import "../../assets/global.css";
 
-	export let theme: Theme = "light";
-	export let variant: Variant = "center";
+	export let theme = defaults.theme;
+	export let variant = defaults.variant;
+	export let subtitle = defaults.subtitle;
+	export let heading = defaults.heading;
+	export let href = defaults.href;
+	export let ctaText = defaults.ctaText;
+	export let text = defaults.text;
 </script>
 
 <div class="fixed z-10 inset-0 overflow-y-auto" role="dialog" aria-modal="true">
@@ -19,6 +20,6 @@
 		}[variant]}"
 	>
 		<div class="fixed inset-0 bg-gray-500/75 -z-1" />
-		<ModalBase {theme} {variant} />
+		<ModalBase {theme} {variant} {subtitle} {heading} {href} {ctaText} {text} />
 	</div>
 </div>
