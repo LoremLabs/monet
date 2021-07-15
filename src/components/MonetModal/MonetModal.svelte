@@ -7,25 +7,18 @@
 	import ModalBase from "./ModalBase.svelte";
 	import "../../assets/global.css";
 
-	export let isMonetized = false;
 	export let theme: Theme = "light";
 	export let variant: Variant = "center";
 </script>
 
-{#if !isMonetized}
+<div class="fixed z-10 inset-0 overflow-y-auto" role="dialog" aria-modal="true">
 	<div
-		class="fixed z-10 inset-0 overflow-y-auto"
-		role="dialog"
-		aria-modal="true"
+		class="min-h-screen flex justify-center {{
+			center: 'items-center',
+			bottom: 'items-end',
+		}[variant]}"
 	>
-		<div
-			class="min-h-screen flex justify-center {{
-				center: 'items-center',
-				bottom: 'items-end',
-			}[variant]}"
-		>
-			<div class="fixed inset-0 bg-gray-500/75 -z-1" />
-			<ModalBase {theme} {variant} />
-		</div>
+		<div class="fixed inset-0 bg-gray-500/75 -z-1" />
+		<ModalBase {theme} {variant} />
 	</div>
-{/if}
+</div>
