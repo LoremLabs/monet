@@ -23,6 +23,6 @@
 				{heading}
 			</h2>
 		</div>
-		<PrefPanelColumn items={options} />
+		<PrefPanelColumn bind:items={options} on:change />
 	</div>
 </div>

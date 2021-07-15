@@ -26,6 +26,7 @@
 		label={title}
 		{description}
 		bind:checked={enabled}
+		on:change
 		class="flex-grow p-2 gap-2"
 	/>
 	<DragHandle

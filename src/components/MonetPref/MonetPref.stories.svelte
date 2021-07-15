@@ -1,12 +1,13 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
+	import { action } from "@storybook/addon-actions";
 	import MonetPref from "./MonetPref.svelte";
 </script>
 
 <Meta title="Components/MonetPref" component={MonetPref} argTypes={{}} />
 
 <Template let:args>
-	<MonetPref {...args} />
+	<MonetPref {...args} on:change={action("change")} />
 </Template>
 
 <Story

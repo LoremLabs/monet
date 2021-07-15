@@ -22,10 +22,12 @@
 
 <script lang="ts">
 	import { flip } from "svelte/animate";
+	import { createEventDispatcher } from "svelte";
 	import { dndzone, SOURCES, TRIGGERS } from "svelte-dnd-action";
 	import PrefPanelColumnItem from "./PrefPanelColumnItem.svelte";
 
 	export let items: Item[] = [];
+	const dispatch = createEventDispatcher();
 
 	let dragDisabled = true;
 	let currentlyDraggedId: string | null;
@@ -44,6 +46,7 @@
 	function handleDndFinalize(ev: CustomEvent<DndEvent>) {
 		const { source } = ev.detail.info;
 		items = ev.detail.items as Item[];
+		dispatch("change", { type: "reorder" });
 		// Ensure dragging is stopped on drag finish via pointer (mouse, touch)
 		if (source === SOURCES.POINTER) {
 			dragDisabled = true;
@@ -81,6 +84,13 @@
 				title={item.title}
 				description={item.description}
 				bind:enabled={item.enabled}
+				on:change={(ev) => {
+					dispatch("change", {
+						// @ts-expect-error
+						type: ev.target.checked ? "allow" : "deny",
+						name: item.id,
+					});
+				}}
 				{dragDisabled}
 				on:mousedown={startDrag}
 				on:touchstart={startDrag}

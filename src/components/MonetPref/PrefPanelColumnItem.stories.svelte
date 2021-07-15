@@ -1,5 +1,6 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
+	import { action } from "@storybook/addon-actions";
 	import PrefPanelColumnItem from "./PrefPanelColumnItem.svelte";
 </script>
 
@@ -16,7 +17,7 @@
 <Template let:args>
 	<div class="max-w-sm">
 		<div class="max-w-max">
-			<PrefPanelColumnItem {...args} />
+			<PrefPanelColumnItem {...args} on:change={action("change")} />
 		</div>
 	</div>
 </Template>
