@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="monetization" content="$respec.org" />
+		<script>
+			if (location.search.includes("disable")) {
+				document.querySelector(`meta[name~=monetization]`).remove();
+			}
+		</script>
+		<script
+			src="https://monetization-capabilities-api.vercel.app/build/index.js"
+			type="module"
+		></script>
+		<script type="module">
+			import webmonetization from "https://monetization-capabilities-api.vercel.app/build/plugins/webmonetization.js";
+			monetization.userPreferences.addEventListener("change", (ev) => {
+				console.log("userPreferences:change 👋", ev.changeType);
+			});
+			const capabilities = window.monetization.capabilities.acquire();
+			capabilities.use(webmonetization(100));
+			capabilities.define("ads/*", () => ({ isSupported: false }));
+			setTimeout(() => {
+				capabilities.define("subscription/*", () => ({ isSupported: false }));
+			}, 3000);
+		</script>
+		<script src="/elements/monet-pref.js" defer></script>
+	</head>
+	<body>
+		<h1>Add <code>?disable</code> to remove the monetization meta tag.</h1>
+		<hr />
+
+		<!-- placeholder page starts -->
+		<h2>This is 2nd level heading</h2>
+
+		<p>
+			This is a normal paragraph (<code>p</code> element). To add some length to
+			it, let us mention that this page was primarily written for testing the
+			effect of <strong>user style sheets</strong>. You can use it for various
+			other purposes as well, like just checking how your browser displays
+			various HTML elements by default. It can also be useful when testing
+			conversions from HTML format to other formats, since some elements can go
+			wrong then.
+		</p>
+		<!-- placeholder page ends -->
+
+		<monet-pref></monet-pref>
+	</body>
+</html>
