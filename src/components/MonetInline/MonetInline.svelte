@@ -1,18 +1,13 @@
-<script context="module" lang="ts">
-	export type Theme = "light" | "dark" | "dim";
-</script>
-
 <script lang="ts">
 	import "../../assets/global.css";
+	import * as defaults from "./defaults";
 
-	export let heading1 = "The news you need, when you need it!";
-	export let heading2 = "Read more with Web Monetization";
-	export let subtitle = "";
-	export let body =
-		"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
-	export let ctaText = "Purchase Web Monetization Pass";
-
-	export let theme: Theme = "light";
+	export let theme = defaults.theme;
+	export let heading1 = defaults.heading1;
+	export let heading2 = defaults.heading2;
+	export let subtitle = defaults.subtitle;
+	export let body = defaults.body;
+	export let ctaText = defaults.ctaText;
 </script>
 
 <div class="max-w-max">
