@@ -1,19 +1,15 @@
 <script lang="ts">
 	import { fly } from "../../utils/transfix";
 
-	import "../../assets/global.css";
 	import Heading from "../../atoms/Heading.svelte";
 	import WebMonetizationLogo from "../../atoms/WebMonetizationLogo.svelte";
 
-	export let href = "#learn-more";
-
-	export let ctaText = "Purchase from Provider";
-	export let ctaTextMobile = "Purchase";
-
-	export let heading1 = "The news you need, when you need it!";
-	export let heading2 = "Read more with Web Monetization";
-	export let text =
-		"Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.";
+	export let href: string;
+	export let ctaText: string;
+	export let ctaTextMobile: string;
+	export let heading1: string;
+	export let heading2: string;
+	export let text: string;
 </script>
 
 <div transition:fly={{ x: 500, duration: 300 }} class="font-sans">
