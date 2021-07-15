@@ -1,9 +1,9 @@
-<script lang="ts">
+<script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
 	import ModalBase from "./ModalBase.svelte";
 	import * as defaults from "./defaults";
 
-	const text = { control: { type: "text" as const } };
+	const text = { control: { type: "text" } };
 
 	const demo_modalBackgroundClasslist =
 		"relative bg-gray-600/60 w-screen h-screen max-w-full max-h-full";
