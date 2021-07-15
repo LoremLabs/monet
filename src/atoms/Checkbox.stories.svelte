@@ -1,5 +1,6 @@
 <script>
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
+	import { action } from "@storybook/addon-actions";
 	import Checkbox from "./Checkbox.svelte";
 </script>
 
@@ -14,7 +15,7 @@
 />
 
 <Template let:args>
-	<Checkbox id="checkbox-1" {...args} />
+	<Checkbox id="checkbox-1" {...args} on:change={action("change")} />
 </Template>
 
 <Story

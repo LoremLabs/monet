@@ -10,6 +10,7 @@
 	<input
 		type="checkbox"
 		bind:checked
+		on:change
 		{id}
 		name={id}
 		class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border border-solid border-gray-300 rounded"
