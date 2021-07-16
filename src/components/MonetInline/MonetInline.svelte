@@ -8,6 +8,7 @@
 	export let subtitle = defaults.subtitle;
 	export let body = defaults.body;
 	export let ctaText = defaults.ctaText;
+	export let href = defaults.href;
 </script>
 
 <div class="max-w-max">
@@ -46,7 +47,7 @@
 		</p>
 		<a
 			class="inline-block rounded-lg py-2 px-3 md:py-3 md:px-5 leading-tight text-sm sm:text-base no-underline text-white bg-wm-green text-center"
-			href="#learn-more">{ctaText}</a
+			{href}>{ctaText}</a
 		>
 	</div>
 </div>

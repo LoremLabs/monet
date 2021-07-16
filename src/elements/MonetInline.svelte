@@ -8,6 +8,7 @@
 	export let subtitle = defaults.subtitle;
 	export let body = defaults.body;
 	export let ctaText = defaults.ctaText;
+	export let href = defaults.href;
 </script>
 
-<MonetInline {theme} {heading1} {heading2} {subtitle} {body} {ctaText} />
+<MonetInline {theme} {heading1} {heading2} {subtitle} {body} {ctaText} {href} />
