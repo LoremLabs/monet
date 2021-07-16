@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { fly } from "../../utils/transfix";
-	import "../../assets/global.css";
 
-	import BasicToast from "./BasicToast.svelte";
-	import SmallToast from "./SmallToast.svelte";
+	import ToastExpanded from "./ToastExpanded.svelte";
+	import ToastCollapsed from "./ToastCollapsed.svelte";
 
-	export let text = "This site is web-monetized.";
+	export let text: string;
 	export let collapsed = false;
 
 	function toggleCollapse() {
@@ -23,11 +22,11 @@
 {#if ready}
 	{#if !collapsed}
 		<div in:fly={{ y: 200, duration: 200 }}>
-			<BasicToast {text} on:click={toggleCollapse} />
+			<ToastExpanded {text} on:click={toggleCollapse} />
 		</div>
 	{:else}
 		<div in:fly={{ y: -60, duration: 200 }}>
-			<SmallToast on:click={toggleCollapse} />
+			<ToastCollapsed on:click={toggleCollapse} />
 		</div>
 	{/if}
 {/if}

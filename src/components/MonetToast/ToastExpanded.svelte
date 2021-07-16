@@ -1,9 +1,8 @@
-<script>
-	import "../../assets/global.css";
+<script lang="ts">
 	import WebMonetizationLogo from "../../atoms/WebMonetizationLogo.svelte";
 	import CloseIcon from "../../assets/icons/close.svelte";
 
-	export let text = "This site is web-monetized.";
+	export let text: string;
 </script>
 
 <div class="relative md:w-max max-w-md mt-6 mr-6">
