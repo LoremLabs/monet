@@ -11,6 +11,7 @@ const OUTPUT_DIR = "dist/elements";
 
 const path = require("path");
 const alias = require("@rollup/plugin-alias");
+const typescript = require("@rollup/plugin-typescript");
 const { terser } = require("rollup-plugin-terser");
 const sourcemaps = require("rollup-plugin-sourcemaps");
 const sizes = require("rollup-plugin-sizes");
@@ -23,13 +24,15 @@ const { isProdEnv, getInputs } = require("./utils.js");
  */
 function getRollupConfig(elementName) {
 	return {
-		input: `${INPUT_DIR}/${elementName}.js`,
+		input: `${INPUT_DIR}/${elementName}.ts`,
 		output: {
 			sourcemap: true,
 			format: "iife",
 			file: `${OUTPUT_DIR}/${elementName}.js`,
 		},
 		plugins: [
+			// @ts-expect-error
+			typescript(),
 			// @ts-expect-error
 			sourcemaps(),
 			// @ts-expect-error
@@ -48,7 +51,7 @@ function getRollupConfig(elementName) {
 
 const inputs = getInputs(
 	INPUT_DIR,
-	/^(\w+-\w+)\.js$/,
+	/^(\w+-\w+)\.ts$/,
 	process.env.ELEMENT,
 ).concat(["monet"]);
 console.log({ inputs });
