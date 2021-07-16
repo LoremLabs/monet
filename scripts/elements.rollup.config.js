@@ -49,11 +49,11 @@ function getRollupConfig(elementName) {
 	};
 }
 
-const inputs = getInputs(
-	INPUT_DIR,
-	/^(\w+-\w+)\.ts$/,
-	process.env.ELEMENT,
-).concat(["monet"]);
+const inputs = getInputs(INPUT_DIR, /^(\w+-\w+)\.ts$/, process.env.ELEMENT);
+if (!process.env.ROLLUP_WATCH) {
+	inputs.push("monet");
+}
+
 console.log({ inputs });
 
 module.exports = inputs.map((elem) => getRollupConfig(elem));

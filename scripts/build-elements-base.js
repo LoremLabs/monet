@@ -11,7 +11,7 @@ const OUTPUT_DIR = "dist/.elements";
 const path = require("path");
 const { defineConfig, build } = require("vite");
 const { svelte } = require("@sveltejs/vite-plugin-svelte");
-const { isProdEnv, getInputs } = require("./utils.js");
+const { isProdEnv, watch, getInputs } = require("./utils.js");
 
 /**
  * @param {string} componentName
@@ -23,6 +23,8 @@ function getRollupConfig(componentName) {
 		clearScreen: false,
 		mode: isProdEnv ? "production" : "development",
 		build: {
+			emptyOutDir: isProdEnv,
+			watch: watch ? { exclude: `${INPUT_DIR}/*.ts` } : null,
 			sourcemap: true,
 			...(!isProdEnv ? { minify: false } : {}),
 			lib: {

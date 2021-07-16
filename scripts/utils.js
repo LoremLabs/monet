@@ -1,6 +1,7 @@
 const { readdirSync } = require("fs");
 
 const isProdEnv = process.env.NODE_ENV === "production";
+const watch = !!process.env.BUILD_WATCH;
 
 /**
  * Get input files from a directory matching a pattern.
@@ -34,6 +35,7 @@ function pascalToKebab(str) {
 
 module.exports = {
 	isProdEnv,
+	watch,
 	getInputs,
 	pascalToKebab,
 };

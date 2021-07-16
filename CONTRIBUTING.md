@@ -18,7 +18,7 @@ npm start
 ```bash
 # Dev Builds (watch mode)
 # run following to two separate terminals:
-nodemon -w src --exec npm run build:elements-base
+BUILD_WATCH=1 npm run build:elements-base
 npm run build:elements -- -w
 
 # Then view them in action (another terminal):
