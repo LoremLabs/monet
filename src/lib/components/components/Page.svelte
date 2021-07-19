@@ -28,7 +28,7 @@
 	<OptionsHeader storybookPath="/story/{name}" />
 
 	<ResizeableColumns>
-		<div slot="left" class="flex flex-col gap-4">
+		<div slot="left" class="flex flex-col gap-4 pr-4">
 			<IsMonetized bind:isMonetized />
 			<slot />
 		</div>
