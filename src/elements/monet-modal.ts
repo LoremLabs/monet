@@ -17,6 +17,11 @@ const propMap: PropMap = {
 		const variant = ensureOneOf(value, options, el, attr, defaults.variant);
 		return { variant };
 	},
+	subtitle: (value) => ({ subtitle: value || defaults.subtitle }),
+	heading: (value) => ({ heading: value || defaults.heading }),
+	href: (value) => ({ href: value || defaults.href }),
+	cta: (value) => ({ ctaText: value || defaults.ctaText }),
+	text: (value) => ({ text: value || defaults.text }),
 };
 
 init("monet-modal", propMap, App, css);
