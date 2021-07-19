@@ -9,7 +9,8 @@
 	export let variant = 'center';
 	/** @type {"light" | "dark" | "accent"} */
 	export let theme = 'dark';
-	$: props = { variant, theme };
+	export let subtitle = 'foo abar';
+	$: props = { variant, theme, subtitle };
 
 	let target;
 	let modal;
