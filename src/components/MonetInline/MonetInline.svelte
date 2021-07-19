@@ -1,6 +1,10 @@
+<script lang="ts" context="module">
+	import * as defaults from "./defaults";
+	export { defaults };
+</script>
+
 <script lang="ts">
 	import "../../assets/global.css";
-	import * as defaults from "./defaults";
 
 	export let theme = defaults.theme;
 	export let heading1 = defaults.heading1;

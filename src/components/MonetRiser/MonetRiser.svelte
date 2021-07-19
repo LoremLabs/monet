@@ -1,7 +1,11 @@
+<script lang="ts" context="module">
+	import * as defaults from "./defaults";
+	export { defaults };
+</script>
+
 <script lang="ts">
 	import "../../assets/global.css";
 	import RiserBase from "./RiserBase.svelte";
-	import * as defaults from "./defaults";
 
 	export let href = defaults.href;
 	export let ctaText = defaults.ctaText;

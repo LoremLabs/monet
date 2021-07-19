@@ -1,6 +1,10 @@
+<script lang="ts" context="module">
+	import * as defaults from "./defaults";
+	export { defaults };
+</script>
+
 <script lang="ts">
 	import ToastBase from "./ToastBase.svelte";
-	import * as defaults from "./defaults";
 	import "../../assets/global.css";
 
 	export let text = defaults.text;
