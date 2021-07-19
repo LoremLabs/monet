@@ -5,9 +5,9 @@
 			const val = values[idx];
 			const option = options[idx];
 
-			const value = option.value(val);
+			const value = typeof option.value === 'function' ? option.value(val) : val || undefined;
 			if (value !== undefined) {
-				attrs.set(option.name, value);
+				attrs.set(option.prop || option.name, value);
 			}
 		}
 		return attrs.toString();

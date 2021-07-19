@@ -8,7 +8,7 @@
 			if (option.name === 'isMonetized') continue;
 			if (option.default === val) continue;
 
-			const value = option.value(val);
+			const value = typeof option.value === 'function' ? option.value(val) : val || undefined;
 			if (value !== undefined) {
 				if (typeof value === 'boolean') {
 					attrs.push(option.name);
