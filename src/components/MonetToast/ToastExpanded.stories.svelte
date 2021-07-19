@@ -9,7 +9,14 @@
 	title="Components/MonetToast/ToastExpanded"
 	component={ToastExpanded}
 	argTypes={{
-		text: { defaultValue: defaults.text, control: { type: "text" } },
+		text: {
+			defaultValue: defaults.text(defaults.type),
+			control: { type: "text" },
+		},
+		type: {
+			defaultValue: defaults.type,
+			control: { type: "inline-radio", options: defaults.types },
+		},
 	}}
 />
 

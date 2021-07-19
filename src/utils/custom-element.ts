@@ -66,12 +66,12 @@ export function init(
 }
 
 export function ensureOneOf<T>(
-	value: T,
+	value: any,
 	options: T[],
 	elem: HTMLElement,
 	attr: string,
 	defaultValue: T,
-) {
+): T {
 	if (options.includes(value)) {
 		return value;
 	}

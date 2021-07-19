@@ -7,7 +7,8 @@
 	import ToastBase from "./ToastBase.svelte";
 	import "../../assets/global.css";
 
-	export let text = defaults.text;
+	export let type = defaults.type;
+	export let text = defaults.text(type);
 	export let collapsed = false;
 </script>
 
@@ -15,5 +16,5 @@
 	class="fixed bottom-2 left-2 right-2 p-4 w-full m-auto"
 	style="max-width: 95vw;"
 >
-	<ToastBase {text} {collapsed} />
+	<ToastBase {type} {text} {collapsed} />
 </div>

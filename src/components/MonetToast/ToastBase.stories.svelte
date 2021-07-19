@@ -8,7 +8,14 @@
 	title="Components/MonetToast"
 	component={MonetToast}
 	argTypes={{
-		text: { defaultValue: defaults.text, control: { type: "text" } },
+		text: {
+			value: defaults.text(defaults.type),
+			control: { type: "text" },
+		},
+		type: {
+			defaultValue: defaults.type,
+			control: { type: "inline-radio", options: defaults.types },
+		},
 	}}
 />
 
@@ -20,4 +27,9 @@
 	</div>
 </Template>
 
-<Story name="Primary" args={{ collapsed: false }} />
+<Story name="Ad" args={{ type: "ad", text: defaults.text("ad") }} />
+<Story name="Subscription" args={{ type: "sub", text: defaults.text("sub") }} />
+<Story
+	name="WebMonetization"
+	args={{ type: "webmon", text: defaults.text("webmon") }}
+/>

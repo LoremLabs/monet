@@ -1,10 +1,12 @@
 <script lang="ts">
+	import type { Type } from "../../utils/constants";
 	import { onMount } from "svelte";
 	import { fly } from "../../utils/transfix";
 
 	import ToastExpanded from "./ToastExpanded.svelte";
 	import ToastCollapsed from "./ToastCollapsed.svelte";
 
+	export let type: Type;
 	export let text: string;
 	export let collapsed = false;
 
@@ -22,11 +24,11 @@
 {#if ready}
 	{#if !collapsed}
 		<div in:fly={{ y: 200, duration: 200 }}>
-			<ToastExpanded {text} on:click={toggleCollapse} />
+			<ToastExpanded {type} {text} on:click={toggleCollapse} />
 		</div>
 	{:else}
 		<div in:fly={{ y: -60, duration: 200 }}>
-			<ToastCollapsed on:click={toggleCollapse} />
+			<ToastCollapsed {type} on:click={toggleCollapse} />
 		</div>
 	{/if}
 {/if}

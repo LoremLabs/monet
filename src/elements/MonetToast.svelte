@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import MonetToast from "../components/MonetToast/MonetToast.svelte";
-	import * as defaults from "../components/MonetToast/defaults";
+	import type { Type } from "../components/MonetToast/defaults";
 	import HiddenOnScroll from "../utils/HiddenOnScroll.svelte";
 
-	export let text = defaults.text;
+	export let type: Type;
+	export let text: string;
 	let collapsed = false;
 	onMount(() => {
 		const timeout = 4000;
@@ -14,5 +15,5 @@
 </script>
 
 <HiddenOnScroll>
-	<MonetToast {text} {collapsed} />
+	<MonetToast {type} {text} {collapsed} />
 </HiddenOnScroll>

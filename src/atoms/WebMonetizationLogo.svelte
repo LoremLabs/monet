@@ -1,13 +1,11 @@
 <script lang="ts">
 	export let animate = false;
-	export let height = "h-6";
-	export let color = "";
 </script>
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 128 128"
-	class="{height} fill-current {color}"
+	class="h-full fill-current"
 	class:animate
 >
 	<path

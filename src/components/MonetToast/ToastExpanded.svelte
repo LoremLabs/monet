@@ -1,7 +1,12 @@
+<script lang="ts" context="module">
+	import type { Type } from "./../../utils/constants";
+</script>
+
 <script lang="ts">
-	import WebMonetizationLogo from "../../atoms/WebMonetizationLogo.svelte";
+	import Logo from "../../atoms/Logo.svelte";
 	import CloseIcon from "../../assets/icons/close.svelte";
 
+	export let type: Type;
 	export let text: string;
 </script>
 
@@ -22,9 +27,13 @@
 			{text}
 		</div>
 		<div
-			class="flex-shrink-0 flex p-4 bg-gray-900 text-wm-green rounded-l-full"
+			class="flex-shrink-0 flex p-4 bg-gray-900 rounded-l-full {{
+				ad: 'text-red-700',
+				sub: 'text-wm-green',
+				webmon: 'text-wm-green',
+			}[type]}"
 		>
-			<WebMonetizationLogo height="h-10" animate />
+			<span class="h-10"><Logo {type} /></span>
 		</div>
 	</div>
 </div>
