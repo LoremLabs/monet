@@ -1,9 +1,24 @@
 <script>
 	import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
-	import MonetInline from './monet-inline.svelte';
+	import MonetInline, { defaults } from './monet-inline.svelte';
 </script>
 
-<Meta title="monet-inline" component={MonetInline} argTypes={{}} />
+<Meta
+	title="monet-inline"
+	component={MonetInline}
+	argTypes={{
+		theme: {
+			defaultValue: defaults.theme,
+			control: { type: 'inline-radio', options: ['light', 'dark', 'dim'] },
+		},
+		heading1: { defaultValue: defaults.heading1, control: { type: 'text' } },
+		heading2: { defaultValue: defaults.heading2, control: { type: 'text' } },
+		subtitle: { defaultValue: defaults.subtitle, control: { type: 'text' } },
+		body: { defaultValue: defaults.body, control: { type: 'text' } },
+		ctaText: { defaultValue: defaults.ctaText, control: { type: 'text' } },
+		href: { defaultValue: defaults.href, control: { type: 'text' } },
+	}}
+/>
 
 <Template let:args>
 	<div class="p-4">

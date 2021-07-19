@@ -1,11 +1,18 @@
 <script context="module">
-	import MonetRiser from '@loremlabs/monet/components/monet-riser/app.js';
+	import MonetRiser, { defaults } from '@loremlabs/monet/components/monet-riser/app.mjs';
+	export { defaults };
 </script>
 
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 
-	$: props = {};
+	export let href = defaults.href;
+	export let ctaText = defaults.ctaText;
+	export let ctaTextMobile = defaults.ctaTextMobile;
+	export let heading1 = defaults.heading1;
+	export let heading2 = defaults.heading2;
+	export let text = defaults.text;
+	$: props = { href, ctaText, ctaTextMobile, heading1, heading2, text };
 
 	let target;
 	let riser;

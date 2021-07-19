@@ -1,7 +1,8 @@
 <script context="module">
+	import { defaults } from '@loremlabs/monet/components/monet-modal/app.mjs';
 	const themeOptions = {
 		name: 'theme',
-		default: 'light',
+		default: defaults.theme,
 		options: [
 			['light', 'Light'],
 			['dark', 'Dark'],
@@ -14,7 +15,7 @@
 	};
 	const variantOptions = {
 		name: 'variant',
-		default: 'center',
+		default: defaults.variant,
 		options: [
 			['center', 'Centered', 'Centered of page.'],
 			['bottom', 'Bottom', 'Sticky on bottom of page.'],
@@ -26,7 +27,7 @@
 	};
 	const subtitleOptions = {
 		name: 'subtitle',
-		default: 'The news you need, when you need it!',
+		default: defaults.subtitle,
 		value: (val) => val || undefined,
 	};
 

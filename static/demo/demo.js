@@ -1,5 +1,5 @@
 const BASE_URL = '../node_modules/@loremlabs/monet/components';
-const getJS = (component) => `${BASE_URL}/${component}/app.js`;
+const getJS = (component) => `${BASE_URL}/${component}/app.mjs`;
 const getCSS = (component) => `${BASE_URL}/${component}/app.css`;
 const showIfMonetized = (component) => ['monet-toast'].includes(component);
 

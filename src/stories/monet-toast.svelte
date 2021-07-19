@@ -1,11 +1,13 @@
 <script context="module">
-	import MonetToast from '@loremlabs/monet/components/monet-toast/app.js';
+	import MonetToast, { defaults } from '@loremlabs/monet/components/monet-toast/app.mjs';
+	export { defaults};
 </script>
 
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 
-	$: props = {};
+	export let text = defaults.text;
+	$: props = { text };
 
 	let target;
 	let toast;

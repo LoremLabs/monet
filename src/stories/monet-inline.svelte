@@ -1,11 +1,19 @@
 <script context="module">
-	import MonetInline from '@loremlabs/monet/components/monet-inline/app.js';
+	import MonetInline, { defaults } from '@loremlabs/monet/components/monet-inline/app.mjs';
+	export { defaults };
 </script>
 
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 
-	$: props = {};
+	export let theme = defaults.theme;
+	export let heading1 = defaults.heading1;
+	export let heading2 = defaults.heading2;
+	export let subtitle = defaults.subtitle;
+	export let body = defaults.body;
+	export let ctaText = defaults.ctaText;
+	export let href = defaults.href;
+	$: props = { theme, heading1, heading2, subtitle, body, ctaText, href };
 
 	let target;
 	let inline;

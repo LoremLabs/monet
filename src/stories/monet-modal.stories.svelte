@@ -1,6 +1,6 @@
 <script>
 	import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
-	import MonetModal from './monet-modal.svelte';
+	import MonetModal, { defaults } from './monet-modal.svelte';
 </script>
 
 <Meta
@@ -8,11 +8,18 @@
 	component={MonetModal}
 	argTypes={{
 		variant: {
+			defaultValue: defaults.variant,
 			control: { type: 'inline-radio', options: ['center', 'bottom'] },
 		},
 		theme: {
+			defaultValue: defaults.theme,
 			control: { type: 'inline-radio', options: ['light', 'dark', 'accent'] },
 		},
+		subtitle: { defaultValue: defaults.subtitle, control: { type: 'text' } },
+		heading: { defaultValue: defaults.heading, control: { type: 'text' } },
+		href: { defaultValue: defaults.href, control: { type: 'text' } },
+		ctaText: { defaultValue: defaults.ctaText, control: { type: 'text' } },
+		text: { defaultValue: defaults.text, control: { type: 'text' } },
 	}}
 />
 
