@@ -35,7 +35,7 @@ function getRollupConfig(componentName) {
 				output: {
 					format: "es",
 					dir: `${OUTPUT_DIR}/${outDirName}/`,
-					entryFileNames: "app.js",
+					entryFileNames: "app.mjs",
 					assetFileNames: "app.css",
 				},
 			},
