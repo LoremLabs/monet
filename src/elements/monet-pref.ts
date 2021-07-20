@@ -41,7 +41,7 @@ class MonetPref extends HTMLElement {
 		};
 
 		// @ts-expect-error
-		const mon = window.monetization;
+		const mon = window.monet;
 		if (!mon) return;
 		mon.capabilities?.addEventListener("change", onCapabilityChange);
 	}
@@ -51,7 +51,7 @@ class MonetPref extends HTMLElement {
 		shadowRoot = null;
 
 		// @ts-expect-error
-		const mon = window.monetization;
+		const mon = window.monet;
 		if (!mon) return;
 		mon.capabilities?.removeEventListener("change", onCapabilityChange);
 	}
@@ -79,7 +79,7 @@ class MonetPref extends HTMLElement {
 
 function updateUserPreferences(options) {
 	// @ts-expect-error
-	const userPreferences = window.monetization?.userPreferences;
+	const userPreferences = window.monet?.userPreferences;
 	if (!userPreferences) return;
 	const newPreferences = { allow: [], deny: [] };
 	for (const { id: capability, enabled } of options) {
@@ -93,7 +93,7 @@ function updateUserPreferences(options) {
  */
 function getOptions() {
 	// @ts-expect-error
-	const mon = window.monetization;
+	const mon = window.monet;
 	if (!mon) return [];
 	const capabilities = mon.capabilities?.list() ?? [];
 	return capabilities.map((capability) => {

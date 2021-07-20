@@ -9,6 +9,7 @@
 				document.querySelector(`meta[name~=monetization]`).remove();
 			}
 		</script>
+		<!-- Adds window.monet -->
 		<script
 			src="https://monetization-capabilities-api.vercel.app/build/index.js"
 			type="module"
@@ -18,7 +19,7 @@
 			monetization.userPreferences.addEventListener("change", (ev) => {
 				console.log("userPreferences:change 👋", ev.changeType);
 			});
-			const capabilities = window.monetization.capabilities.acquire();
+			const capabilities = window.monet.capabilities.acquire();
 			capabilities.use(webmonetization(100));
 			capabilities.define("ads/*", () => ({ isSupported: false }));
 			setTimeout(() => {
