@@ -1,3 +1,5 @@
+import { type as defaultType } from "./constants";
+
 interface AppConstructor {
 	new (arg: {
 		target: ShadowRoot | HTMLElement;
@@ -83,4 +85,9 @@ export function ensureOneOf<T>(
 	console.warn(`${prefix}: ${msg} ${info}`);
 	elem.setAttribute(attr, `${defaultValue}`);
 	return defaultValue;
+}
+
+export function getTypeFromElement(el: HTMLElement) {
+	const type = el.getAttribute("type");
+	return type ? (type as typeof defaultType) : defaultType;
 }

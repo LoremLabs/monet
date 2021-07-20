@@ -10,6 +10,10 @@
 	title="Components/MonetInline"
 	component={MonetInline}
 	argTypes={{
+		type: {
+			defaultValue: defaults.type,
+			control: { type: "inline-radio", options: defaults.types },
+		},
 		theme: {
 			defaultValue: defaults.theme,
 			control: {
@@ -18,10 +22,10 @@
 			},
 		},
 		heading1: { defaultValue: defaults.heading1, ...text },
-		heading2: { defaultValue: defaults.heading2, ...text },
+		heading2: { defaultValue: defaults.heading2(defaults.type), ...text },
 		subtitle: { defaultValue: defaults.subtitle, ...text },
-		body: { defaultValue: defaults.body, ...text },
-		ctaText: { defaultValue: defaults.ctaText, ...text },
+		body: { defaultValue: defaults.body(defaults.type), ...text },
+		ctaText: { defaultValue: defaults.ctaText(defaults.type), ...text },
 	}}
 />
 
@@ -45,12 +49,19 @@
 	</div>
 </Template>
 
-<Story name="Light" args={{ subtitle: "" }} />
-<Story name="Dark" args={{ theme: "dark", subtitle: "" }} />
-<Story name="Dimmed" args={{ theme: "dim", subtitle: "" }} />
-<Story name="With subtitle" args={{ theme: "dark", heading1: "" }} />
+<Story name="Ad" args={{ type: "ad", ...defaults.getProps("ad") }} />
 <Story
-	name="Inline block"
-	template="InlineBlock"
-	args={{ subtitle: "", theme: "dark" }}
+	name="Subscription"
+	args={{ type: "sub", ...defaults.getProps("sub") }}
 />
+<Story
+	name="WebMonetization"
+	args={{ type: "webmon", ...defaults.getProps("webmon") }}
+/>
+
+<Story name="Theme/Light" args={{}} />
+<Story name="Theme/Dark" args={{ theme: "dark" }} />
+<Story name="Theme/Dimmed" args={{ theme: "dim" }} />
+
+<Story name="With subtitle" args={{ theme: "dark", heading1: "" }} />
+<Story name="Inline block" template="InlineBlock" args={{ theme: "dark" }} />
