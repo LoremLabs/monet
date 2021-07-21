@@ -42,7 +42,7 @@
 				<div
 					class="self-stretch md:self-center max-w-max flex-shrink-0 flex flex-col md:flex-row md:gap-3 items-center justify-center p-3 pl-6 md:p-5 xl:p-6 text-white bg-wm-green rounded-l-3xl md:drop-shadow-lg md:-translate-y-1/2"
 				>
-					<WebMonetizationLogo height="h-6 md:h-8" />
+					<span class="h-6 md:h-8"><WebMonetizationLogo /></span>
 					<span class="max-w-xs text-xs md:text-sm xl:text-base">
 						<span class="hidden md:inline">{ctaText}</span>
 						<span class="md:hidden">{ctaTextMobile}</span>

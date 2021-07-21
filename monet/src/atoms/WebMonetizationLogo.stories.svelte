@@ -15,12 +15,20 @@
 			control: "text",
 			description: "A tailwind class, e.g. `bg-wm-green`",
 		},
+		height: {
+			control: "text",
+			description: "A tailwind class, e.g. `h-10`",
+		},
+		animate: {
+			defaultValue: false,
+			control: "boolean",
+		},
 	}}
 />
 
 <Template let:args>
-	<div class="{args.background} p-2 w-max">
-		<WebMonetizationLogo {...args} />
+	<div class="{args.background} {args.color} p-2 w-max {args.height}">
+		<WebMonetizationLogo animate={args.animate} />
 	</div>
 </Template>
 
