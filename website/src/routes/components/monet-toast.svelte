@@ -1,5 +1,5 @@
 <script context="module">
-	import { defaults } from '@loremlabs/monet/components/monet-toast/app.mjs';
+	import { defaults } from '@loremlabs/monet/dist/components/monet-toast/app.mjs';
 	const textOptions = { name: 'text', default: defaults.text };
 
 	const name = 'monet-toast';

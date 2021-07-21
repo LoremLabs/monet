@@ -1,5 +1,5 @@
 <script context="module">
-	import { HighlightSvelte as Highlight } from 'svelte-highlight';
+	import Highlight from 'svelte-highlight/src/HighlightSvelte.svelte';
 	const props = (options, values) => {
 		let attrs = [];
 		for (let idx = 0; idx < values.length; idx++) {

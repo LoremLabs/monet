@@ -12,7 +12,7 @@ const OUTPUT_DIR = "dist/components";
 const path = require("path");
 const { defineConfig, build } = require("vite");
 const { svelte } = require("@sveltejs/vite-plugin-svelte");
-const { isProdEnv, getInputs, pascalToKebab } = require("./utils.js");
+const { isProdEnv, watch, getInputs, pascalToKebab } = require("./utils.js");
 
 /**
  * @param {string} componentName
@@ -25,6 +25,8 @@ function getRollupConfig(componentName) {
 		clearScreen: false,
 		mode: isProdEnv ? "production" : "development",
 		build: {
+			watch: watch ? {} : null,
+			emptyOutDir: !watch,
 			sourcemap: true,
 			...(!isProdEnv ? { minify: false } : {}),
 			lib: {

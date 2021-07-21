@@ -1,7 +1,12 @@
 {
   "private": true,
-  "workspaces": [
-    "elements",
-    "website"
-  ]
+  "workspaces": {
+    "packages": [
+      "elements",
+      "website"
+    ],
+    "nohoist": [
+      "**/@loremlabs/monet"
+    ]
+  }
 }

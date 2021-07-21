@@ -84,7 +84,7 @@
 								'flex-col md:flex-row md:gap-3 p-3 sm:p-5 w-min sm:w-auto',
 						}[variant]}"
 					>
-						<WebMonetizationLogo height="h-6" />
+						<WebMonetizationLogo />
 						<span class="max-w-xs text-sm self-stretch">{ctaText}</span>
 					</a>
 				</div>

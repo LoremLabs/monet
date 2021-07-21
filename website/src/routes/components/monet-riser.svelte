@@ -1,5 +1,5 @@
 <script context="module">
-	import { defaults } from '@loremlabs/monet/components/monet-riser/app.mjs';
+	import { defaults } from '@loremlabs/monet/dist/components/monet-riser/app.mjs';
 	const heading1Options = { name: 'heading1', default: defaults.heading1 };
 	const heading2Options = { name: 'heading2', default: defaults.heading2 };
 	const textOptions = { name: 'text', default: defaults.text };

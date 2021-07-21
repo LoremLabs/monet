@@ -1,5 +1,5 @@
 <script context="module">
-	import { HighlightSvelte as Highlight } from 'svelte-highlight';
+	import Highlight from 'svelte-highlight/src/HighlightSvelte.svelte';
 
 	const SOURCE_PREFIX = {
 		jsDelivr: 'https://cdn.jsdelivr.net/npm/@loremlabs/monet/',

@@ -1,5 +1,5 @@
 <script context="module">
-	import { defaults } from '@loremlabs/monet/components/monet-inline/app.mjs';
+	import { defaults } from '@loremlabs/monet/dist/components/monet-inline/app.mjs';
 	const markupComment = 'Add following within `<body></body>` where you want the prompt to appear';
 
 	const themeOptions = {

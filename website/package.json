@@ -1,10 +1,11 @@
 {
-  "name": "@loremlabs/website",
+	"name": "@loremlabs/website",
 	"private": true,
 	"version": "0.0.1",
+	"type": "module",
 	"scripts": {
-		"prepare": "npx cp -a --parents node_modules/@loremlabs/monet static/",
 		"dev": "svelte-kit dev",
+		"prebuild": "copyfiles 'node_modules/@loremlabs/monet/dist/components/**/*.{mjs,js,css}' static",
 		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
@@ -26,6 +27,7 @@
 		"@tailwindcss/forms": "^0.3.3",
 		"autoprefixer": "^10.3.1",
 		"babel-loader": "^8.2.2",
+		"copyfiles": "^2.4.1",
 		"cssnano": "^5.0.6",
 		"eslint": "^7.30.0",
 		"eslint-config-prettier": "^8.3.0",
@@ -42,6 +44,5 @@
 		"svelte-preprocess": "^4.7.4",
 		"tailwindcss": "^2.2.4"
 	},
-	"type": "module",
 	"dependencies": {}
 }

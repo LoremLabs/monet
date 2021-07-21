@@ -1,5 +1,5 @@
 <script context="module">
-	import MonetRiser, { defaults } from '@loremlabs/monet/components/monet-riser/app.mjs';
+	import MonetRiser, { defaults } from '@loremlabs/monet/dist/components/monet-riser/app.mjs';
 	export { defaults };
 </script>
 
@@ -26,5 +26,5 @@
 
 <div bind:this={target} />
 
-<style src="../../node_modules/@loremlabs/monet/components/monet-riser/app.css" global>
+<style src="../../node_modules/@loremlabs/monet/dist/components/monet-riser/app.css" global>
 </style>

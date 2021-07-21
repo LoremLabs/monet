@@ -1,5 +1,5 @@
 <script context="module">
-	import { defaults } from '@loremlabs/monet/components/monet-modal/app.mjs';
+	import { defaults } from '@loremlabs/monet/dist/components/monet-modal/app.mjs';
 	const themeOptions = {
 		name: 'theme',
 		default: defaults.theme,

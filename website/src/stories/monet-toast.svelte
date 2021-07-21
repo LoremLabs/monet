@@ -1,5 +1,5 @@
 <script context="module">
-	import MonetToast, { defaults } from '@loremlabs/monet/components/monet-toast/app.mjs';
+	import MonetToast, { defaults } from '@loremlabs/monet/dist/components/monet-toast/app.mjs';
 	export { defaults};
 </script>
 
@@ -21,5 +21,5 @@
 
 <div bind:this={target} />
 
-<style src="../../node_modules/@loremlabs/monet/components/monet-toast/app.css" global>
+<style src="../../node_modules/@loremlabs/monet/dist/components/monet-toast/app.css" global>
 </style>
