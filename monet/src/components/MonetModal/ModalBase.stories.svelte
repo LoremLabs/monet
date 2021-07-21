@@ -18,27 +18,25 @@
 	argTypes={{
 		theme: {
 			defaultValue: defaults.theme,
-			control: {
-				type: "inline-radio",
-				options: ["light", "dark", "accent"],
-			},
+			control: { type: "inline-radio", options: defaults.themes },
 		},
 		variant: {
 			defaultValue: defaults.variant,
-			control: {
-				type: "inline-radio",
-				options: ["center", "bottom"],
-			},
+			control: { type: "inline-radio", options: defaults.variants },
 		},
-		subtitle: { defaultValue: defaults.subtitle, ...text },
-		heading: { defaultValue: defaults.heading, ...text },
-		href: { defaultValue: defaults.href, ...text },
-		ctaText: { defaultValue: defaults.ctaText, ...text },
-		text: { defaultValue: defaults.text, ...text },
+		subtitle: { ...text },
+		heading: { ...text },
+		href: { ...text },
+		ctaText: { ...text },
+		text: { ...text },
+		type: {
+			defaultValue: defaults.type,
+			control: { type: "inline-radio", options: defaults.types },
+		},
 	}}
 />
 
-<Template let:args>
+<Template let:args id="Base">
 	<div class="p-8 outline-black box-border m-4">
 		<ModalBase {...args} />
 	</div>
@@ -60,22 +58,47 @@
 	</div>
 </Template>
 
-<Story name="Base" args={{}} />
+<Story name="Base" template="Base" args={{ ...defaults.getProps("webmon") }} />
 
 <Story
-	name="Center"
 	template="Center"
-	args={{
-		variant: "center",
-		ctaText: "Purchase",
-	}}
+	name="Type/Ad"
+	args={{ type: "ad", ...defaults.getProps("ad") }}
+/>
+<Story
+	template="Center"
+	name="Type/Subscription"
+	args={{ type: "sub", ...defaults.getProps("sub") }}
+/>
+<Story
+	template="Center"
+	name="Type/WebMonetization"
+	args={{ type: "webmon", ...defaults.getProps("webmon") }}
 />
 
 <Story
-	name="Bottom"
+	template="Center"
+	name="Theme/Light"
+	args={{ type: "webmon", theme: "light", ...defaults.getProps("webmon") }}
+/>
+<Story
+	template="Center"
+	name="Theme/Dark"
+	args={{ type: "webmon", theme: "dark", ...defaults.getProps("webmon") }}
+/>
+<Story
+	template="Center"
+	name="Theme/Accent"
+	args={{ type: "webmon", theme: "accent", ...defaults.getProps("webmon") }}
+/>
+
+<Story
+	name="Variant/Center"
+	template="Center"
+	args={{ variant: "center", ...defaults.getProps("webmon") }}
+/>
+<Story
+	name="Variant/Bottom"
 	template="Bottom"
-	args={{
-		variant: "bottom",
-		ctaText: "Purchase from Provider",
-	}}
+	args={{ variant: "bottom", ...defaults.getProps("webmon") }}
 />

@@ -15,11 +15,12 @@
 			defaultValue: defaults.theme,
 			control: { type: 'inline-radio', options: ['light', 'dark', 'accent'] },
 		},
-		subtitle: { defaultValue: defaults.subtitle, control: { type: 'text' } },
-		heading: { defaultValue: defaults.heading, control: { type: 'text' } },
-		href: { defaultValue: defaults.href, control: { type: 'text' } },
-		ctaText: { defaultValue: defaults.ctaText, control: { type: 'text' } },
-		text: { defaultValue: defaults.text, control: { type: 'text' } },
+		subtitle: { control: { type: 'text' } },
+		heading: { control: { type: 'text' } },
+		href: { control: { type: 'text' } },
+		ctaText: { control: { type: 'text' } },
+		text: { control: { type: 'text' } },
+		type: { control: { type: 'inline-radio', options: defaults.types } },
 	}}
 />
 
@@ -27,4 +28,6 @@
 	<MonetModal {...args} />
 </Template>
 
-<Story name="Base" args={{}} />
+<Story name="Ad" args={{ type: 'ad', ...defaults.getProps('ad') }} />
+<Story name="Subscription" args={{ type: 'sub', ...defaults.getProps('sub') }} />
+<Story name="WebMonetization" args={{ type: 'webmon', ...defaults.getProps('webmon') }} />

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import WebMonetizationLogo from "../../atoms/WebMonetizationLogo.svelte";
-	import type { Theme, Variant } from "./defaults";
+	import type { Type, Theme, Variant } from "./defaults";
 
+	export let type: Type;
 	export let variant: Variant;
 	export let theme: Theme;
 	export let subtitle: string;
@@ -84,7 +85,13 @@
 								'flex-col md:flex-row md:gap-3 p-3 sm:p-5 w-min sm:w-auto',
 						}[variant]}"
 					>
-						<span class="h-6"><WebMonetizationLogo /></span>
+						<span
+							class="h-6 {{
+								ad: 'text-red-500',
+								sub: 'text-blue-500',
+								webmon: 'text-white',
+							}[type]}"><WebMonetizationLogo /></span
+						>
 						<span class="max-w-xs text-sm self-stretch">{ctaText}</span>
 					</a>
 				</div>

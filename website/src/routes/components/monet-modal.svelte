@@ -1,5 +1,7 @@
 <script context="module">
 	import { defaults } from '@loremlabs/monet/dist/components/monet-modal/app.mjs';
+	const type = defaults.type;
+
 	const themeOptions = {
 		name: 'theme',
 		default: defaults.theme,
@@ -23,11 +25,11 @@
 	};
 	const headingOptions = {
 		name: 'heading',
-		default: defaults.heading,
+		default: defaults.heading(type),
 	};
 	const textOptions = {
 		name: 'text',
-		default: defaults.text,
+		default: defaults.text(type),
 	};
 	const linkOptions = {
 		name: 'href',
