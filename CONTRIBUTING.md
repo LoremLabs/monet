@@ -1,0 +1,57 @@
+This project makes use of Yarn workspaces, so `yarn` (v1) is required in your system path.
+
+## Getting started
+
+After cloning the repo, run `yarn install`.
+
+To start developing components and website together, run `yarn start` and open `http://localhost:3000` in your browser.
+
+### Developing components
+
+```bash
+yarn workspace @loremlabs/monet run storybook
+
+# or
+cd elements
+yarn storybook
+```
+
+### Developing the website
+
+```bash
+cd website
+yarn dev
+```
+
+## Production Build
+
+```bash
+yarn build
+
+# or, build components separately
+yarn build-elements #  built elements are in ./elements/dist
+yarn build-website # built website is in ./website/build
+yarn build-storybooks # built storybooks are in ./elements/dist/storybook and ./website/build/storybook respetively
+```
+
+### Releasing
+
+Only `@loremlabs/monet` is meant be publishing to npm.
+
+1. ```bash
+   cd elements
+   ```
+2. Bump package version and create a release commit + git tag by running:
+   ```bash
+   yarn version [--major | --minor | --patch]
+   # Example: If current package version is 1.0.5, running `npm version --minor` will:
+   #  - set the package version to 1.1.0 (in both package.json and package-lock.json)
+   #  - create a git commit with message 1.1.0
+   #  - create a git tag with name `v1.1.0`
+   ```
+3. Then `git push` your commit+tag.
+   ```bash
+   git push && git push --tags
+   ```
+4. Publish a new release at https://github.com/LoremLabs/monet/releases/new using the tag from first step. Also add a changelog/release summary (you can edit the it later).
+5. A GitHub Action will then **automatically** run `scripts/release.sh` to publish the package to npm with correct directories and file names (don't simply run `npm publish` locally! Run `./scripts/release.sh` if you wish to publish from your computer).

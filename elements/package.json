@@ -5,7 +5,8 @@
   "browser": true,
   "files": [
     "dist/**",
-    "!dist/.elements/**"
+    "!dist/.elements/**",
+    "!dist/storybook/**"
   ],
   "scripts": {
     "start": "npm run storybook",
@@ -16,13 +17,11 @@
     "build:components": "TAILWIND_MODE=build node scripts/build-components.js",
     "build:elements-base": "TAILWIND_MODE=build node scripts/build-elements-base.js",
     "build:elements": "rollup -c scripts/elements.rollup.config.js",
-    "build:clean": "npx rimraf 'dist/{components,.elements,elements,storybook}'",
+    "build:clean": "rimraf dist",
     "storybook": "start-storybook -c .config/storybook/ -p 6006",
     "build-storybook": "build-storybook -c .config/storybook/ -o dist/storybook",
     "prettier:check": "prettier -c .",
-    "prettier": "prettier -w .",
-    "prerelease": "npx rimraf dist/publish",
-    "release": "./scripts/release.sh"
+    "prettier": "prettier -w ."
   },
   "repository": "github:LoremLabs/monet-elements",
   "license": "MPL-2.0",
@@ -49,6 +48,7 @@
     "postcss-loader": "^6.1.1",
     "prettier": "^2.3.2",
     "prettier-plugin-svelte": "^2.3.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.53.1",
     "rollup-plugin-import-css": "^3.0.0",
     "rollup-plugin-sizes": "^1.0.4",
