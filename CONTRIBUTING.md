@@ -44,7 +44,7 @@ Only `@loremlabs/monet` is meant be publishing to npm.
 2. Bump package version and create a release commit + git tag by running:
    ```bash
    yarn version [--major | --minor | --patch]
-   # Example: If current package version is 1.0.5, running `npm version --minor` will:
+   # Example: If current package version is 1.0.5, running `yarn version --minor` will:
    #  - set the package version to 1.1.0 (in both package.json and package-lock.json)
    #  - create a git commit with message 1.1.0
    #  - create a git tag with name `v1.1.0`

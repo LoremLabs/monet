@@ -9,11 +9,11 @@
     "!dist/storybook/**"
   ],
   "scripts": {
-    "start": "npm run storybook",
-    "build": "NODE_ENV=production npm run build:all",
-    "build:debug": "NODE_ENV=development npm run build:all",
+    "start": "yarn storybook",
+    "build": "NODE_ENV=production yarn build:all",
+    "build:debug": "NODE_ENV=development yarn build:all",
     "serve": "npx serve -n dist",
-    "build:all": "npm run build:components && npm run build:elements-base && npm run build:elements",
+    "build:all": "yarn build:components && yarn build:elements-base && yarn build:elements",
     "build:components": "TAILWIND_MODE=build node scripts/build-components.js",
     "build:elements-base": "TAILWIND_MODE=build node scripts/build-elements-base.js",
     "build:elements": "rollup -c scripts/elements.rollup.config.js",
