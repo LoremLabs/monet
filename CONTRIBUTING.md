@@ -12,7 +12,7 @@ To start developing components and website together, run `yarn start` and open `
 yarn workspace @loremlabs/monet run storybook
 
 # or
-cd elements
+cd monet
 yarn storybook
 ```
 
@@ -29,9 +29,9 @@ yarn dev
 yarn build
 
 # or, build components separately
-yarn build-elements #  built elements are in ./elements/dist
+yarn build-monet #  built monet are in ./monet/dist
 yarn build-website # built website is in ./website/build
-yarn build-storybooks # built storybooks are in ./elements/dist/storybook and ./website/build/storybook respetively
+yarn build-storybooks # built storybooks are in ./monet/dist/storybook and ./website/build/storybook respetively
 ```
 
 ### Releasing
@@ -39,7 +39,7 @@ yarn build-storybooks # built storybooks are in ./elements/dist/storybook and ./
 Only `@loremlabs/monet` is meant be publishing to npm.
 
 1. ```bash
-   cd elements
+   cd monet
    ```
 2. Bump package version and create a release commit + git tag by running:
    ```bash

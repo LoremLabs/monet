@@ -15,8 +15,8 @@ jobs:
           cache: "npm"
           registry-url: "https://registry.npmjs.org"
       - run: yarn install
-      - run: yarn build-elements
+      - run: yarn build-monet
       - name: npm publish
-        run: cd elements && npm publish
+        run: cd monet && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}

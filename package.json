@@ -2,7 +2,7 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "elements",
+      "monet",
       "website"
     ],
     "nohoist": [
@@ -15,10 +15,10 @@
     "start-website": "yarn workspace @loremlabs/website dev",
     "prebuild": "yarn workspaces run build:clean",
     "build": "concurrently -k -m1 'yarn:build-*'",
-    "build-elements": "yarn workspace @loremlabs/monet run build",
+    "build-monet": "yarn workspace @loremlabs/monet run build",
     "build-website": "yarn workspace @loremlabs/website run build",
     "build-storybooks": "yarn workspaces run build-storybook --quiet",
-    "vercel-copyfiles": "copyfiles -u2 'website/build/**/*' dist && copyfiles -u1 'elements/{demo,dist}/**/*' dist/monet"
+    "vercel-copyfiles": "copyfiles -u2 'website/build/**/*' dist && copyfiles -u1 'monet/{demo,dist}/**/*' dist/monet"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",
