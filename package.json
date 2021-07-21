@@ -18,6 +18,8 @@
     "build-monet": "yarn workspace @loremlabs/monet run build",
     "build-website": "yarn workspace @loremlabs/website run build",
     "build-storybooks": "yarn workspaces run build-storybook --quiet",
+    "lint": "yarn workspaces run lint",
+    "lint:fix": "yarn workspaces run lint:fix",
     "vercel-copyfiles": "copyfiles -u2 'website/build/**/*' dist && copyfiles -u1 'monet/{demo,dist}/**/*' dist/monet"
   },
   "devDependencies": {

@@ -3,5 +3,5 @@ static/**
 !static/demo/
 !static/demo/*
 build/**
-node_modules/**
-package-lock.json
+node_modules
+yarn.lock

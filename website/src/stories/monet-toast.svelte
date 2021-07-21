@@ -1,6 +1,6 @@
 <script context="module">
 	import MonetToast, { defaults } from '@loremlabs/monet/dist/components/monet-toast/app.mjs';
-	export { defaults};
+	export { defaults };
 </script>
 
 <script>

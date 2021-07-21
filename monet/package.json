@@ -20,8 +20,8 @@
     "build:clean": "rimraf dist",
     "storybook": "start-storybook -c .config/storybook/ -p 6006",
     "build-storybook": "build-storybook -c .config/storybook/ -o dist/storybook",
-    "prettier:check": "prettier -c .",
-    "prettier": "prettier -w ."
+    "lint": "prettier -c .",
+    "lint:fix": "prettier -w ."
   },
   "repository": "github:LoremLabs/monet",
   "license": "MPL-2.0",
@@ -62,21 +62,5 @@
     "tslib": "^2.3.0",
     "typescript": "^4.3.5",
     "vite": "^2.4.2"
-  },
-  "prettier": {
-    "singleQuote": false,
-    "trailingComma": "all",
-    "useTabs": true,
-    "overrides": [
-      {
-        "files": [
-          "package.json",
-          "package-lock.json"
-        ],
-        "options": {
-          "useTabs": false
-        }
-      }
-    ]
   }
 }
