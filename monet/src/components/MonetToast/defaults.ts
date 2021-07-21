@@ -9,3 +9,9 @@ export const text = (type: Type) => {
 		webmon: "This site is web-monetized.",
 	}[type];
 };
+
+export const getProps = (type: Type) => {
+	return {
+		text: text(type),
+	};
+};

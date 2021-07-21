@@ -6,8 +6,9 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 
-	export let text = defaults.text;
-	$: props = { text };
+	export let type = defaults.type;
+	export let text = defaults.text(type);
+	$: props = { type, text };
 
 	let target;
 	let toast;
