@@ -8,5 +8,21 @@
     "nohoist": [
       "**/@loremlabs/monet"
     ]
-  }
+  },
+  "scripts": {
+    "start": "concurrently -k 'yarn:start-*'",
+    "start-components": "BUILD_WATCH=1 yarn workspace @loremlabs/monet run build:components",
+    "start-website": "yarn workspace @loremlabs/website dev",
+    "prebuild": "yarn workspaces run build:clean",
+    "build": "concurrently -k -m1 'yarn:build-*'",
+    "build-elements": "yarn workspace @loremlabs/monet run build",
+    "build-website": "yarn workspace @loremlabs/website run build",
+    "build-storybooks": "yarn workspaces run build-storybook --quiet",
+    "vercel-copyfiles": "copyfiles -u2 'website/build/**/*' dist && copyfiles -u1 'elements/{demo,dist}/**/*' dist/monet"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "copyfiles": "^2.4.1"
+  },
+  "version": "0.0.0"
 }
