@@ -6,14 +6,15 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 
+	export let type = defaults.type;
 	export let theme = defaults.theme;
 	export let heading1 = defaults.heading1;
-	export let heading2 = defaults.heading2;
+	export let heading2 = defaults.heading2(type);
 	export let subtitle = defaults.subtitle;
-	export let body = defaults.body;
-	export let ctaText = defaults.ctaText;
+	export let body = defaults.body(type);
+	export let ctaText = defaults.ctaText(type);
 	export let href = defaults.href;
-	$: props = { theme, heading1, heading2, subtitle, body, ctaText, href };
+	$: props = { type, theme, heading1, heading2, subtitle, body, ctaText, href };
 
 	let target;
 	let inline;

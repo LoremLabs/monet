@@ -11,12 +11,13 @@
 			defaultValue: defaults.theme,
 			control: { type: 'inline-radio', options: ['light', 'dark', 'dim'] },
 		},
-		heading1: { defaultValue: defaults.heading1, control: { type: 'text' } },
-		heading2: { defaultValue: defaults.heading2, control: { type: 'text' } },
-		subtitle: { defaultValue: defaults.subtitle, control: { type: 'text' } },
-		body: { defaultValue: defaults.body, control: { type: 'text' } },
-		ctaText: { defaultValue: defaults.ctaText, control: { type: 'text' } },
-		href: { defaultValue: defaults.href, control: { type: 'text' } },
+		heading1: { control: { type: 'text' } },
+		heading2: { control: { type: 'text' } },
+		subtitle: { control: { type: 'text' } },
+		body: { control: { type: 'text' } },
+		ctaText: { control: { type: 'text' } },
+		href: { control: { type: 'text' } },
+		type: { control: { type: 'inline-radio', options: defaults.types } },
 	}}
 />
 
@@ -36,4 +37,6 @@
 	</div>
 </Template>
 
-<Story name="Base" args={{}} />
+<Story name="Ad" args={{ type: 'ad', ...defaults.getProps('ad') }} />
+<Story name="Subscription" args={{ type: 'sub', ...defaults.getProps('sub') }} />
+<Story name="WebMonetization" args={{ type: 'webmon', ...defaults.getProps('webmon') }} />

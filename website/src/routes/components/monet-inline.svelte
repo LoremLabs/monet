@@ -1,5 +1,6 @@
 <script context="module">
 	import { defaults } from '@loremlabs/monet/dist/components/monet-inline/app.mjs';
+	const type = defaults.type;
 	const markupComment = 'Add following within `<body></body>` where you want the prompt to appear';
 
 	const themeOptions = {
@@ -12,10 +13,10 @@
 		],
 	};
 	const heading1Options = { name: 'heading1', default: defaults.heading1 };
-	const heading2Options = { name: 'heading2', default: defaults.heading2 };
+	const heading2Options = { name: 'heading2', default: defaults.heading2(type) };
 	const subtitleOptions = { name: 'subtitle', default: defaults.subtitle };
-	const bodyOptions = { name: 'body', default: defaults.body };
-	const ctaTextOptions = { name: 'cta', prop: 'ctaText', default: defaults.ctaText };
+	const bodyOptions = { name: 'body', default: defaults.body(type) };
+	const ctaTextOptions = { name: 'cta', prop: 'ctaText', default: defaults.ctaText(type) };
 	const linkOptions = { name: 'link', prop: 'href', default: defaults.href };
 
 	const name = 'monet-inline';
