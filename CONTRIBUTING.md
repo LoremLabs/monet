@@ -38,20 +38,7 @@ yarn build-storybooks # built storybooks are in ./monet/dist/storybook and ./web
 
 Only `@loremlabs/monet` is meant be publishing to npm.
 
-1. ```bash
-   cd monet
-   ```
-2. Bump package version and create a release commit + git tag by running:
-   ```bash
-   yarn version [--major | --minor | --patch]
-   # Example: If current package version is 1.0.5, running `yarn version --minor` will:
-   #  - set the package version to 1.1.0 (in both package.json and package-lock.json)
-   #  - create a git commit with message 1.1.0
-   #  - create a git tag with name `v1.1.0`
-   ```
-3. Then `git push` your commit+tag.
-   ```bash
-   git push && git push --tags
-   ```
-4. Publish a new release at https://github.com/LoremLabs/monet/releases/new using the tag from first step. Also add a changelog/release summary (you can edit the it later).
-5. A GitHub Action will then **automatically** run `scripts/release.sh` to publish the package to npm with correct directories and file names (don't simply run `npm publish` locally! Run `./scripts/release.sh` if you wish to publish from your computer).
+1. Bump package version for `@loremlabs/monet` and use same in the dependent `@loremlabs/website`.
+1. Create a release commit (say, with message `x.y.z`) and `git push`.
+1. Create a new release at https://github.com/LoremLabs/monet/releases/new and publish it. Also add a changelog/release summary (you can edit the it later).
+1. A GitHub Action will then **automatically** run `scripts/release.sh` to publish the package to npm with correct directories and file names (don't simply run `npm publish` locally! Run `./scripts/release.sh` if you wish to publish from your computer).
