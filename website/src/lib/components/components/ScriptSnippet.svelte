@@ -2,8 +2,8 @@
 	import Highlight from 'svelte-highlight/src/HighlightSvelte.svelte';
 
 	const SOURCE_PREFIX = {
-		jsDelivr: 'https://cdn.jsdelivr.net/npm/@loremlabs/monet/',
-		unpkg: 'https://unpkg.com/@loremlabs/monet/',
+		jsDelivr: 'https://cdn.jsdelivr.net/npm/@loremlabs/monet/dist/',
+		unpkg: 'https://unpkg.com/@loremlabs/monet/dist/',
 	};
 </script>
 
