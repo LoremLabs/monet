@@ -6,13 +6,14 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 
+	export let type = defaults.type;
 	export let href = defaults.href;
-	export let ctaText = defaults.ctaText;
-	export let ctaTextMobile = defaults.ctaTextMobile;
+	export let ctaText = defaults.ctaText(type);
+	export let ctaTextMobile = defaults.ctaTextMobile(type);
 	export let heading1 = defaults.heading1;
-	export let heading2 = defaults.heading2;
-	export let text = defaults.text;
-	$: props = { href, ctaText, ctaTextMobile, heading1, heading2, text };
+	export let heading2 = defaults.heading2(type);
+	export let text = defaults.text(type);
+	$: props = { type, href, ctaText, ctaTextMobile, heading1, heading2, text };
 
 	let target;
 	let riser;

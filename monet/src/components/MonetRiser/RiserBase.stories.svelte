@@ -10,12 +10,16 @@
 	title="Components/MonetRiser"
 	component={RiserBase}
 	argTypes={{
-		href: { defaultValue: defaults.href, ...text },
-		ctaText: { defaultValue: defaults.ctaText, ...text },
-		ctaTextMobile: { defaultValue: defaults.ctaTextMobile, ...text },
-		heading1: { defaultValue: defaults.heading1, ...text },
-		heading2: { defaultValue: defaults.heading2, ...text },
-		text: { defaultValue: defaults.text, ...text },
+		href: { control: { type: "text" } },
+		ctaText: { control: { type: "text" } },
+		ctaTextMobile: { control: { type: "text" } },
+		heading1: { control: { type: "text" } },
+		heading2: { control: { type: "text" } },
+		text: { control: { type: "text" } },
+		type: {
+			defaultValue: defaults.type,
+			control: { type: "inline-radio", options: defaults.types },
+		},
 	}}
 />
 
@@ -23,9 +27,12 @@
 	<RiserBase {...args} />
 </Template>
 
+<Story name="Type/Ad" args={{ type: "ad", ...defaults.getProps("ad") }} />
 <Story
-	name="Primary"
-	args={{
-		ctaTextMobile: "Purchase",
-	}}
+	name="Type/Subscription"
+	args={{ type: "sub", ...defaults.getProps("sub") }}
+/>
+<Story
+	name="Type/WebMonetization"
+	args={{ type: "webmon", ...defaults.getProps("webmon") }}
 />

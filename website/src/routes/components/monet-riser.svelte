@@ -1,10 +1,12 @@
 <script context="module">
 	import { defaults } from '@loremlabs/monet/dist/components/monet-riser/app.mjs';
+	const type = defaults.type;
+
 	const heading1Options = { name: 'heading1', default: defaults.heading1 };
-	const heading2Options = { name: 'heading2', default: defaults.heading2 };
-	const textOptions = { name: 'text', default: defaults.text };
-	const ctaTextOptions = { name: 'ctaText', default: defaults.ctaText };
-	const ctaTextMobileOptions = { name: 'ctaTextMobile', default: defaults.ctaTextMobile };
+	const heading2Options = { name: 'heading2', default: defaults.heading2(type) };
+	const textOptions = { name: 'text', default: defaults.text(type) };
+	const ctaTextOptions = { name: 'ctaText', default: defaults.ctaText(type) };
+	const ctaTextMobileOptions = { name: 'ctaTextMobile', default: defaults.ctaTextMobile(type) };
 	const hrefOptions = { name: 'href', default: defaults.href };
 
 	const name = 'monet-riser';

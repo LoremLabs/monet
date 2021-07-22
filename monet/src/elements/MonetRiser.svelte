@@ -1,16 +1,25 @@
 <script lang="ts">
+	import type { Type } from "../components/MonetRiser/defaults";
 	import MonetRiser from "../components/MonetRiser/MonetRiser.svelte";
-	import * as defaults from "../components/MonetRiser/defaults";
 	import HiddenOnScroll from "../utils/HiddenOnScroll.svelte";
 
-	export let href = defaults.href;
-	export let ctaText = defaults.ctaText;
-	export let ctaTextMobile = defaults.ctaTextMobile;
-	export let heading1 = defaults.heading1;
-	export let heading2 = defaults.heading2;
-	export let text = defaults.text;
+	export let type: Type;
+	export let href: string;
+	export let ctaText: string;
+	export let ctaTextMobile: string;
+	export let heading1: string;
+	export let heading2: string;
+	export let text: string;
 </script>
 
 <HiddenOnScroll>
-	<MonetRiser {href} {ctaText} {ctaTextMobile} {heading1} {heading2} {text} />
+	<MonetRiser
+		{type}
+		{href}
+		{ctaText}
+		{ctaTextMobile}
+		{heading1}
+		{heading2}
+		{text}
+	/>
 </HiddenOnScroll>
