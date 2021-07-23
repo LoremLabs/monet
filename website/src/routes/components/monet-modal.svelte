@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import Page from '$lib/components/components/Page.svelte';
 	import RadioGroup from '$lib/components/components/RadioGroup.svelte';
 	import Text from '$lib/components/components/Text.svelte';
@@ -58,6 +59,7 @@
 	];
 
 	$: type = typeof window !== 'undefined' ? $userPref : 'webmon';
+	onMount(() => userPref.subscribe((t) => (type = t)));
 	let theme = themeOptions.default;
 	let variant = variantOptions.default;
 	let subtitle = subtitleOptions.default;
