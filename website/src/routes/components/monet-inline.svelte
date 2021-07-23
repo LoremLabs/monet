@@ -4,6 +4,7 @@
 	import Text from '$lib/components/components/Text.svelte';
 	import userPref from '$lib/components/components/monetization-type';
 	import { defaults as _defaults } from '@loremlabs/monet/dist/components/monet-inline/app.mjs';
+	import { onMount } from 'svelte';
 	/** @type {import("@loremlabs/monet/src/components/MonetInline/defaults")} */
 	const defaults = _defaults;
 
@@ -37,6 +38,7 @@
 	];
 
 	$: type = typeof window !== 'undefined' ? $userPref : 'webmon';
+	onMount(() => userPref.subscribe((t) => (type = t)));
 	let theme = themeOptions.default;
 	let heading1 = heading1Options.default;
 	let subtitle = subtitleOptions.default;

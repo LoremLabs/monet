@@ -43,6 +43,7 @@ const store = readable(defaultValue, (set) => {
 		}
 	};
 
+	listener();
 	monet.userPreferences.addEventListener('change', listener);
 	return () => monet.userPreferences.removeEventListener('change', listener);
 });

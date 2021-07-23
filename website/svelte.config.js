@@ -9,7 +9,6 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: 'body',
 		vite: {
-			logLevel: 'info',
 			assetsInclude: [
 				'node_modules/@loremlabs/monetization-capability-api/',
 				'node_modules/@loremlabs/monet/',
