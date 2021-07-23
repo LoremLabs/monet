@@ -1,6 +1,11 @@
-<script context="module">
-	import { defaults } from '@loremlabs/monet/dist/components/monet-modal/app.mjs';
-	const type = defaults.type;
+<script>
+	import Page from '$lib/components/components/Page.svelte';
+	import RadioGroup from '$lib/components/components/RadioGroup.svelte';
+	import Text from '$lib/components/components/Text.svelte';
+	import userPref from '$lib/components/components/monetization-type';
+	import { defaults as _defaults } from '@loremlabs/monet/dist/components/monet-modal/app.mjs';
+	/** @type {import("@loremlabs/monet/src/components/MonetModal/defaults")} */
+	const defaults = _defaults;
 
 	const themeOptions = {
 		name: 'theme',
@@ -25,11 +30,11 @@
 	};
 	const headingOptions = {
 		name: 'heading',
-		default: defaults.heading(type),
+		default: defaults.heading,
 	};
 	const textOptions = {
 		name: 'text',
-		default: defaults.text(type),
+		default: defaults.text,
 	};
 	const linkOptions = {
 		name: 'href',
@@ -51,24 +56,19 @@
 		linkOptions,
 		ctaOptions,
 	];
-</script>
 
-<script>
-	import Page from '$lib/components/components/Page.svelte';
-	import RadioGroup from '$lib/components/components/RadioGroup.svelte';
-	import Text from '$lib/components/components/Text.svelte';
-
+	$: type = typeof window !== 'undefined' ? $userPref : 'webmon';
 	let theme = themeOptions.default;
 	let variant = variantOptions.default;
 	let subtitle = subtitleOptions.default;
-	let heading = headingOptions.default;
-	let text = textOptions.default;
 	let link = linkOptions.default;
 	let cta = ctaOptions.default;
+	$: text = textOptions.default(type);
+	$: heading = headingOptions.default(type);
 	$: values = [theme, variant, subtitle, heading, text, link, cta];
 </script>
 
-<Page {name} {options} {values}>
+<Page {type} {name} {options} {values}>
 	<RadioGroup bind:selected={theme} legend="Theme" name="theme" options={themeOptions.options} />
 	<RadioGroup
 		bind:selected={variant}

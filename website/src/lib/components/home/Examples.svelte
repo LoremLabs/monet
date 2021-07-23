@@ -15,7 +15,7 @@
 	</svelte:fragment>
 </Example>
 
-<Example
+<!-- <Example
 	name="monet-riser"
 	title="Riser"
 	imageUrl="/img/riser.png"
@@ -40,4 +40,4 @@
 		To temporarily block access to a piece of content, this Modal prompt directs users to activate
 		Web Monetization before continuing.
 	</svelte:fragment>
-</Example>
+</Example> -->

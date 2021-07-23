@@ -14,7 +14,7 @@
 <div class="font-sans">
 	<div class="bg-wm-green w-95 h-6 rounded-t-3xl" />
 	<div
-		class="grid grid-cols-2 gap-2 justify-between p-4 shadow-xl-all rounded-3xl rounded-tl-none"
+		class="bg-white grid grid-cols-2 gap-2 justify-between p-4 shadow-xl-all rounded-3xl rounded-tl-none"
 	>
 		<div class="pr-4">
 			<h2
