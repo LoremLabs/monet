@@ -2,6 +2,8 @@ const isStorybook = (process.env.npm_lifecycle_script || "").includes(
 	"storybook",
 );
 
+const colors = require("tailwindcss/colors");
+
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig} */
 module.exports = {
 	corePlugins: {
@@ -13,11 +15,21 @@ module.exports = {
 		content: ["./src/**/*.{js,svelte,ts}"],
 		options: {
 			prefix: "svelte-",
+			safelist: [/\-webmon\-/] // TODO(mankins): this doesn't seem to work so span hacks...
 		},
 	},
 	theme: {
 		extend: {
 			colors: {
+				// if adding new monetization type, add identifier here
+				webmon: {
+					'100': colors.green['100'],
+					'400': colors.green['400'],
+					'500': '#2FA875',
+					'800': '#2FA875',
+				},
+				ad: colors.red,
+				sub: colors.gray,
 				"wm-green": "#2FA875",
 			},
 			width: {

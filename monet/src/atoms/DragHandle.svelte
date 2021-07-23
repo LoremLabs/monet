@@ -11,7 +11,7 @@
 	on:touchstart
 	on:keydown
 	class="h-full w-6 border-none bg-transparent p-1 text-gray-400 hover:text-gray-800 focus:outline-none {dragDisabled
-		? 'cursor-[grab]'
+		? 'cursor-move'
 		: 'cursor-[grabbing]'} {$$props.class}"
 >
 	<DragIcon />

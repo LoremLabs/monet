@@ -12,17 +12,17 @@
 </script>
 
 <div class="font-sans">
-	<div class="bg-wm-green w-95 h-6 rounded-t-3xl" />
+	<div class="bg-gray-900 w-95 h-6 rounded-t-3xl" />
 	<div
-		class="grid grid-cols-2 gap-2 justify-between p-4 shadow-xl-all rounded-3xl rounded-tl-none"
+		class="grid grid-cols-1 justify-between p-4 shadow-xl-all rounded-3xl rounded-tl-none"
 	>
-		<div class="pr-4">
+		<div class="pl-4 pr-4 sm:pl-8 sm:pr-8 pb-12">
 			<h2
-				class="mt-1 font-extrabold text-gray-900 text-3xl sm:text-4xl sm:tracking-tight lg:text-5xl"
+				class="mt-1 pt-4 pl-2 font-extrabold text-gray-900 text-2xl sm:tracking-tight lg:text-5xl"
 			>
 				{heading}
 			</h2>
+			<PrefPanelColumn bind:items={options} on:change />
 		</div>
-		<PrefPanelColumn bind:items={options} on:change />
 	</div>
 </div>
