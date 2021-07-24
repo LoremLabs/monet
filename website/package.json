@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"prebuild": "copyfiles 'node_modules/@loremlabs/monet/dist/components/**/*.{mjs,js,css}' static",
+		"prebuild": "copyfiles 'node_modules/@loremlabs/{monet/dist/{components,elements},monetization-capability-api/build/legacy}/**/*.{mjs,js,css}' static",
 		"build": "svelte-kit build",
 		"build:clean": "rimraf .svelte-kit build static/node_modules",
 		"preview": "svelte-kit preview",
@@ -18,6 +18,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.14.6",
 		"@loremlabs/monet": "0.0.4",
+		"@loremlabs/monetization-capability-api": "^0.0.1",
 		"@storybook/addon-actions": "^6.3.4",
 		"@storybook/addon-essentials": "^6.2.9",
 		"@storybook/addon-postcss": "^2.0.0",
