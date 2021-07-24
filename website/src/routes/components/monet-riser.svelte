@@ -1,12 +1,17 @@
-<script context="module">
-	import { defaults } from '@loremlabs/monet/dist/components/monet-riser/app.mjs';
-	const type = defaults.type;
+<script>
+	import { onMount } from 'svelte';
+	import Page from '$lib/components/components/Page.svelte';
+	import Text from '$lib/components/components/Text.svelte';
+	import userPref from '$lib/components/components/monetization-type';
+	import { defaults as _defaults } from '@loremlabs/monet/dist/components/monet-riser/app.mjs';
+	/** @type {import("@loremlabs/monet/src/components/MonetRiser/defaults")} */
+	const defaults = _defaults;
 
 	const heading1Options = { name: 'heading1', default: defaults.heading1 };
-	const heading2Options = { name: 'heading2', default: defaults.heading2(type) };
-	const textOptions = { name: 'text', default: defaults.text(type) };
-	const ctaTextOptions = { name: 'ctaText', default: defaults.ctaText(type) };
-	const ctaTextMobileOptions = { name: 'ctaTextMobile', default: defaults.ctaTextMobile(type) };
+	const heading2Options = { name: 'heading2', default: defaults.heading2 };
+	const textOptions = { name: 'text', default: defaults.text };
+	const ctaTextOptions = { name: 'ctaText', default: defaults.ctaText };
+	const ctaTextMobileOptions = { name: 'ctaTextMobile', default: defaults.ctaTextMobile };
 	const hrefOptions = { name: 'href', default: defaults.href };
 
 	const name = 'monet-riser';
@@ -18,22 +23,22 @@
 		ctaTextMobileOptions,
 		hrefOptions,
 	];
-</script>
 
-<script>
-	import Page from '$lib/components/components/Page.svelte';
-	import Text from '$lib/components/components/Text.svelte';
-
+	$: type = typeof window !== 'undefined' ? $userPref : 'webmon';
+	onMount(() => userPref.subscribe((t) => (type = t)));
 	let heading1 = heading1Options.default;
-	let heading2 = heading2Options.default;
-	let text = textOptions.default;
-	let ctaText = ctaTextOptions.default;
-	let ctaTextMobile = ctaTextMobileOptions.default;
 	let href = hrefOptions.default;
+	let heading2, text, ctaText, ctaTextMobile;
+	$: {
+		heading2 = heading2Options.default(type);
+		text = textOptions.default(type);
+		ctaText = ctaTextOptions.default(type);
+		ctaTextMobile = ctaTextMobileOptions.default(type);
+	}
 	$: values = [heading1, heading2, text, ctaText, ctaTextMobile, href];
 </script>
 
-<Page {name} {options} {values} demoStyle="min-height: 400px;">
+<Page {type} {name} {options} {values} demoStyle="min-height: 400px;">
 	<div class="flex gap-2">
 		<Text name={ctaTextOptions.name} label="CTA Text" bind:value={ctaText} />
 		<Text

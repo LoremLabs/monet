@@ -6,12 +6,14 @@
       "website"
     ],
     "nohoist": [
+      "**/@loremlabs/monetization-capability-api",
       "**/@loremlabs/monet"
     ]
   },
   "scripts": {
     "start": "concurrently -k 'yarn:start-*'",
     "start-components": "BUILD_WATCH=1 yarn workspace @loremlabs/monet run build:components",
+    "start-elements": "BUILD_WATCH=1 concurrently -k 'yarn workspace @loremlabs/monet run build:elements-base' 'yarn workspace @loremlabs/monet run build:elements -w'",
     "start-website": "yarn workspace @loremlabs/website dev",
     "prebuild": "yarn workspaces run build:clean",
     "build": "concurrently -k -m1 'yarn:build-*'",

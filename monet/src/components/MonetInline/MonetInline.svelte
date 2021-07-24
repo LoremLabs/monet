@@ -17,7 +17,7 @@
 </script>
 
 <div class="max-w-max">
-	<div class="bg-wm-green w-11/12 h-6 rounded-t-3xl" />
+	<div class={`bg-gray-50 bg-${type}-100 w-11/12 h-6 rounded-t-3xl`} />
 	<div
 		class="font-sans tracking-tight shadow-xl-all rounded-3xl rounded-tl-none p-8 md:p-14 xl:p-20 {theme ===
 		'dark'
@@ -52,11 +52,13 @@
 		</p>
 		<a
 			class="inline-block rounded-lg py-2 px-3 md:py-3 md:px-5 leading-tight text-sm sm:text-base no-underline text-center text-white {{
-				ad: 'bg-red-400',
-				sub: 'bg-blue-400',
-				webmon: 'bg-wm-green',
+				ad: 'bg-ad-400',
+				sub: 'bg-sub-400',
+				webmon: 'bg-green-500',
 			}[type]}"
 			{href}>{ctaText}</a
 		>
 	</div>
+	<span class="hidden bg-ad-100 bg-sub-100 bg-webmon-100" /> <!-- purge css dynamic class workaround add new types here. -->
 </div>
+

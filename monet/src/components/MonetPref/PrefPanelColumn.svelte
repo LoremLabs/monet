@@ -75,7 +75,7 @@
 >
 	{#each items as item (item.id)}
 		<div
-			class="focus:outline-none bg-white"
+			class="focus:outline-none bg-gray-50"
 			class:opacity-60={!dragDisabled && currentlyDraggedId !== item.id}
 			animate:flip={{ duration: flipDurationMs }}
 		>
