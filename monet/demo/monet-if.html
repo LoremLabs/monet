@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="monetization" content="$respec.org" />
+		<script
+			src="https://monetization-capabilities-api.vercel.app/build/legacy/index.js"
+			defer
+		></script>
+		<script src="../dist/monet-if.js" defer></script>
+		<script src="../dist/monet-inline.js" defer></script>
+
+		<script type="module">
+			import webmonetization from "https://monetization-capabilities-api.vercel.app/build/plugins/webmonetization.js";
+			const capabilities = window.monet.capabilities.acquire();
+			capabilities.use(webmonetization({ timeout: 2000 }));
+			capabilities.define("ads/*", () => ({ isSupported: true }));
+		</script>
+
+		<style>
+			output {
+				display: block;
+				white-space: pre-wrap;
+				font-family: monospace;
+				border: 1px solid;
+				padding: 1em;
+				margin-bottom: 1em;
+			}
+			form {
+				margin-bottom: 1em;
+			}
+
+			h1::before {
+				content: "✨";
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				Click the buttons and wait a few seconds for detection to take occur..
+				<output></output>
+				<button>deny webmonetization/*</button>
+				<button>deny ads/*</button>
+				<button>Disable webmonetization (remove meta)</button>
+			</fieldset>
+		</form>
+
+		<!-- Actual usage starts -->
+		<monet-if supports="webmonetization/* ads/*" interval="3000">
+			<h1>Premium content</h1>
+			<monet-inline slot="else" type="webmon"></monet-inline>
+		</monet-if>
+		<!-- Actual usage ends -->
+
+		<script type="module">
+			const $ = (sel) => document.querySelector(sel);
+			const trimLines = (str) => {
+				const lines = str.split("\n");
+				return lines.map((s) => s.trim()).join("\n");
+			};
+
+			const form = $("form");
+			const output = $("output");
+			const elem = $("monet-if");
+
+			const updateOutput = () => {
+				const data = {
+					monet: {
+						userPreferences: window.monet.userPreferences.get(),
+						capabilities: window.monet.capabilities.list(),
+					},
+					paymentPointer: $("meta[name=monetization]")?.content || null,
+					element: {
+						supports: elem.getAttribute("supports"),
+						updateInterval: `${elem.getAttribute("interval")}ms`,
+						getters: {
+							activeCapabilities: elem.activeCapabilities,
+							state: elem.state,
+						},
+					},
+				};
+				console.log(data);
+				output.textContent = JSON.stringify(data, null, 2);
+			};
+
+			updateOutput();
+			elem.addEventListener("change", () => {
+				updateOutput();
+				console.log(elem.querySelectorAll("*"));
+			});
+			form.addEventListener("submit", (ev) => {
+				ev.preventDefault();
+				if (!(ev.submitter instanceof HTMLButtonElement)) {
+					return;
+				}
+
+				const button = ev.submitter;
+				const text = button.textContent.toLowerCase();
+
+				const capability = text.includes("webmon")
+					? "webmonetization/*"
+					: "ads/*";
+				switch (true) {
+					case text.includes("allow"): {
+						window.monet.userPreferences.allow(capability);
+						button.textContent = `deny ${capability}`;
+						break;
+					}
+					case text.includes("deny"): {
+						window.monet.userPreferences.deny(capability);
+						button.textContent = `allow ${capability}`;
+						break;
+					}
+					case text.includes("enable"): {
+						document.head.append(
+							Object.assign(document.createElement("meta"), {
+								name: "monetization",
+								content: "$respec.org",
+							}),
+						);
+						button.textContent = "disable webmonetization";
+						updateOutput();
+						break;
+					}
+					case text.includes("disable"): {
+						$("meta[name=monetization]")?.remove();
+						button.textContent = "enable webmonetization";
+						updateOutput();
+						break;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
