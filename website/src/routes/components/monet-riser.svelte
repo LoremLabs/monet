@@ -3,7 +3,7 @@
 	import Page from '$lib/components/components/Page.svelte';
 	import Text from '$lib/components/components/Text.svelte';
 	import userPref from '$lib/components/components/monetization-type';
-	import { defaults as _defaults } from '@loremlabs/monet/dist/components/monet-riser/app.mjs';
+	import { defaults as _defaults } from '@loremlabs/monet/dist/components/MonetRiser.mjs';
 	/** @type {import("@loremlabs/monet/src/components/MonetRiser/defaults")} */
 	const defaults = _defaults;
 

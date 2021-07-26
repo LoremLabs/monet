@@ -13,6 +13,8 @@
 		}
 		return attrs.toString();
 	};
+
+	const kebabToPascal = (str) => str.replace(/(^\w|-\w)/g, (s) => s.replace(/-/, '').toUpperCase());
 </script>
 
 <script>
@@ -28,6 +30,6 @@
 	title="Demo: {name}"
 	class="border-none ring-4 ring-gray-100 w-full h-full"
 	style="min-height: 70vh; min-height: max(600px, 70vh); {style}"
-	src="/demo/index.html?component={name}#{props(options, values, type)}"
+	src="/demo/index.html?component={kebabToPascal(name)}#{props(options, values, type)}"
 	frameborder="0"
 />

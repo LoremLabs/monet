@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"prebuild": "copyfiles 'node_modules/@loremlabs/{monet/dist/{components,elements},monetization-capability-api/build/legacy}/**/*.{mjs,js,css}' static",
+		"prebuild": "copyfiles 'node_modules/@loremlabs/{monet/dist/components,monetization-capability-api/build/legacy}/**/*.{mjs,js,css}' 'node_modules/@loremlabs/monet/dist/*.js' static",
 		"build": "svelte-kit build",
 		"build:clean": "rimraf .svelte-kit build static/node_modules",
 		"preview": "svelte-kit preview",

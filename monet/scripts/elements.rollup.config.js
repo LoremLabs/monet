@@ -7,7 +7,7 @@
  */
 
 const INPUT_DIR = "src/elements";
-const OUTPUT_DIR = "dist/elements";
+const OUTPUT_DIR = "dist";
 
 const path = require("path");
 const alias = require("@rollup/plugin-alias");

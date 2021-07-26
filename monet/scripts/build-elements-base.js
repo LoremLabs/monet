@@ -16,14 +16,14 @@ const { isProdEnv, watch, getInputs } = require("./utils.js");
 /**
  * @param {string} componentName
  */
-function getRollupConfig(componentName) {
+function getViteConfig(componentName) {
 	const viteConfig = defineConfig({
 		root: path.resolve(__dirname, ".."),
 		publicDir: false,
 		clearScreen: false,
 		mode: isProdEnv ? "production" : "development",
 		build: {
-			emptyOutDir: isProdEnv,
+			emptyOutDir: false,
 			watch: watch ? { exclude: `${INPUT_DIR}/*.ts` } : null,
 			sourcemap: true,
 			...(!isProdEnv ? { minify: false } : {}),
@@ -41,7 +41,7 @@ function getRollupConfig(componentName) {
 
 async function buildComponents(inputs) {
 	await Promise.all(
-		inputs.map((elem) => getRollupConfig(elem)).map((conf) => build(conf)),
+		inputs.map((elem) => getViteConfig(elem)).map((conf) => build(conf)),
 	);
 }
 
