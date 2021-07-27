@@ -1,12 +1,5 @@
 import { throttle } from "throttle-debounce";
-
-import type { Monetization } from "@loremlabs/monetization-capability-api/build";
-declare global {
-	interface Window {
-		monet?: Monetization;
-	}
-}
-type Capabilities = ReturnType<Monetization["capabilities"]["list"]>;
+type Capabilities = ReturnType<Window["monet"]["capabilities"]["list"]>;
 
 const clamp = (val: number, lower: number, upper: number) => {
 	return Math.min(Math.max(lower, val), upper);
