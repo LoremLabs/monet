@@ -1,3 +1,5 @@
+import { throttle } from "throttle-debounce";
+
 import type { Monetization } from "@loremlabs/monetization-capability-api/build";
 declare global {
 	interface Window {
@@ -19,7 +21,6 @@ const isEqual = (a: string[], b: string[]) => {
 };
 
 class ThrottledListener {
-	#pending = 0;
 	#intervalId: ReturnType<typeof setInterval> = null;
 	#onChange: (value: Capabilities | null) => void;
 
@@ -31,38 +32,29 @@ class ThrottledListener {
 		if (interval > 0) {
 			// add some randomness to ensure we clear our pending counter
 			interval = Math.round(interval + (Math.random() * interval) / 10);
-			this.#intervalId = setInterval(() => this.update(true), interval);
+			this.#intervalId = setInterval(this.update, interval);
 		}
 	}
 
 	activate() {
 		const { capabilities, userPreferences } = window.monet!;
-		capabilities.addEventListener("change", this.onChange);
-		userPreferences.addEventListener("change", this.onChange);
+		capabilities.addEventListener("change", this.update);
+		userPreferences.addEventListener("change", this.update);
 		return this;
 	}
 
 	deactivate() {
 		const { capabilities, userPreferences } = window.monet!;
-		capabilities.removeEventListener("change", this.onChange);
-		userPreferences.removeEventListener("change", this.onChange);
+		capabilities.removeEventListener("change", this.update);
+		userPreferences.removeEventListener("change", this.update);
 		if (this.#intervalId !== null) clearInterval(this.#intervalId);
 	}
 
-	onChange = () => this.update();
-
-	update = async (force = false) => {
-		this.#pending += 1;
-		const matches = await this.#matchCapabilities();
-		if (this.#pending === 1 || force) {
-			this.#onChange(matches);
-		}
-		this.#pending -= 1;
-	};
-
-	async #matchCapabilities() {
+	update = throttle(200, false, () => this.#update(), false);
+	async #update() {
 		const userSupports = await window.monet!.match({ bypassCache: true });
-		return userSupports.map(({ capability }) => capability);
+		const capabilities = userSupports.map(({ capability }) => capability);
+		this.#onChange(capabilities);
 	}
 }
 

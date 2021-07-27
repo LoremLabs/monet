@@ -86,10 +86,7 @@
 			};
 
 			updateOutput();
-			elem.addEventListener("change", () => {
-				updateOutput();
-				console.log(elem.querySelectorAll("*"));
-			});
+			elem.addEventListener("change", updateOutput);
 			form.addEventListener("submit", (ev) => {
 				ev.preventDefault();
 				if (!(ev.submitter instanceof HTMLButtonElement)) {
