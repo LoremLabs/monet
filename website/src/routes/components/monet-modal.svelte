@@ -4,7 +4,7 @@
 	import RadioGroup from '$lib/components/components/RadioGroup.svelte';
 	import Text from '$lib/components/components/Text.svelte';
 	import userPref from '$lib/components/components/monetization-type';
-	import { defaults as _defaults } from '@loremlabs/monet/dist/components/monet-modal/app.mjs';
+	import { defaults as _defaults } from '@loremlabs/monet/dist/components/MonetModal.mjs';
 	/** @type {import("@loremlabs/monet/src/components/MonetModal/defaults")} */
 	const defaults = _defaults;
 

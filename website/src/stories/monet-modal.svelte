@@ -1,5 +1,5 @@
 <script context="module">
-	import MonetModal, { defaults } from '@loremlabs/monet/dist/components/monet-modal/app.mjs';
+	import MonetModal, { defaults } from '@loremlabs/monet/dist/components/MonetModal.mjs';
 	export { defaults };
 </script>
 
@@ -28,5 +28,5 @@
 
 <div bind:this={target} />
 
-<style src="../../node_modules/@loremlabs/monet/dist/components/monet-modal/app.css" global>
+<style src="../../node_modules/@loremlabs/monet/dist/components/MonetModal.css" global>
 </style>

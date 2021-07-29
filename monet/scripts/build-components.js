@@ -12,21 +12,20 @@ const OUTPUT_DIR = "dist/components";
 const path = require("path");
 const { defineConfig, build } = require("vite");
 const { svelte } = require("@sveltejs/vite-plugin-svelte");
-const { isProdEnv, watch, getInputs, pascalToKebab } = require("./utils.js");
+const { isProdEnv, watch, getInputs } = require("./utils.js");
 
 /**
  * @param {string} componentName
  */
-function getRollupConfig(componentName) {
-	const outDirName = pascalToKebab(componentName);
+function getViteConfig(componentName) {
 	const viteConfig = defineConfig({
 		publicDir: false,
 		root: path.resolve(__dirname, ".."),
 		clearScreen: false,
 		mode: isProdEnv ? "production" : "development",
 		build: {
+			emptyOutDir: false,
 			watch: watch ? {} : null,
-			emptyOutDir: !watch,
 			sourcemap: true,
 			...(!isProdEnv ? { minify: false } : {}),
 			lib: {
@@ -36,12 +35,12 @@ function getRollupConfig(componentName) {
 			rollupOptions: {
 				output: {
 					format: "es",
-					dir: `${OUTPUT_DIR}/${outDirName}/`,
-					entryFileNames: "app.mjs",
-					assetFileNames: "app.css",
+					dir: `${OUTPUT_DIR}/`,
+					entryFileNames: `${componentName}.mjs`,
+					assetFileNames: `${componentName}.css`,
 				},
 			},
-			outDir: `${OUTPUT_DIR}/${outDirName}/`,
+			outDir: `${OUTPUT_DIR}/`,
 		},
 		plugins: [svelte()],
 	});
@@ -50,7 +49,7 @@ function getRollupConfig(componentName) {
 
 async function buildBaseElements(inputs) {
 	await Promise.all(
-		inputs.map((elem) => getRollupConfig(elem)).map((conf) => build(conf)),
+		inputs.map((elem) => getViteConfig(elem)).map((conf) => build(conf)),
 	);
 }
 

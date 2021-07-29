@@ -40,7 +40,6 @@ class MonetPref extends HTMLElement {
 			updateUserPreferences(app.options);
 		};
 
-		// @ts-expect-error
 		const mon = window.monet;
 		if (!mon) return;
 		mon.capabilities?.addEventListener("change", onCapabilityChange);
@@ -50,7 +49,6 @@ class MonetPref extends HTMLElement {
 		app = null;
 		shadowRoot = null;
 
-		// @ts-expect-error
 		const mon = window.monet;
 		if (!mon) return;
 		mon.capabilities?.removeEventListener("change", onCapabilityChange);
@@ -78,7 +76,6 @@ class MonetPref extends HTMLElement {
 }
 
 function updateUserPreferences(options) {
-	// @ts-expect-error
 	const userPreferences = window.monet?.userPreferences;
 	if (!userPreferences) return;
 	const newPreferences = { allow: [], deny: [] };
@@ -92,7 +89,6 @@ function updateUserPreferences(options) {
  * @returns {{ id: string, title?: string, description?: string, enabled: boolean }[]}
  */
 function getOptions() {
-	// @ts-expect-error
 	const mon = window.monet;
 	if (!mon) return [];
 	const capabilities = mon.capabilities?.list() ?? [];

@@ -14,3 +14,10 @@ declare namespace svelte.JSX {
 		) => void;
 	}
 }
+
+import type { Monetization } from "@loremlabs/monetization-capability-api/build";
+declare global {
+	interface Window {
+		monet?: Monetization;
+	}
+}

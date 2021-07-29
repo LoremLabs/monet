@@ -7,10 +7,11 @@
  */
 
 const INPUT_DIR = "src/elements";
-const OUTPUT_DIR = "dist/elements";
+const OUTPUT_DIR = "dist";
 
 const path = require("path");
 const alias = require("@rollup/plugin-alias");
+const { nodeResolve } =require('@rollup/plugin-node-resolve');
 const typescript = require("@rollup/plugin-typescript");
 const { terser } = require("rollup-plugin-terser");
 const sourcemaps = require("rollup-plugin-sourcemaps");
@@ -31,6 +32,7 @@ function getRollupConfig(elementName) {
 			file: `${OUTPUT_DIR}/${elementName}.js`,
 		},
 		plugins: [
+			nodeResolve(),
 			// @ts-expect-error
 			typescript(),
 			// @ts-expect-error

@@ -1,6 +1,6 @@
 const BASE_URL = '../node_modules/@loremlabs/monet/dist/components';
-const getJS = (component) => `${BASE_URL}/${component}/app.mjs`;
-const getCSS = (component) => `${BASE_URL}/${component}/app.css`;
+const getJS = (component) => `${BASE_URL}/${component}.mjs`;
+const getCSS = (component) => `${BASE_URL}/${component}.css`;
 
 const getProps = () => {
 	const params = new URLSearchParams(location.hash.slice(1));
