@@ -27,5 +27,5 @@
 <main class="max-w-7xl mx-auto ">
 	<slot />
 </main>
-<div class="p-4 lg:p-8"><monet-pref /></div>
 <Footer />
+<div class="p-4 lg:p-8"><monet-pref /></div>
