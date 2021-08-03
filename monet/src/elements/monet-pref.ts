@@ -32,7 +32,7 @@ class MonetPref extends HTMLElement {
 		style.textContent = css;
 		shadowRoot.append(style);
 
-		const props = { options: getOptions() };
+		const props = { options: getOptions(), heading: this.getAttribute("heading") };
 		updateUserPreferences(props.options);
 		app = new App({ target: shadowRoot, props });
 		app.onChange = (detail) => {
