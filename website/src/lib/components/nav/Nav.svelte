@@ -1,34 +1,23 @@
 <header class="bg-black">
 	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
 		<div
-			class="w-full py-6 flex items-center justify-between border-b border-theme-500 lg:border-none"
+			class="w-full py-6 flex items-center justify-between border-b border-gray-500 lg:border-none"
 		>
 			<div class="flex items-end">
 				<a href="/">
 					<span class="sr-only">Monet</span>
 					<div class="bg-gray-100 border-2 border-gray-50 rounded-xl text-black font-mono">
-						<div class="pl-4 pr-4">
-							Monet
-												</div>							
+						<div class="pl-4 pr-4">Monet</div>
 					</div>
 				</a>
 				<div class="hidden ml-10 space-x-8 lg:block font-mono border">
-					<a href="/components" class="m-2 text-base font-medium text-white hover:text-theme-50" key="Components">
+					<a
+						href="/components"
+						class="m-2 text-base font-medium text-white hover:text-theme-50"
+						key="Components"
+					>
 						Components
-					  </a>
-		  
-					<!-- <a href="#" class="text-base font-medium text-white hover:text-theme-50" key="Solutions">
-              Solutions
-            </a>
-  
-  
-            <a href="#" class="text-base font-medium text-white hover:text-theme-50" key="Docs">
-              Docs
-            </a>
-  
-            <a href="#" class="text-base font-medium text-white hover:text-theme-50" key="Company">
-              Company
-            </a> -->
+					</a>
 				</div>
 			</div>
 			<div class="ml-10 space-x-4">
@@ -51,25 +40,13 @@
 			</div>
 		</div>
 		<div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
-			<a href="/components" class="text-base font-medium text-white hover:text-theme-50" key="Components">
+			<a
+				href="/components"
+				class="text-base font-medium text-white hover:text-theme-50"
+				key="Components"
+			>
 				Components
-			  </a>
-	  
-			<!-- <a href="#" class="text-base font-medium text-white hover:text-theme-50" key="Solutions">
-          Solutions
-        </a>
-  
-        <a href="#" class="text-base font-medium text-white hover:text-theme-50" key="Pricing">
-          Pricing
-        </a>
-  
-        <a href="#" class="text-base font-medium text-white hover:text-theme-50" key="Docs">
-          Docs
-        </a>
-  
-        <a href="#" class="text-base font-medium text-white hover:text-theme-50" key="Company">
-          Company
-        </a> -->
+			</a>
 		</div>
 	</nav>
 </header>
