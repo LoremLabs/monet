@@ -19,6 +19,16 @@
 						Components
 					</a>
 				</div>
+				<div class="hidden ml-10 space-x-8 lg:block font-mono border">
+					<a
+						href="/demo"
+						class="m-2 text-base font-medium text-white hover:text-theme-50"
+						key="Demo"
+					>
+						Demo
+					</a>
+				</div>
+		
 			</div>
 			<div class="ml-10 space-x-4">
 				<a

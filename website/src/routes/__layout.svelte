@@ -10,6 +10,7 @@
 
 	import Nav from '$lib/components/nav/Nav.svelte';
 	import Footer from '$lib/components/nav/Footer.svelte';
+	import ContentFooter from '$lib/components/components/ContentFooter.svelte';
 
 	onMount(() => {
 		// analytics
@@ -40,8 +41,13 @@
 </svelte:head>
 
 <Nav />
-<main class="max-w-7xl mx-auto ">
+<main class="max-w-7xl mx-auto min-h-screen">
 	<slot />
 </main>
 <Footer />
-<div class="p-4 lg:p-8"><monet-pref heading="Example Monetization Preferences" /></div>
+
+<ContentFooter>
+	<span slot="content">
+		<div class="p-4 lg:p-8"><monet-pref heading="Set Your Monetization Preferences" /></div>
+	</span>
+</ContentFooter>

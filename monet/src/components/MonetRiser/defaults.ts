@@ -22,7 +22,7 @@ export const text = (type: Type) => {
 	return {
 		ad: `Our journalism is supported by readers like you.`,
 		sub: `Our journalism is supported by readers like you.`,
-		webmon: `Our journalism is supported by readers like you. Web Monetization saves you from obnoxious ads and enables us to report out the news you need. We call that a win-win.`,
+		webmon: `Our journalism is supported by readers like you. Web Monetization sends money to us when you read, enabling us to report out the news you need. We call that a win-win.`,
 	}[type];
 };
 
