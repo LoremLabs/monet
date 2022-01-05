@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { browser } from '$app/env';
 	import webMonetization from '@loremlabs/monetization-capability-api/build/legacy/plugins/webmonetization.js';
 
 	let userMatches = [];
@@ -8,6 +9,8 @@
 	let acceptHeader = '';
 
 	onMount(() => {
+		if (!browser) return;
+
 		if (!window.monet) {
 			console.error('`window.monet` not found.');
 			return;
@@ -33,19 +36,15 @@
 			console.dir(window.monet.userPreferences.get());
 			console.groupEnd();
 
-            window.localStorage.setItem('monetization-prefs', JSON.stringify(userPrefs));
+			window.localStorage.setItem('monetization-prefs', JSON.stringify(userPrefs));
 
 			console.log({ userPrefs, siteMethods, acceptHeader });
 		};
 
 		const capabilities = window.monet.capabilities.acquire();
 		capabilities.use(webMonetization({ timeout: 5000 }));
-		// capabilities.define('webmonetization/*', () => ({ isSupported: true }));
-		// capabilities.define('ads/*', () => ({ isSupported: true }));
-		// capabilities.define('subscription/*', () => ({ isSupported: true }));
-		capabilities.define('webmonetization/*', () => ({}));
-		capabilities.define('ads/*', () => ({}));
-		capabilities.define('subscription/*', () => ({}));
+		capabilities.define('ads/*', () => ({ isSupported: true }));
+		capabilities.define('subscription/*', () => ({ isSupported: true }));
 		capabilities.unlock(); // don't unlock if you don't want others to change
 
 		const cachedPrefs = window.localStorage.getItem('monetization-prefs');
@@ -53,12 +52,12 @@
 			const initialPrefs = JSON.parse(cachedPrefs);
 			if (initialPrefs.allows) {
 				initialPrefs.allows.forEach((allow) => {
-					capabilities.define(allow);
+					window.monet.userPreferences.allow(allow);
 				});
 			}
 			if (initialPrefs.denies) {
 				initialPrefs.denies.forEach((deny) => {
-					capabilities.define(deny);
+					window.monet.userPreferences.deny(deny);
 				});
 			}
 		}
@@ -80,7 +79,7 @@
 
 		(async () => {
 			console.log(await window.monet.detect('webmonetization/*'));
-            updateUserPrefs();
+			updateUserPrefs();
 		})();
 
 		updateUserPrefs();
