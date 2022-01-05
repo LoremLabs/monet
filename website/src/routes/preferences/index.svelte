@@ -80,6 +80,7 @@
 
 		(async () => {
 			console.log(await window.monet.detect('webmonetization/*'));
+            updateUserPrefs();
 		})();
 
 		updateUserPrefs();

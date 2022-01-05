@@ -21,11 +21,11 @@
 				</div>
 				<div class="hidden ml-10 space-x-8 lg:block font-mono border">
 					<a
-						href="/demo"
+						href="/preferences"
 						class="m-2 text-base font-medium text-white hover:text-theme-50"
-						key="Demo"
+						key="Preferences"
 					>
-						Demo
+						Preferences
 					</a>
 				</div>
 		
