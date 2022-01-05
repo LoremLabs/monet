@@ -2,7 +2,7 @@
 	import HomeHeader from '$lib/components/home/HomeHeader.svelte';
 </script>
 
-<section>
+<section class="h-min-screen">
 	<HomeHeader />
 </section>
 
