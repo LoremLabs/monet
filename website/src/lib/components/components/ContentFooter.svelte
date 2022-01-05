@@ -32,7 +32,7 @@
 				<slot name="header" />
 			</div>
 		{:else}
-			<div class="fixed inset-x-0 bottom-0 h-1 bg-secondary-500" />
+			<div class="fixed inset-x-0 bottom-0 h-1 bg-gray-500" />
 		{/if}
 	</footer>
 </Visibility>
