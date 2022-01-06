@@ -1250,15 +1250,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@loremlabs/monetization-capability-api@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@loremlabs/monetization-capability-api/-/monetization-capability-api-0.0.1.tgz#27043fbcc61e22e608d5c2adc2b7702d775ec630"
-  integrity sha512-y/W5NtpR2VGOS1w2FuComS9ERsF+jEFutja7XGBet5wtr+Jh2esm8acYUaluqwK3dsY8ahbmNVDbwQlNfK3qqQ==
-
-"@loremlabs/monetization-capability-api@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@loremlabs/monetization-capability-api/-/monetization-capability-api-0.0.3.tgz#3974765c9efbb1dc12f7b4fcb8a507157c1e99c1"
-  integrity sha512-5aLJVEPKhOQD0jlJCOyHRvgEI8CW0qlgJPqTN9kSTzODHf1aDYctM3ezp/fnnHLHBaO9JYyh9aS1UmiA8ZbBYQ==
+"@loremlabs/monetization-capability-api@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@loremlabs/monetization-capability-api/-/monetization-capability-api-0.0.4.tgz#b3a73559742047a0d0965fd01207367d4a8c3506"
+  integrity sha512-z4PCtmrx7c1kZZHQyPH1UjuXxFALrvAELQ4UAdmB6UxXHZzeyfwqQv3LAbB5Kr64lt0/Qa72ySlg6fj3BdyUqA==
 
 "@mdx-js/loader@^1.6.22":
   version "1.6.22"
