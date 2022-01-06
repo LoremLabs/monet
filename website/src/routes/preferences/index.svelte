@@ -16,7 +16,7 @@
 			return;
 		}
 
-		// store user's monetization preferences 
+		// store user's monetization preferences
 		const cachedPrefs = window.localStorage.getItem('monetization-prefs');
 		if (cachedPrefs) {
 			const initialPrefs = JSON.parse(cachedPrefs);
@@ -35,7 +35,7 @@
 			window.monet.userPreferences.deny('ads/behavioral');
 			window.monet.userPreferences.allow('ads/*');
 			window.monet.userPreferences.allow('subscriptions/*'); // doesn't say that user has a subscription, just that it's possible
-			window.monet.userPreferences.deny('webmonetization/*'); // 
+			window.monet.userPreferences.deny('webmonetization/*'); //
 		}
 
 		const updateUserPrefs = () => {
@@ -85,10 +85,12 @@
 
 		// probe for webmonetization support, added via plugin
 		(async () => {
-			const browserSupportsWebmon = await window.monet.detect('webmonetization/*', { timeout: 3000 });
+			const browserSupportsWebmon = await window.monet.detect('webmonetization/*', {
+				timeout: 3000,
+			});
 			if (browserSupportsWebmon.isSupported) {
 				console.log('🎉 browser supports webmonetization');
-				window.monet.userPreferences.allow('webmonetization/*');				
+				window.monet.userPreferences.allow('webmonetization/*');
 			} else {
 				console.log('🚫 browser does not support webmonetization');
 				window.monet.userPreferences.deny('webmonetization/*');
@@ -172,17 +174,30 @@
 		<h1
 			class="mt-2 text-2xl tracking-tight font-extrabold text-black sm:mt-5 sm:text-3xl lg:mt-6 xl:text-3xl"
 		>
-			Premium content
+			Content Example
 		</h1>
 		<ul class="pl-4 font-mono">
 			<monet-if supports="webmonetization/*" interval="3000">
 				<li class="text-gray-500">Web Monetization</li>
-				<monet-inline slot="else">
-					<li class="text-gray-500 line-through">
-						Web Monetization
-					</li>
-				</monet-inline>					
+				<div slot="else">
+					<li class="text-gray-500 line-through">Web Monetization</li>
+				</div>
+			</monet-if>
+			<monet-if supports="ads/simple" interval="100">
+				<li class="text-gray-500">Ads</li>
+				<div slot="else">
+					<li class="text-gray-500 line-through">Ads</li>
+				</div>
+			</monet-if>
+			<monet-if supports={siteMethods.join(' ')} interval="3000">
+				<li class="text-gray-500">Anything</li>
+				<span slot="else"></span>
 			</monet-if>
 		</ul>
+		<monet-if supports={siteMethods.join(' ')} interval="3000">
+			<p>You're monetizing this site, thank you.</p>
+			<monet-inline slot="else" heading1="Consider going premium?" heading2="Buy a pass" subtitle="No Monetization Method Found" body="This would tell the user about the various options." cta="Learn More" link="/"></monet-inline>
+		</monet-if>
+
 	</section>
 </div>
