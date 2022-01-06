@@ -160,8 +160,7 @@
 			Premium content
 		</h1>
 		<ul class="pl-4 font-mono">
-            <!-- this isn't working? -->
-			<monet-if supports="zzz/*" interval="3000">
+			<monet-if supports="webmonetization/*" interval="3000">
 				<li class="text-gray-500">Web Monetization</li>
 			</monet-if>
 		</ul>
