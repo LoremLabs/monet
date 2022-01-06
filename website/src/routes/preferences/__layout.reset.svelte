@@ -11,15 +11,13 @@
 	// import Footer from '$lib/components/nav/Footer.svelte';
 	import ContentFooter from '$lib/components/components/ContentFooter.svelte';
 
-	const monetizationMethods = new Map([
-		['webmonetization/*', { title: 'WebMonetization', description: 'Streaming micropayments.' }],
-		['ads/*', { title: 'Advertisements', description: 'All advertisements.' }],
-		['subscription/*', { title: 'Subscription', description: 'Monthly subscription.' }],
-		['zzz/*', { title: 'ZZZ', description: 'ZZZ Thing' }],
-	]);
-
 	// track a page view when the URL path changes
 	$: $page.path, browser && Fathom.trackPageview();
+
+	let monetPrefElem;
+	$: if (monetPrefElem) {
+		monetPrefElem.config('zzz/*', 'ZZZ', 'ZZZ Thing');
+	}
 </script>
 
 <svelte:head>
@@ -34,7 +32,7 @@
 <ContentFooter>
 	<span slot="content">
 		<div class="p-4 lg:p-8">
-			<monet-pref zoptions={monetizationMethods} heading="Set Your Monetization Preferences"></monet-pref>
+			<monet-pref bind:this={monetPrefElem} heading="Set Your Monetization Preferences" />
 		</div>
 	</span>
 </ContentFooter>
