@@ -37,7 +37,8 @@
 </script>
 
 <svelte:head>
-	<title>Monet: Patterns for Monetization</title>
+	<title>Monet: Paywall Patterns for Monetization</title>
+	<meta name="monetization" content="$ilp.uphold.com/fWWxqr4H9rHa" note="mankins payment pointer" />
 </svelte:head>
 
 <Nav />

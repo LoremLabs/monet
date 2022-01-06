@@ -16,7 +16,30 @@
 			return;
 		}
 
+		// store user's monetization preferences 
+		const cachedPrefs = window.localStorage.getItem('monetization-prefs');
+		if (cachedPrefs) {
+			const initialPrefs = JSON.parse(cachedPrefs);
+			if (initialPrefs.allows) {
+				initialPrefs.allows.forEach((allow) => {
+					window.monet.userPreferences.allow(allow);
+				});
+			}
+			if (initialPrefs.denies) {
+				initialPrefs.denies.forEach((deny) => {
+					window.monet.userPreferences.deny(deny);
+				});
+			}
+		} else {
+			// default user preferences
+			window.monet.userPreferences.deny('ads/behavioral');
+			window.monet.userPreferences.allow('ads/*');
+			window.monet.userPreferences.allow('subscriptions/*'); // doesn't say that user has a subscription, just that it's possible
+			window.monet.userPreferences.deny('webmonetization/*'); // 
+		}
+
 		const updateUserPrefs = () => {
+			// report updated preferences, persist
 			userPrefs = window.monet.userPreferences.get();
 			siteMethods = window.monet.capabilities.list();
 			window.monet.match().then((matches) => {
@@ -41,44 +64,36 @@
 			console.log({ userPrefs, siteMethods, acceptHeader });
 		};
 
+		// these are the site's capabilities
 		const capabilities = window.monet.capabilities.acquire();
 		capabilities.use(webMonetization({ timeout: 5000 }));
 		capabilities.define('ads/*', () => ({ isSupported: true }));
 		capabilities.define('subscription/*', () => ({ isSupported: true }));
+		capabilities.define('zzz/*', () => ({ isSupported: true }));
 		capabilities.unlock(); // don't unlock if you don't want others to change
 
-		const cachedPrefs = window.localStorage.getItem('monetization-prefs');
-		if (cachedPrefs) {
-			const initialPrefs = JSON.parse(cachedPrefs);
-			if (initialPrefs.allows) {
-				initialPrefs.allows.forEach((allow) => {
-					window.monet.userPreferences.allow(allow);
-				});
-			}
-			if (initialPrefs.denies) {
-				initialPrefs.denies.forEach((deny) => {
-					window.monet.userPreferences.deny(deny);
-				});
-			}
-		}
-
+		// setup event listeners to respond to changes
 		window.monet.userPreferences.addEventListener('change', (ev) => {
-			console.log(`userPreferences:change===============`, ev.changeType);
+			console.log(`userPreferences:change 👋`, ev.changeType);
 			updateUserPrefs();
 		});
 		window.monet.capabilities.addEventListener('change', (ev) => {
-			console.log(`capabilities:change--------------`, ev.changeType, ev.capability);
+			console.log(`👋 capabilities:change`, ev.changeType, ev.capability);
 			userPrefs = window.monet.userPreferences.get();
 			updateUserPrefs();
 		});
 
-		// window.monet.userPreferences.deny('ads/behavioral');
-		// window.monet.userPreferences.allow('ads/*');
-		// window.monet.userPreferences.allow('foo/*');
-		// window.monet.userPreferences.allow('webmonetization/*');
-
+		// probe for webmonetization support, added via plugin
 		(async () => {
-			console.log(await window.monet.detect('webmonetization/*'));
+			const browserSupportsWebmon = await window.monet.detect('webmonetization/*', { timeout: 3000 });
+			if (browserSupportsWebmon) {
+				console.log('🎉 browser supports webmonetization');
+				window.monet.userPreferences.allow('webmonetization/*');				
+			} else {
+				console.log('🚫 browser does not support webmonetization');
+				window.monet.userPreferences.deny('webmonetization/*');
+			}
+
 			updateUserPrefs();
 		})();
 
@@ -162,6 +177,11 @@
 		<ul class="pl-4 font-mono">
 			<monet-if supports="webmonetization/*" interval="3000">
 				<li class="text-gray-500">Web Monetization</li>
+				<monet-inline slot="else">
+					<li class="text-gray-500 line-through">
+						Web Monetization
+					</li>
+				</monet-inline>					
 			</monet-if>
 		</ul>
 	</section>
