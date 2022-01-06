@@ -69,7 +69,7 @@
 		capabilities.use(webMonetization({ timeout: 5000 }));
 		capabilities.define('ads/*', () => ({ isSupported: true }));
 		capabilities.define('subscription/*', () => ({ isSupported: true }));
-		capabilities.define('zzz/*', () => ({ isSupported: true }));
+		capabilities.define('pass/*', () => ({ isSupported: true }));
 		capabilities.unlock(); // don't unlock if you don't want others to change
 
 		// setup event listeners to respond to changes
@@ -86,7 +86,7 @@
 		// probe for webmonetization support, added via plugin
 		(async () => {
 			const browserSupportsWebmon = await window.monet.detect('webmonetization/*', { timeout: 3000 });
-			if (browserSupportsWebmon) {
+			if (browserSupportsWebmon.isSupported) {
 				console.log('🎉 browser supports webmonetization');
 				window.monet.userPreferences.allow('webmonetization/*');				
 			} else {

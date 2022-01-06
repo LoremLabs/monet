@@ -16,7 +16,7 @@
 
 	let monetPrefElem;
 	$: if (monetPrefElem) {
-		monetPrefElem.config('zzz/*', 'ZZZ', 'ZZZ Thing');
+		monetPrefElem.config('pass/*', 'Pass', 'Day Pass');
 	}
 </script>
 
