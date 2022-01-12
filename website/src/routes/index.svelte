@@ -7,6 +7,6 @@
 	<HomeHeader />
 </section>
 
-<section class="bg-white pt-40 lg:py-20 flex flex-col gap-1">
+<section class="bg-white pt-40 lg:py-20 flex flex-col gap-1 mb-96">
 	<Examples />
 </section>

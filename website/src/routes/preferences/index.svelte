@@ -110,10 +110,10 @@
 		<h2
 			class="mt-2 text-2xl tracking-tight font-extrabold text-black sm:mt-5 sm:text-3xl lg:mt-6 xl:text-3xl"
 		>
-			Accept-Payment Header
+			Accept-Monetization Header
 		</h2>
 		<ul class="pl-4 font-mono">
-			<li class="text-gray-500">Accept-Payment: "{acceptHeader}"</li>
+			<li class="text-gray-500">Accept-Monetization: "{acceptHeader}"</li>
 		</ul>
 
 		<h2

@@ -41,3 +41,16 @@
 		Web Monetization before continuing.
 	</svelte:fragment>
 </Example>
+
+<Example
+	name="monet-if"
+	title="Monetization If Block"
+	imageUrl="/img/modal.png"
+	align="left"
+	backgroundImageUrl="/svg/gradient-circle-blue.svg"
+	class="bg-right"
+>
+	<svelte:fragment slot="description">
+		Build premium content by choosing to show or hide based on a user's monetization status.
+	</svelte:fragment>
+</Example>

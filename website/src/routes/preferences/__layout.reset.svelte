@@ -26,12 +26,12 @@
 </svelte:head>
 
 <Nav />
-<main class="max-w-7xl mx-auto min-h-screen">
+<main class="max-w-7xl mx-auto min-h-screen mb-96">
 	<slot />
 </main>
 <ContentFooter>
 	<span slot="content">
-		<div class="p-4 lg:p-8">
+		<div class="p-1">
 			<monet-pref bind:this={monetPrefElem} heading="Set Your Monetization Preferences" />
 		</div>
 	</span>

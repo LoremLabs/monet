@@ -49,6 +49,6 @@
 
 <ContentFooter>
 	<span slot="content">
-		<div class="p-4 lg:p-8"><monet-pref heading="Set Your Monetization Preferences" /></div>
+		<div class="p-1"><monet-pref heading="Set Your Monetization Preferences" /></div>
 	</span>
 </ContentFooter>
