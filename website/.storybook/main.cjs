@@ -1,20 +1,19 @@
-const preprocess = require('svelte-preprocess');
-
 module.exports = {
-	stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|svelte)'],
+	stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|svelte)'],
 	addons: [
 		'@storybook/addon-essentials',
 		{
-			name: '@storybook/addon-postcss',
+			name: '@storybook/addon-svelte-csf',
 			options: {
-				postcssLoaderOptions: {
-					implementation: require('postcss'),
-				},
-			},
+				legacyTemplate: true
+			}
 		},
-		'@storybook/addon-svelte-csf',
 	],
-	svelteOptions: {
-		preprocess: preprocess({ postcss: true }),
+	framework: {
+		name: '@storybook/sveltekit',
+		options: {}
 	},
+	docs: {
+		autodocs: 'tag'
+	}
 };
